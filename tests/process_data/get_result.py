@@ -47,4 +47,8 @@ def get_result_markdown(data: MainDataType, sc: ResultDataType) -> str:
 
 
 def get_questions_markdown(data: MainDataType, sc: ResultDataType) -> str:
+    # we don't convert it to a dict because jinja seems to be doing this itself in some way
+    # if we face somw error while rendering we should do
+    # So accesing with and without `[""]` notation is possible
+    # data = data.__dict__ in the arguments below
     return render_jinja_temp("questions_temp.md.j2", data=data)

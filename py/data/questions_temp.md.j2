@@ -1,13 +1,13 @@
 ## Questions
 
 {% for i in range(90) %}
-{{ i + 1 }}. ![]({{ data["QuestionIMG"][i] }} "Question {{ i + 1 }}")
-{%- if data["Type"][i] == "MCQ" %}
+{{ i + 1 }}. ![]({{ data.QuestionIMG[i] }} "Question {{ i + 1 }}")
+{%- if data.Type[i] == "MCQ" %}
     {%- for opt_numb in range(1, 5) %}
     {%- set opt_nm = ["A", "B", "C", "D"][opt_numb - 1] %}
     - {{ opt_nm }}. ![]({{ data["Option{0}IMG".format(opt_numb)][i] }} "Question {{ i + 1 }} - Option {{ opt_nm }}")
     {%- endfor %}
 {%- endif %}
-    - Correct Answer : {{ data["CorrectAnswer"][i] }}
-    - Marked Answer : {{ data["GivenAnswer"][i] }}
+    - Correct Answer : {{ data.CorrectAnswer[i] }}
+    - Marked Answer : {{ data.GivenAnswer[i] }}
 {% endfor -%}

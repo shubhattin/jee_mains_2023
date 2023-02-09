@@ -7,6 +7,7 @@ PROD_ENV: bool = not DEV_ENV
 if DEV_ENV:
     from .gupta import from_base64
     import dotenv
+
     dotenv.load_dotenv()
 
     deta = Deta(from_base64(os.getenv("DETA_KEY")))

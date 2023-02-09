@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import Response
 from datetime import timedelta
 from kry.datt import DEV_ENV, PROD_ENV
-import jee
+import mains
 
 APP_NAME = "शुभलिपिलघूपकरणम्"
 if DEV_ENV:
@@ -35,7 +35,7 @@ async def middleware(req: Request, call_next):
             del res.headers[x]
     return res
 
-app.include_router(jee.router)
+app.include_router(mains.router)
 # if PROD_ENV:
 #     app.mount("/", sthaitik_sanchit(directory="public"), name="static")
 
