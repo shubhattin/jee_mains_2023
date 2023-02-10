@@ -1,0 +1,6 @@
+{% for x in DATA -%}
+# {{ x|safe }}
+
+{{ DATA[x]|safe }}
+
+{% endfor -%}
