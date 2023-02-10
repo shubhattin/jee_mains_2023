@@ -17,3 +17,8 @@ py/o
 tests/data/question_paper_html.html
 py/.env
 tests/result
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

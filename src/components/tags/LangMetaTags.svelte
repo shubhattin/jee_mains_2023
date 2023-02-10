@@ -2,7 +2,7 @@
   import { default_locale, get_link, locale_keys } from '@tools/i18n';
   import { page } from '$app/stores';
 
-  const SITE_URL: string = import.meta.env.PUBLIC_SITE_URL || '';
+  const SITE_URL: string = import.meta.env.VITE_SITE_URL || '';
 
   export let title: string;
   export let description: string;

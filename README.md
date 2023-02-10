@@ -1,6 +1,6 @@
 ## JEE Mains 2023 Score Calculator
 
-Link: [https://jee_mains_2023.deta.dev](https://jee_mains_2023.deta.dev)
+Link: [https://jeemains2023.deta.dev](https://jeemains2023.deta.dev)
 
 ### **Tech Stack Used**
 

@@ -22,7 +22,7 @@ async def middleware(req: Request, call_next):
     if req.method == "GET":
         head.update(
             {
-                "X-Robots-Tag": "noindex",
+                "X-Robots-Tag": "index",
                 "X-Frame-Options": "deny",
                 "Cache-Control": "No-Store"
                 if DEV_ENV
