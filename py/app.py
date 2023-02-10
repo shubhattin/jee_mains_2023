@@ -2,16 +2,17 @@ from fastapi import FastAPI, Request
 from fastapi.responses import Response
 from datetime import timedelta
 from kry.datt import DEV_ENV, PROD_ENV
+from kry.plugins import sthaitik_sanchit
 import mains
 
-APP_NAME = "शुभलिपिलघूपकरणम्"
+APP_NAME = "JEE Mains 2023 Score Calculator"
 if DEV_ENV:
     app = FastAPI(debug=True, title=APP_NAME)
 else:
     app = FastAPI(openapi_url=None, redoc_url=None, title=APP_NAME)
 
 
-CACHE_DURATION = int(timedelta(weeks=1).total_seconds())
+CACHE_DURATION = int(timedelta(hours=4).total_seconds())
 
 
 @app.middleware("http")
@@ -24,8 +25,8 @@ async def middleware(req: Request, call_next):
                 "X-Robots-Tag": "noindex",
                 "X-Frame-Options": "deny",
                 "Cache-Control": "No-Store"
-                # if DEV_ENV
-                # else f"public, max-age={CACHE_DURATION}",
+                if DEV_ENV
+                else f"public, max-age={CACHE_DURATION}",
             }
         )
     for x in head:
@@ -35,9 +36,10 @@ async def middleware(req: Request, call_next):
             del res.headers[x]
     return res
 
+
 app.include_router(mains.router)
-# if PROD_ENV:
-#     app.mount("/", sthaitik_sanchit(directory="public"), name="static")
+if PROD_ENV:
+    app.mount("/", sthaitik_sanchit(directory="public"), name="static")
 
 if DEV_ENV:
     import uvicorn

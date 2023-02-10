@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 from .lang_data_model import LangDBModel
 from kry.datt import DEV_ENV, PROD_ENV, read_file
 import json
@@ -39,9 +39,7 @@ class भाषादत्तांश:
             return dt
         import shubhlipi as sh
 
-        MAP = [
-            [dt.drive_api.reset.user_not_found, ["dt.drive_security.user_not_found"]]
-        ]
+        MAP: List[List[str, List[str]]] = []
         for x in MAP:
             for y in x[1]:
                 sh.set_val_from_address("/".join(y[2:].split(".")), db, x[0])

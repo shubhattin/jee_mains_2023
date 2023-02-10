@@ -7,10 +7,10 @@ name = "pypi"
 fastapi = "*"
 deta = "*"
 pyquery = "*"
+jinja2 = "*"
 
 [dev-packages]
 black = "*"
-jinja2 = "*"
 markdown = "*"
 ipykernel = "*"
 shubhlipi = "*"
@@ -19,6 +19,7 @@ uvicorn = "*"
 pyyaml = "*"
 markdownify = "*"
 requests = "*"
+datamodel-code-generator = "*"
 
 [requires]
 python_version = "3"

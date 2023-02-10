@@ -1,6 +1,6 @@
 import shubhlipi as sh, re, os
-# from langs.datt import LANG_DB
-# from typing import Dict
+from langs.datt import LANG_DB
+from typing import Dict
 
 if sh.args(0) == "clone":
     sh.delete_folder("o")
@@ -56,27 +56,27 @@ def copy_files(lc=""):
             sh.copy_file(x, f"o/{x}")
 
 
-# def make_lang_files():
-#     sh.makedir("o/langs/data")
-#     LANG_DB.json_type = True
-#     for x in sh.lang_list:
-#         code = sh.lang_list[x]
-#         data: Dict = LANG_DB(code)
-#         sh.write(f"o/langs/data/{sh.lang_list[x]}.json", sh.dump_json(data))
+def make_lang_files():
+    sh.makedir("o/langs/data")
+    LANG_DB.json_type = True
+    for x in sh.lang_list:
+        code = sh.lang_list[x]
+        data: Dict = LANG_DB(code)
+        sh.write(f"o/langs/data/{sh.lang_list[x]}.json", sh.dump_json(data))
 
 
 copy_files()
-# make_lang_files()
+make_lang_files()
 
 if "deploy" in sh.argv:
-    # if "nobuild" not in sh.argv:
-    #     sh.start_thread(
-    #         lambda: print(
-    #             f"\n\tBeautified with prettier :",
-    #             "Success" if sh.cmd("pnpm format", display=False)[0] == 0 else "Failed",
-    #         )
-    #     )
-    #     sh.cmd("pnpm build", direct=False)
-    # sh.copy_folder("../build", "o/public")
-    # print("\nCopied SvelteKit 'build' folder to FastAPI 'public' folder")
+    if "nobuild" not in sh.argv:
+        sh.start_thread(
+            lambda: print(
+                f"\n\tBeautified with prettier :",
+                "Success" if sh.cmd("pnpm format", display=False)[0] == 0 else "Failed",
+            )
+        )
+        sh.cmd("pnpm build", direct=False)
+    sh.copy_folder("../build", "o/public")
+    print("\nCopied SvelteKit 'build' folder to FastAPI 'public' folder")
     sh.cmd("cd o && deta deploy", direct=False)

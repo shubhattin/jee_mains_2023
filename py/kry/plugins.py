@@ -2,7 +2,7 @@ from starlette.types import Receive, Scope, Send
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi import Request
-# from langs.datt import LOCALES, DEFAULT_LOCALE
+from langs.datt import LOCALES, DEFAULT_LOCALE
 import os
 
 
@@ -40,25 +40,25 @@ class sthaitik_sanchit(StaticFiles):
         await response(scope, receive, send)
 
 
-# async def get_locale(req: Request):
-#     """`FastAPI` dependency to get the current locale"""
-#     header: str = req.headers.get("X-bhAShA") or req.headers.get("Accept-Language")
-#     if not header:
-#         return DEFAULT_LOCALE
-#     try:
-#         languages = header.split(",")
-#         locale_q_pairs = []
-#         for language in languages:
-#             if language.split(";")[0] == language:
-#                 ln = language.strip().lower().split("-")
-#                 locale_q_pairs.append((ln[0], ln[1] if len(ln) == 2 else "", 1.0))
-#             else:
-#                 locale = language.split(";")[0].strip()
-#                 q = language.split(";")[1].split("=")[1]
-#                 ln = locale.lower().split("-")
-#                 locale_q_pairs.append((ln[0], ln[1] if len(ln) == 2 else "", float(q)))
-#         for x in locale_q_pairs:
-#             if x[0] in LOCALES:
-#                 return x[0]
-#     except:
-#         return DEFAULT_LOCALE
+async def get_locale(req: Request):
+    """`FastAPI` dependency to get the current locale"""
+    header: str = req.headers.get("X-bhAShA") or req.headers.get("Accept-Language")
+    if not header:
+        return DEFAULT_LOCALE
+    try:
+        languages = header.split(",")
+        locale_q_pairs = []
+        for language in languages:
+            if language.split(";")[0] == language:
+                ln = language.strip().lower().split("-")
+                locale_q_pairs.append((ln[0], ln[1] if len(ln) == 2 else "", 1.0))
+            else:
+                locale = language.split(";")[0].strip()
+                q = language.split(";")[1].split("=")[1]
+                ln = locale.lower().split("-")
+                locale_q_pairs.append((ln[0], ln[1] if len(ln) == 2 else "", float(q)))
+        for x in locale_q_pairs:
+            if x[0] in LOCALES:
+                return x[0]
+    except:
+        return DEFAULT_LOCALE

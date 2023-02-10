@@ -1,9 +1,9 @@
-### A _Simple_ Full Stack Drive Application
+## JEE Mains 2023 Score Calculator
 
-**Tech Stack Used**
+Link: [https://jee_mains_2023.deta.dev](https://jee_mains_2023.deta.dev)
 
-- **[FastAPI](https://fastapi.tiangolo.com/)** - Backend ([Python](https://www.python.org/)), also _[GraphQL](https://strawberry.rocks/)_ for Drive API
+### **Tech Stack Used**
+
+- **[FastAPI](https://fastapi.tiangolo.com/)** - Backend ([Python](https://www.python.org/))
 - **[SvelteKit](https://kit.svelte.dev/)** - Frontend ([Svelte](https://svelte.dev/), [TypeScript](https://www.typescriptlang.org/))
 - **_[Deta](https://www.deta.sh/)_** - A Free Hosting service to host and deploy our app. Also provides inbuilt support for databases and File Storage.
-
-I had also _built_ the same site using **Nextjs** and **React** for frontend, [here](https://github.com/shubhattin/drive-react).
