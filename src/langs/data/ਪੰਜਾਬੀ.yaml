@@ -1,5 +1,27 @@
 main:
-  html_title: ਜੇਈਈ ਮੇਨਜ਼ 2023 ਸਕੋਰ ਕੈਲਕੂਲੇਟਰ
-  page_title: ਜੇਈਈ ਮੇਨਜ਼ 2023 ਸਕੋਰ ਕੈਲਕੂਲੇਟਰ
-  page_description: ਤੁਹਾਡੇ ਜੇਈਈ ਮੇਨਜ਼ ੨੦੨੩ ਦੀ ਪ੍ਰੀਖਿਆ ਦੇ ਨਤੀਜੇ ਨੂੰ ਪੂਰੇ ਵੇਰਵਿਆਂ ਨਾਲ
-    ਅਸਾਨੀ ਨਾਲ ਵੇਖਣ ਲਈ ਇੱਕ ਸਧਾਰਣ ਸਾਧਨ।
+  title: JEE Mains 2023 ਸਕੋਰ ਕੈਲਕੂਲੇਟਰ
+  description: ਜੇਈਈ ਮੇਨਜ਼ ੨੦੨੩ ਪ੍ਰੀਖਿਆ ਦੇ ਸਕੋਰ ਦੀ ਅਸਾਨੀ ਨਾਲ ਗਣਨਾ ਕਰਨ ਲਈ ਇੱਕ ਸਧਾਰਣ
+    ਸਾਧਨ।
+  home:
+    get_result: ਨਤੀਜਾ ਲਵੋ
+    made_by: ਵਲੋਂ ਬਣਾਇਆ ਗਿਆ
+  result:
+    result_tab:
+      title: ਨਤੀਜਾ
+      summary: ਸੰਖੇਪ
+      unattempted_ques: ਅਣ-ਉਲੇਖੇ ਵਾਲੇ ਪ੍ਰਸ਼ਨ
+      attempted_ques: ਕੋਸ਼ਿਸ਼ ਕੀਤੇ ਸਵਾਲ
+      correct_ques: ਠੀਕ ਸਵਾਲ
+      incorrect_ques: ਗਲਤ ਸਵਾਲ
+      total_score: ਕੁੱਲ ਸਕੋਰ
+      detailed_report: ਵੇਰਵੇ ਸਮੇਤ ਰਿਪੋਰਟ
+      table:
+        given_answer: ਦਿੱਤਾ ਜਵਾਬ
+        correct_answer: ਠੀਕ ਜਵਾਬ
+        question_id: ਸਵਾਲ ID
+        correct_answer_id: ਠੀਕ ਜਵਾਬ ID
+        given_answer_id: ਦਿੱਤਾ ਜਵਾਬ ID
+    questions_tab:
+      title: ਸਵਾਲ
+      correct_answer: ਠੀਕ ਜਵਾਬ
+      marked_answer: ਨਿਸ਼ਾਨਬੱਧ ਜਵਾਬ

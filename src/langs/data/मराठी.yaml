@@ -1,5 +1,26 @@
 main:
-  html_title: जेईई मेन्स 2023 स्कोर कैलकुलेटर
-  page_title: जेईई मेन्स 2023 स्कोर कैलकुलेटर
-  page_description: आपला जेईई मेन्स 2023 परीक्षेचा निकाल संपूर्ण तपशीलांसह सहजपणे
-    पाहण्यासाठी एक सोपे साधन.
+  title: JEE Mains 2023 परिणाम मूल्यांकन
+  description: जेईई मेन्स 2023 परीक्षेच्या गुणांची सहज गणना करण्यासाठी एक सोपे साधन.
+  home:
+    get_result: निकाल मिळवा
+    made_by: द्वारा बना हुआ
+  result:
+    result_tab:
+      title: परिणाम
+      summary: सारांश
+      unattempted_ques: न केलेले प्रश्न
+      attempted_ques: प्रयत्न केलेले प्रश्न
+      correct_ques: सही प्रश्न
+      incorrect_ques: चुकीचे प्रश्न
+      total_score: एकूण धावसंख्या
+      detailed_report: सविस्तर अहवाल
+      table:
+        given_answer: दिलेले उत्तर
+        correct_answer: सही उत्तर
+        question_id: प्रश्न पड़ा
+        correct_answer_id: सही उत्तर आईडी
+        given_answer_id: उत्तर आयडी दिला आहे
+    questions_tab:
+      title: प्रश्न
+      correct_answer: सही उत्तर
+      marked_answer: चिन्हांकित उत्तर

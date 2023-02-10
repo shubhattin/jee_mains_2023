@@ -1,5 +1,27 @@
 main:
-  html_title: JEE Mains 2023 परिणामस्य मूल्यांकनम्
-  page_title: JEE Mains 2023 परिणामस्य मूल्यांकनम्
-  page_description: एकं सरलमुपकरणं येन भवतः सरलतया स्वस्य JEE Mains 2023
-    परीक्षायाः परिणामस्य मूल्यांकनम् पूर्णविवरणेन सह पश्यतु।
+  title: JEE Mains 2023 परिणामस्य मूल्यांकनम्
+  description: एकं सरलमुपकरणं येन भवतः सरलतया स्वस्य JEE Mains 2023 परीक्षायाः परिणामस्य
+    मूल्यांकनम् पूर्णविवरणेन सह पश्यतु।
+  home:
+    get_result: मूल्यांकनम् प्राप्यताम्
+    made_by: निर्माता
+  result:
+    result_tab:
+      title: परिणामम्
+      summary: सारांशम्
+      unattempted_ques: अप्रयासितप्रश्नानि
+      attempted_ques: प्रयासितप्रश्नानि
+      correct_ques: उचितप्रश्नानि
+      incorrect_ques: अनुचितप्रश्नानि
+      total_score: सकलाङ्कम्
+      detailed_report: विस्तृतवृत्तान्तम्
+      table:
+        given_answer: प्रदत्तोत्तराणि
+        correct_answer: उचितोत्तराणि
+        question_id: प्रश्नम् ID
+        correct_answer_id: उचितोत्तरम् ID
+        given_answer_id: प्रदत्तोत्तरम् ID
+    questions_tab:
+      title: प्रश्नानि
+      correct_answer: उचितोउत्तरम्
+      marked_answer: चिह्नितोउत्तरम्

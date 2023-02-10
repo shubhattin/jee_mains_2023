@@ -1,5 +1,27 @@
 main:
-  html_title: ಜೆಇಇ ಮೇನ್ಸ್ 2023 ಸ್ಕೋರ್ ಕ್ಯಾಲ್ಕುಲೇಟರ್
-  page_title: ಜೆಇಇ ಮೇನ್ಸ್ 2023 ಸ್ಕೋರ್ ಕ್ಯಾಲ್ಕುಲೇಟರ್
-  page_description: ಸಂಪೂರ್ಣ ವಿವರಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಜೆಇಇ ಮೇನ್ಸ್ 2023 ಪರೀಕ್ಷೆಯ ಫಲಿತಾಂಶವನ್ನು
-    ಸುಲಭವಾಗಿ ವೀಕ್ಷಿಸಲು ಸರಳ ಸಾಧನ.
+  title: JEE Mains 2023 ಸ್ಕೋರ್ ಕ್ಯಾಲ್ಕುಲೇಟರ್
+  description: ಜೆಇಇ ಮೇನ್ಸ್ 2023 ಪರೀಕ್ಷೆಯ ಸ್ಕೋರ್ ಅನ್ನು ಸುಲಭವಾಗಿ ಲೆಕ್ಕಹಾಕಲು ಒಂದು ಸರಳ
+    ಸಾಧನ.
+  home:
+    get_result: ಫಲಿತಾಂಶ ಪಡೆಯಿರಿ
+    made_by: ಮಾಡಿದವರು ಯಾರು?
+  result:
+    result_tab:
+      title: ಫಲಿತಾಂಶ
+      summary: ಸಾರಾಂಶ
+      unattempted_ques: ಉತ್ತರಿಸದ ಪ್ರಶ್ನೆಗಳು
+      attempted_ques: ಪ್ರಯತ್ನಿಸಿದ ಪ್ರಶ್ನೆಗಳು
+      correct_ques: ಸರಿಯಾದ ಪ್ರಶ್ನೆಗಳು
+      incorrect_ques: ತಪ್ಪಾದ ಪ್ರಶ್ನೆಗಳು
+      total_score: ಒಟ್ಟು ಸ್ಕೋರ್
+      detailed_report: ವಿವರವಾದ ವರದಿ
+      table:
+        given_answer: ನೀಡಲಾದ ಉತ್ತರ
+        correct_answer: ಸರಿಯಾದ ಉತ್ತರ
+        question_id: ಪ್ರಶ್ನೆ ID
+        correct_answer_id: ಸರಿಯಾದ ಉತ್ತರ ID
+        given_answer_id: ನೀಡಲಾದ ಉತ್ತರ ID
+    questions_tab:
+      title: ಪ್ರಶ್ನೆಗಳು
+      correct_answer: ಸರಿಯಾದ ಉತ್ತರ
+      marked_answer: ಗುರುತು ಮಾಡಲಾದ ಉತ್ತರ

@@ -1,5 +1,26 @@
 main:
-  html_title: JEE Mains 2023 Score Calculator
-  page_title: JEE Mains 2023 Score Calculator
-  page_description: A simple tool to easily view your JEE Mains 2023 exam
-    score with complete details.
+  title: JEE Mains 2023 Score Calculator
+  description: A simple tool to easily calculate JEE Mains 2023 exam score.
+  home:
+    get_result: Get Result
+    made_by: Made by
+  result:
+    result_tab:
+      title: Result
+      summary: Summary
+      unattempted_ques: Unattempted Questions
+      attempted_ques: Attempted Questions
+      correct_ques: Correct Questions
+      incorrect_ques: Incorrect Questions
+      total_score: Total Score
+      detailed_report: Detailed Report
+      table:
+        given_answer: Given Answer
+        correct_answer: Correct Answer
+        question_id: Question ID
+        correct_answer_id: Correct Answer ID
+        given_answer_id: Given Answer ID
+    questions_tab:
+      title: Questions
+      correct_answer: Correct Answer
+      marked_answer: Marked Answer

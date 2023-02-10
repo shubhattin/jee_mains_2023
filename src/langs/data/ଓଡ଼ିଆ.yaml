@@ -1,5 +1,27 @@
 main:
-  html_title: ଜେଇଇ ମେନ୍ସ ୨୦୨୩ ସ୍କୋର କ୍ୟାଲକୁଲେଟର
-  page_title: ଜେଇଇ ମେନ୍ସ ୨୦୨୩ ସ୍କୋର କ୍ୟାଲକୁଲେଟର
-  page_description: ସମ୍ପୂର୍ଣ୍ଣ ବିବରଣୀ ସହିତ ଆପଣଙ୍କ ଜେଇଇ ମେନ୍ସ 2023 ପରୀକ୍ଷା ଫଳାଫଳ କୁ
-    ସହଜରେ ଦେଖିବା ପାଇଁ ଏକ ସରଳ ଉପକରଣ |
+  title: JEE Mains ୨୦୨୩ ସ୍କୋର କ୍ୟାଲକୁଲେଟର
+  description: ଜେଇଇ ମେନ୍ସ ୨୦୨୩ ପରୀକ୍ଷା ସ୍କୋର କୁ ସହଜରେ ଗଣନା କରିବା ପାଇଁ ଏକ ସରଳ ଉପକରଣ
+    ।
+  home:
+    get_result: ଫଳାଫଳ ପ୍ରାପ୍ତ କରନ୍ତୁ
+    made_by: ଦ୍ଵାରା ତିଆରି ହୋଇଛି
+  result:
+    result_tab:
+      title: ଫଳାଫଳ[ସମ୍ପାଦନା]
+      summary: ସଂକ୍ଷିପ୍ତ ବିବରଣୀ[ସମ୍ପାଦନା]
+      unattempted_ques: Unattempted Questions
+      attempted_ques: ପ୍ରଶ୍ନ କରିବାକୁ ଚେଷ୍ଟା କରାଗଲା
+      correct_ques: ସଠିକ୍ ପ୍ରଶ୍ନ
+      incorrect_ques: ଭୁଲ ପ୍ରଶ୍ନ
+      total_score: ମୋଟ ସ୍କୋର
+      detailed_report: ବିସ୍ତୃତ ରିପୋର୍ଟ
+      table:
+        given_answer: ଦିଆଯାଇଥିବା ଉତ୍ତର
+        correct_answer: ସଠିକ୍ ଉତ୍ତର
+        question_id: ପ୍ରଶ୍ନ ID
+        correct_answer_id: ସଠିକ୍ ଉତ୍ତର ID
+        given_answer_id: ଦିଆଯାଇଥିବା ଉତ୍ତର ID
+    questions_tab:
+      title: ପ୍ରଶ୍ନ
+      correct_answer: ସଠିକ୍ ଉତ୍ତର
+      marked_answer: ଉତ୍ତର ଚିହ୍ନିତ ହୋଇଛି

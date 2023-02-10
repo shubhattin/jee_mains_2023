@@ -1,5 +1,27 @@
 main:
-  html_title: ജെഇഇ മെയിൻസ് 2023 സ്കോർ കാൽക്കുലേറ്റർ
-  page_title: ജെഇഇ മെയിൻസ് 2023 സ്കോർ കാൽക്കുലേറ്റർ
-  page_description: പൂർണ്ണ വിശദാംശങ്ങളോടെ നിങ്ങളുടെ ജെഇഇ മെയിൻസ് 2023 പരീക്ഷാ ഫലം
-    എളുപ്പത്തിൽ കാണുന്നതിനുള്ള ഒരു ലളിതമായ ഉപകരണം.
+  title: JEE Mains 2023 സ്കോർ കാൽക്കുലേറ്റർ
+  description: ജെഇഇ മെയിൻസ് 2023 പരീക്ഷാ സ്കോർ എളുപ്പത്തിൽ കണക്കാക്കുന്നതിനുള്ള ലളിതമായ
+    ഉപകരണം.
+  home:
+    get_result: ഫലം നേടുക
+    made_by: നിർമ്മിച്ചത്
+  result:
+    result_tab:
+      title: ഫലം
+      summary: സംഗ്രഹം
+      unattempted_ques: ഉത്തരം കിട്ടാത്ത ചോദ്യങ്ങൾ
+      attempted_ques: ശ്രമിച്ച ചോദ്യങ്ങൾ
+      correct_ques: ശരിയായ ചോദ്യങ്ങള്
+      incorrect_ques: തെറ്റായ ചോദ്യങ്ങൾ
+      total_score: മൊത്തം സ്കോർ
+      detailed_report: വിശദമായ റിപ്പോർട്ട്
+      table:
+        given_answer: നൽകിയ ഉത്തരം
+        correct_answer: ശരിയായ ഉത്തരം
+        question_id: ചോദ്യ ID
+        correct_answer_id: ശരിയായ ഉത്തര ഐഡി
+        given_answer_id: നൽകിയ ഉത്തര ഐഡി
+    questions_tab:
+      title: ചോദ്യങ്ങൾ
+      correct_answer: ശരിയായ ഉത്തരം
+      marked_answer: അടയാളപ്പെടുത്തിയ ഉത്തരം

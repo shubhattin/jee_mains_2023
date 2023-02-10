@@ -1,5 +1,27 @@
 main:
-  html_title: જેઇઇ મેઇન્સ 2023 સ્કોર કેલ્ક્યુલેટર
-  page_title: જેઇઇ મેઇન્સ 2023 સ્કોર કેલ્ક્યુલેટર
-  page_description: સંપૂર્ણ વિગતો સાથે તમારા જેઇઇ મેઇન્સ ૨૦૨૩ ની પરીક્ષાનું પરિણામ
-    સરળતાથી જોવા માટેનું એક સરળ સાધન.
+  title: JEE Mains 2023 સ્કોર કેલ્ક્યુલેટર
+  description: જેઇઇ મેઇન્સ ૨૦૨૩ પરીક્ષાના સ્કોરની સરળતાથી ગણતરી કરવા માટેનું એક સરળ
+    સાધન.
+  home:
+    get_result: પરિણામ મેળવો
+    made_by: ના દ્વારા બનાવેલ
+  result:
+    result_tab:
+      title: પરિણામ
+      summary: સારાંશ
+      unattempted_ques: અવ્યવસ્થિત પ્રશ્નો
+      attempted_ques: પ્રયત્ન કરેલ પ્રશ્ર્નો
+      correct_ques: સાચા પ્રશ્નો
+      incorrect_ques: અયોગ્ય પ્રશ્ર્નો
+      total_score: કુલ ગુણ
+      detailed_report: વિગતવાર અહેવાલ
+      table:
+        given_answer: આપેલ જવાબ
+        correct_answer: સાચો જવાબ
+        question_id: પ્રશ્ન ID
+        correct_answer_id: સાચો જવાબ ID
+        given_answer_id: આપેલ જવાબ ID
+    questions_tab:
+      title: પ્રશ્ર્નો
+      correct_answer: સાચો જવાબ
+      marked_answer: ચિહ્નિત જવાબ

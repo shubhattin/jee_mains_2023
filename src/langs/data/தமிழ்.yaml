@@ -1,5 +1,26 @@
 main:
-  html_title: ஜேஇஇ மெயின்ஸ் 2023 மதிப்பெண் கால்குலேட்டர்
-  page_title: ஜேஇஇ மெயின்ஸ் 2023 மதிப்பெண் கால்குலேட்டர்
-  page_description: உங்கள் ஜேஇஇ மெயின்ஸ் 2023 தேர்வு முடிவை முழுமையான விவரங்களுடன்
-    எளிதாகக் காண ஒரு எளிய கருவி.
+  title: JEE Mains 2023 மதிப்பெண் கால்குலேட்டர்
+  description: ஜேஇஇ மெயின்ஸ் 2023 தேர்வு மதிப்பெண்ணை எளிதாக கணக்கிட ஒரு எளிய கருவி.
+  home:
+    get_result: முடிவைப் பெறுங்கள்
+    made_by: தயாரித்தவர்
+  result:
+    result_tab:
+      title: பின்விளைவு
+      summary: சுருக்கம்
+      unattempted_ques: கேட்கப்படாத கேள்விகள்
+      attempted_ques: முயற்சித்த கேள்விகள்
+      correct_ques: சரியான கேள்விகள்
+      incorrect_ques: தவறான கேள்விகள்
+      total_score: மொத்த ஸ்கோர்
+      detailed_report: விரிவான அறிக்கை
+      table:
+        given_answer: கொடுக்கப்பட்ட பதில்
+        correct_answer: சரியான பதில்
+        question_id: கேள்வி ஐடி
+        correct_answer_id: சரியான விடை ஐடி
+        given_answer_id: கொடுக்கப்பட்ட பதில் ஐடி
+    questions_tab:
+      title: கேள்விகள்
+      correct_answer: சரியான பதில்
+      marked_answer: குறிக்கப்பட்ட பதில்

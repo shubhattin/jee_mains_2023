@@ -1,5 +1,26 @@
 main:
-  html_title: জেইই মেইনচ 2023 স্কোৰ কেলকুলেটৰ
-  page_title: জেইই মেইনচ 2023 স্কোৰ কেলকুলেটৰ
-  page_description: আপোনাৰ জেইই মেইনচ ২০২৩ পৰীক্ষাৰ ফলাফল সম্পূৰ্ণ বিৱৰণৰ সৈতে সহজে
-    চাবলৈ এটা সৰল সঁজুলি।
+  title: JEE Mains 2023 স্কোৰ কেলকুলেটৰ
+  description: জেইই মেইনচ ২০২৩ পৰীক্ষাৰ নম্বৰ সহজে গণনা কৰিবলৈ এটা সৰল সঁজুলি।
+  home:
+    get_result: ফলাফল প্ৰাপ্ত কৰক
+    made_by: দ্বাৰা নিৰ্মিত
+  result:
+    result_tab:
+      title: ফল
+      summary: সাৰাংশ
+      unattempted_ques: অপ্ৰচেষ্টা কৰা প্ৰশ্নসমূহ
+      attempted_ques: চেষ্টা কৰা প্ৰশ্নসমূহ
+      correct_ques: শুদ্ধ প্ৰশ্ন
+      incorrect_ques: অশুদ্ধ প্ৰশ্ন
+      total_score: মুঠ নম্বৰ
+      detailed_report: বিতং প্ৰতিবেদন
+      table:
+        given_answer: উত্তৰ দিয়া হৈছে
+        correct_answer: শুদ্ধ উত্তৰ
+        question_id: প্ৰশ্ন আইডি
+        correct_answer_id: শুদ্ধ উত্তৰ আইডি
+        given_answer_id: দিয়া উত্তৰ আইডি
+    questions_tab:
+      title: প্ৰশ্নসমূহ
+      correct_answer: শুদ্ধ উত্তৰ
+      marked_answer: চিহ্নিত উত্তৰ

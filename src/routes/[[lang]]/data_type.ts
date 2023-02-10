@@ -1,3 +1,5 @@
+import { writable } from 'svelte/store';
+import type { PageData } from './$types';
 export interface ResponseDataType {
   data: {
     GivenAnswer: string[];
@@ -19,3 +21,5 @@ export interface ResponseDataType {
     score: number;
   };
 }
+
+export const lekhAH = writable<PageData['lekh']>(null!);

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { default_locale, get_link, locale_keys } from '@tools/i18n';
+  import { page } from '$app/stores';
 
   const SITE_URL: string = import.meta.env.PUBLIC_SITE_URL || '';
 
@@ -8,7 +9,7 @@
 
   /** Normalised URL without its locale */
   const asPath = (() => {
-    let vl = get_link('/', default_locale);
+    let vl = get_link($page.url.pathname, default_locale);
     if (vl[vl.length - 1] == '/') vl = vl.substring(0, vl.length - 1);
     vl = vl == '/' ? '' : vl;
     return vl;

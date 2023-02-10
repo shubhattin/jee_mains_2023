@@ -8,7 +8,4 @@
 
 <div class="p-2">
   <slot />
-  {#await import('@components/LangChange.svelte') then LangChange}
-    <LangChange.default />
-  {/await}
 </div>

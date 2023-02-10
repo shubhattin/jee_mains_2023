@@ -1,5 +1,27 @@
 main:
-  html_title: జేఈఈ మెయిన్స్ 2023 స్కోర్ కాలిక్యులేటర్
-  page_title: జేఈఈ మెయిన్స్ 2023 స్కోర్ కాలిక్యులేటర్
-  page_description: పూర్తి వివరాలతో మీ జేఈఈ మెయిన్స్ 2023 పరీక్ష ఫలితాలను సులభంగా
-    వీక్షించడానికి ఒక సాధారణ సాధనం.
+  title: JEE Mains 2023 స్కోర్ కాలిక్యులేటర్
+  description: జేఈఈ మెయిన్స్ 2023 పరీక్ష స్కోరును సులభంగా లెక్కించడానికి ఒక సాధారణ
+    సాధనం.
+  home:
+    get_result: ఫలితాన్ని పొందండి
+    made_by: దీని ద్వారా తయారు చేయబడింది
+  result:
+    result_tab:
+      title: ఫలితం
+      summary: సారం
+      unattempted_ques: ప్రలోభాలకు లోనుకాని ప్రశ్నలు
+      attempted_ques: ప్రయత్నించిన ప్రశ్నలు
+      correct_ques: సరైన ప్రశ్నలు
+      incorrect_ques: తప్పు ప్రశ్నలు
+      total_score: మొత్తం స్కోరు
+      detailed_report: వివరణాత్మక నివేదిక
+      table:
+        given_answer: సమాధానం ఇవ్వబడింది
+        correct_answer: సరైన సమాధానం
+        question_id: ప్రశ్న ఐడి
+        correct_answer_id: సరైన సమాధాన ఐడి
+        given_answer_id: ఆన్సర్ ఐడి ఇవ్వబడింది
+    questions_tab:
+      title: ప్రశ్నలు
+      correct_answer: సరైన సమాధానం
+      marked_answer: మార్క్ చేయబడ్డ సమాధానం
