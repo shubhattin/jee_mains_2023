@@ -104,12 +104,12 @@
       <div class="text-xs">
         <span class="invisible">|</span>
         {#if counted}
-          <span class="mr-1 text-gray-500"
-            >{lekh.home.page_views} - <span class="text-slate-800">{$viewCountData[0]}</span></span
+          <span class="mr-1 text-zinc-500"
+            >{lekh.home.page_views} - <span class="text-slate-600">{$viewCountData[0]}</span></span
           >
-          <span class="text-gray-500"
+          <span class="text-zinc-500"
             >{lekh.home.result_views} -
-            <span class="text-slate-800">{$viewCountData[1]}</span></span
+            <span class="text-slate-600">{$viewCountData[1]}</span></span
           >
         {/if}
       </div>

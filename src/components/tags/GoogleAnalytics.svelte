@@ -1,18 +1,21 @@
 <script lang="ts">
+  const ID: string = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
+  let html = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', '${ID}');
+    `;
 </script>
 
-<!-- <script
-    type="text/partytown"
-    src="https://www.googletagmanager.com/gtag/js?id=YOUR-ID-HERE"></script>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || []
-
-    function gtag() {
-      dataLayer.push(arguments)
-    }
-
-    gtag('js', new Date())
-    gtag('config', 'YOUR-ID-HERE', {
-      page_path: window.location.pathname
-    })
-</script> -->
+<svelte:head>
+  {#if ID}
+    <script
+      type="text/partytown"
+      src={`https://www.googletagmanager.com/gtag/js?id=${ID}`}
+    ></script>
+    <script type="text/partytown" contenteditable="true" bind:textContent={html}></script>
+  {/if}
+</svelte:head>

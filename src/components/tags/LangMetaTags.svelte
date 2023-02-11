@@ -30,10 +30,4 @@
   {#each locale_keys as lcl, i}
     <link rel="alternate" href={LINKS[i]} hreflang={lcl} />
   {/each}
-  <meta
-    property="og:image"
-    content="https://cdn.jsdelivr.net/gh/lipilekhika/dist@latest/i/bhasha.jpg"
-  />
-  <meta property="og:image:width" content="465.5" />
-  <meta property="og:image:height" content="175" />
 </svelte:head>
