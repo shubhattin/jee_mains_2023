@@ -5,6 +5,8 @@ main:
   home:
     get_result: ഫലം നേടുക
     made_by: നിർമ്മിച്ചത്
+    page_views: പേജ് കാഴ്ചകൾ
+    result_views: റിസൾട്ട് കാഴ്ചകൾ
   result:
     result_tab:
       title: ഫലം

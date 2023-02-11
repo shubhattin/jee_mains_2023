@@ -2,11 +2,12 @@
   import type { PageData } from './$types';
   import LangMetaTags from '@components/tags/LangMetaTags.svelte';
   import type { ResponseDataType } from './data_type';
-  import { lekhAH } from './data_type';
+  import { lekhAH, viewCountData } from './data_type';
   import { fetch_post } from '@tools/fetch';
   import Icon from '@tools/Icon.svelte';
   import AiOutlineGithub from 'svelte-icons-pack/ai/AiOutlineGithub';
   import LangChange from '@components/LangChange.svelte';
+  import { onMount } from 'svelte';
 
   export let data: PageData;
 
@@ -16,11 +17,24 @@
 
   let mode: 'main' | 'result' = 'main';
   let datt: ResponseDataType;
+  let counted = false;
 
+  onMount(async () => {
+    if (import.meta.env.DEV) return;
+    const req = await fetch_post('/api/page_view_count');
+    if (!req.ok) return;
+    const data: {
+      page_view_count: number;
+      result_view_count: number;
+    } = await req.json();
+    $viewCountData = [data.page_view_count, data.result_view_count];
+    counted = true;
+  });
   const fetch_data = async () => {
     const req = await fetch_post('/api/get_result');
     if (!req.ok) return;
     const resp: ResponseDataType = await req.json();
+    $viewCountData[1]++;
     datt = resp;
     mode = 'result';
   };
@@ -31,9 +45,9 @@
   <title>{lekh.title}</title>
 </svelte:head>
 <div
-  class="fixed inset-0 flex h-full w-full flex-col justify-center overflow-y-scroll bg-gradient-to-r from-amber-50 via-lime-50 to-yellow-50"
+  class="flex h-full w-full flex-col justify-between overflow-y-scroll bg-gradient-to-r from-amber-50 via-lime-50 to-yellow-50"
 >
-  <div class="flex-grow p-2">
+  <div class="p-2">
     <h1 class="text-center text-2xl font-bold">
       <span class="bg-gradient-to-r from-red-600 to-blue-800 bg-clip-text text-transparent"
         >{lekh.title}</span
@@ -54,7 +68,7 @@
       {/if}
     </div>
   </div>
-  <footer class="flex justify-center border-t-2 border-t-gray-400 bg-zinc-200 px-2 pt-2 pb-3">
+  <footer class="flex justify-center border-t-2 border-t-gray-400 bg-zinc-200 px-2 pt-2 pb-1">
     <div class="flex flex-col justify-center">
       <div>
         <span class="font-bold text-red-600">
@@ -68,7 +82,7 @@
         </span>
         <a
           href="https://github.com/shubhattin/jee_mains_2023_score_calculator"
-          class="ml-4"
+          class="ml-2"
           rel="noreferrer"
           target="_blank"
         >
@@ -86,6 +100,18 @@
           </svg>
         </span>
         <LangChange />
+      </div>
+      <div class="text-xs">
+        <span class="invisible">|</span>
+        {#if counted}
+          <span class="mr-1 text-gray-500"
+            >{lekh.home.page_views} - <span class="text-slate-800">{$viewCountData[0]}</span></span
+          >
+          <span class="text-gray-500"
+            >{lekh.home.result_views} -
+            <span class="text-slate-800">{$viewCountData[1]}</span></span
+          >
+        {/if}
       </div>
     </div>
   </footer>

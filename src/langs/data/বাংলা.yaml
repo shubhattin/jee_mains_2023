@@ -4,6 +4,8 @@ main:
   home:
     get_result: ফলাফল পান
     made_by: দ্বারা তৈরি
+    page_views: পৃষ্ঠা দর্শন
+    result_views: ফলাফল মতামত
   result:
     result_tab:
       title: ফলাফল

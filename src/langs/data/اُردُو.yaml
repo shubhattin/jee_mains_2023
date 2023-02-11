@@ -6,6 +6,8 @@ main:
   home:
     get_result: ماُولیآںکَنَ پرآپتَ کَرےں
     made_by: نِرمآتآ
+    page_views: پرِشٹھَ درِشٹآںکَ
+    result_views: پَرِݨآمَ درِشٹآںکَ
   result:
     result_tab:
       title: پَرِݨآمَ

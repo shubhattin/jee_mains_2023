@@ -1,5 +1,4 @@
 from . import ResultDataType, MainDataType
-import jinja2
 
 
 def get_result(data: MainDataType) -> ResultDataType:
@@ -15,7 +14,7 @@ def get_result(data: MainDataType) -> ResultDataType:
     return dt
 
 
-TEMPLATE_FOLDER: str = "./data"
+TEMPLATE_FOLDER: str = "./template"
 
 
 def set_template_folder(folder: str):
@@ -24,6 +23,8 @@ def set_template_folder(folder: str):
 
 
 def render_jinja_temp(fl: str, **o):
+    import jinja2
+
     return (
         jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_FOLDER))
         .get_template(fl)

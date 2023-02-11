@@ -4,6 +4,8 @@ main:
   home:
     get_result: முடிவைப் பெறுங்கள்
     made_by: தயாரித்தவர்
+    page_views: பக்க பார்வைகள்
+    result_views: முடிவு பார்வைகள்
   result:
     result_tab:
       title: பின்விளைவு

@@ -5,6 +5,8 @@ main:
   home:
     get_result: ਨਤੀਜਾ ਲਵੋ
     made_by: ਵਲੋਂ ਬਣਾਇਆ ਗਿਆ
+    page_views: ਸਫ਼ਾ ਝਲਕ
+    result_views: ਨਤੀਜਾ ਝਲਕ
   result:
     result_tab:
       title: ਨਤੀਜਾ

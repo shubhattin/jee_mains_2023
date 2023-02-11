@@ -4,6 +4,8 @@ main:
   home:
     get_result: निकाल मिळवा
     made_by: द्वारा बना हुआ
+    page_views: पृष्ठ दृश्ये
+    result_views: परिणाम दृश्य
   result:
     result_tab:
       title: परिणाम

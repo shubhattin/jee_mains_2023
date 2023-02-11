@@ -5,6 +5,8 @@ main:
   home:
     get_result: ఫలితాన్ని పొందండి
     made_by: దీని ద్వారా తయారు చేయబడింది
+    page_views: పేజీ వీక్షణలు
+    result_views: ఫలిత వీక్షణలు
   result:
     result_tab:
       title: ఫలితం

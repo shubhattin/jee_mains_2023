@@ -5,11 +5,13 @@ main:
   home:
     get_result: ଫଳାଫଳ ପ୍ରାପ୍ତ କରନ୍ତୁ
     made_by: ଦ୍ଵାରା ତିଆରି ହୋଇଛି
+    page_views: ପୃଷ୍ଠା ଦୃଶ୍ୟ[ସମ୍ପାଦନା]
+    result_views: ଫଳାଫଳ ଦୃଶ୍ୟ
   result:
     result_tab:
       title: ଫଳାଫଳ[ସମ୍ପାଦନା]
       summary: ସଂକ୍ଷିପ୍ତ ବିବରଣୀ[ସମ୍ପାଦନା]
-      unattempted_ques: Unattempted Questions
+      unattempted_ques: ଅବହେଳିତ ପ୍ରଶ୍ନ
       attempted_ques: ପ୍ରଶ୍ନ କରିବାକୁ ଚେଷ୍ଟା କରାଗଲା
       correct_ques: ସଠିକ୍ ପ୍ରଶ୍ନ
       incorrect_ques: ଭୁଲ ପ୍ରଶ୍ନ

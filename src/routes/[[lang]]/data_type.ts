@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store';
 import type { PageData } from './$types';
+
 export interface ResponseDataType {
   data: {
     GivenAnswer: string[];
@@ -23,3 +24,4 @@ export interface ResponseDataType {
 }
 
 export const lekhAH = writable<PageData['lekh']>(null!);
+export const viewCountData = writable<[number, number]>([0, 0]);

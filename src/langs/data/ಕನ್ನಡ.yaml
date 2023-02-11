@@ -5,6 +5,8 @@ main:
   home:
     get_result: ಫಲಿತಾಂಶ ಪಡೆಯಿರಿ
     made_by: ಮಾಡಿದವರು ಯಾರು?
+    page_views: ಪುಟ ವೀಕ್ಷಣೆಗಳು
+    result_views: ಫಲಿತಾಂಶ ವೀಕ್ಷಣೆಗಳು
   result:
     result_tab:
       title: ಫಲಿತಾಂಶ

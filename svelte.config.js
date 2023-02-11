@@ -8,7 +8,8 @@ const routes = get_all_routes(['/']);
 const config = {
   preprocess: [
     preprocess({
-      postcss: true
+      postcss: true,
+      preserve: ['partytown']
     })
   ],
   kit: {

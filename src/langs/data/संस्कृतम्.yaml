@@ -5,6 +5,8 @@ main:
   home:
     get_result: मूल्यांकनम् प्राप्यताम्
     made_by: निर्माता
+    page_views: पृष्ठदृष्टांकम्
+    result_views: परिणामदृष्टांकम्
   result:
     result_tab:
       title: परिणामम्

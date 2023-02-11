@@ -18,9 +18,11 @@
 </script>
 
 <div class="mt-4" in:scale>
-  <div class="h-[80vh] w-full overflow-scroll rounded-xl border-2 border-gray-700">
+  <div
+    class="h-[80vh] w-full overflow-x-hidden overflow-y-scroll rounded-xl border-2 border-gray-700"
+  >
     <div
-      class="rounded-tl-xl rounded-tr-xl border-b-2 border-b-gray-400 bg-zinc-100 text-xl font-bold"
+      class="sticky top-0 w-screen rounded-tl-xl rounded-tr-xl border-b-2 border-b-gray-400 bg-zinc-100 text-xl font-bold"
     >
       <button
         on:click={() => (mode = 'result')}
@@ -77,30 +79,42 @@
               <span class="text-slate-700">{result.unattempted.join(', ')}</span>
             </li>
           </div>
-          <table class="mt-4 border-collapse rounded-xl border-2 border-blue-800">
-            <thead>
-              <tr>
-                <th class="border border-zinc-400 px-1" />
-                <th class="border border-zinc-400 px-1">{result_tab.table.given_answer}</th>
-                <th class="border border-zinc-400 px-2">{result_tab.table.correct_answer}</th>
-                <th class="border border-zinc-400 px-2">{result_tab.table.question_id}</th>
-                <th class="border border-zinc-400 px-2">{result_tab.table.correct_answer_id}</th>
-                <th class="border border-zinc-400 px-2">{result_tab.table.given_answer_id}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {#each { length: data.GivenAnswer.length } as _, i}
+          <div class="overflow-x-scroll">
+            <table class="mt-4 border-collapse rounded-xl border-2 border-blue-800">
+              <thead>
                 <tr>
-                  <td class="border border-zinc-400 px-1">{i + 1}</td>
-                  <td class="border border-zinc-400 px-1">{data.GivenAnswer[i]}</td>
-                  <td class="border border-zinc-400 px-2">{data.CorrectAnswer[i]}</td>
-                  <td class="border border-zinc-400 px-2">{data.QuestionID[i]}</td>
-                  <td class="border border-zinc-400 px-2">{data.CorrectAnswerID[i]}</td>
-                  <td class="border border-zinc-400 px-2">{data.GivenAnswerID[i]}</td>
+                  <th class="border border-slate-900 bg-zinc-200 px-1" />
+                  <th class="border border-slate-900 bg-zinc-200 px-1"
+                    >{result_tab.table.given_answer}</th
+                  >
+                  <th class="border border-slate-900 bg-zinc-200 px-2"
+                    >{result_tab.table.correct_answer}</th
+                  >
+                  <th class="border border-slate-900 bg-zinc-200 px-2"
+                    >{result_tab.table.question_id}</th
+                  >
+                  <th class="border border-slate-900 bg-zinc-200 px-2"
+                    >{result_tab.table.correct_answer_id}</th
+                  >
+                  <th class="border border-slate-900 bg-zinc-200 px-2"
+                    >{result_tab.table.given_answer_id}</th
+                  >
                 </tr>
-              {/each}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {#each { length: data.GivenAnswer.length } as _, i}
+                  <tr>
+                    <td class="border border-zinc-400 px-1">{i + 1}</td>
+                    <td class="border border-zinc-400 px-1">{data.GivenAnswer[i]}</td>
+                    <td class="border border-zinc-400 px-2">{data.CorrectAnswer[i]}</td>
+                    <td class="border border-zinc-400 px-2">{data.QuestionID[i]}</td>
+                    <td class="border border-zinc-400 px-2">{data.CorrectAnswerID[i]}</td>
+                    <td class="border border-zinc-400 px-2">{data.GivenAnswerID[i]}</td>
+                  </tr>
+                {/each}
+              </tbody>
+            </table>
+          </div>
         </div>
       {:else if mode === 'questions'}
         <div transition:fly class="list-decimal">

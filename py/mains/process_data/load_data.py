@@ -7,20 +7,19 @@ OPTIONS = ["A", "B", "C", "D"]
 QUESTION_URL_PREFIX = "https://cdn3.digialm.com"
 
 
-def load_answer_key(filename: str) -> AnswerKeyType:
+def load_answer_key(filedata: str) -> AnswerKeyType:
     data = AnswerKeyType()
-    with open(filename, "r") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            data.QuestionID.append(row["QuestionID"])
-            data.CorrectAnswerID.append(row["Correct Option(s)/ Answers"])
+    reader = csv.DictReader(filedata.splitlines())
+    for row in reader:
+        data.QuestionID.append(row["QuestionID"])
+        data.CorrectAnswerID.append(row["Correct Option(s)/ Answers"])
     return data
 
 
-def load_data(anwer_key_file: str, response_sheet_file: str) -> MainDataType:
+def load_data(anwer_key_data: str, response_sheet_data: str) -> MainDataType:
     data = MainDataType()
-    ANSWER_KEY = load_answer_key(anwer_key_file)
-    HTML_DATA = pq(filename=response_sheet_file)
+    ANSWER_KEY = load_answer_key(anwer_key_data)
+    HTML_DATA = pq(response_sheet_data)
 
     # This contains the selected option and OptionIDs
     ANSWERS = HTML_DATA("td.rw table.menu-tbl")

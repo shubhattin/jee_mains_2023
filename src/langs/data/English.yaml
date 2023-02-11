@@ -4,6 +4,8 @@ main:
   home:
     get_result: Get Result
     made_by: Made by
+    page_views: Page Views
+    result_views: Result Views
   result:
     result_tab:
       title: Result

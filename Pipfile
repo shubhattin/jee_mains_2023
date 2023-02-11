@@ -7,11 +7,11 @@ name = "pypi"
 fastapi = "*"
 deta = "*"
 pyquery = "*"
-jinja2 = "*"
 
 [dev-packages]
 black = "*"
 markdown = "*"
+jinja2 = "*"
 ipykernel = "*"
 shubhlipi = "*"
 python-dotenv = "*"

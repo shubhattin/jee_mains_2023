@@ -4,6 +4,8 @@ main:
   home:
     get_result: ফলাফল প্ৰাপ্ত কৰক
     made_by: দ্বাৰা নিৰ্মিত
+    page_views: পৃষ্ঠা দৰ্শন
+    result_views: ফলাফল দৰ্শন
   result:
     result_tab:
       title: ফল

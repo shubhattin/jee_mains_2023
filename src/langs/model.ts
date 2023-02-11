@@ -5,6 +5,8 @@ export interface dattType {
     home: {
       get_result: string;
       made_by: string;
+      page_views: string;
+      result_views: string;
     };
     result: {
       result_tab: {

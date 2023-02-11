@@ -5,6 +5,8 @@ main:
   home:
     get_result: પરિણામ મેળવો
     made_by: ના દ્વારા બનાવેલ
+    page_views: પાનાં દેખાવો
+    result_views: પરિણામ દેખાવો
   result:
     result_tab:
       title: પરિણામ
