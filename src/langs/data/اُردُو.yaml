@@ -18,6 +18,18 @@ main:
       incorrect_ques: اَنُچِتَ پرَشنَ
       total_score: سَکَلَ اَںکَ
       detailed_report: وِسترِتَ ورِتتآںتَ
+      subject_wise:
+        title: پرَتِوِشَیَ اَنُسآرَ
+        subjects:
+          - بھاَوتِکاِی
+          - رَسآیَنَ
+          - گَݨِتَ
+        table:
+          subject: وِشَیَ
+          correct: اُچِتَ
+          incorrect: اَنُچِتَ
+          unattempted: اَپرَیآسِتَ
+          score: اَںکَ
       table:
         given_answer: پرَدَتتَ اُتتَرَ
         correct_answer: اُچِتَ اُتتَرَ

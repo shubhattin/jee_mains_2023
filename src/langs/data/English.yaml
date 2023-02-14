@@ -16,6 +16,18 @@ main:
       incorrect_ques: Incorrect Questions
       total_score: Total Score
       detailed_report: Detailed Report
+      subject_wise:
+        title: Subject Wise
+        subjects:
+          - Physics
+          - Chemistry
+          - Mathematics
+        table:
+          subject: Subject
+          correct: Correct
+          incorrect: Incorrect
+          unattempted: Unattempted
+          score: Score
       table:
         given_answer: Given Answer
         correct_answer: Correct Answer

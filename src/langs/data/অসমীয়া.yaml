@@ -16,6 +16,18 @@ main:
       incorrect_ques: অশুদ্ধ প্ৰশ্ন
       total_score: মুঠ নম্বৰ
       detailed_report: বিতং প্ৰতিবেদন
+      subject_wise:
+        title: বিষয় অনুসৰি
+        subjects:
+          - পদাৰ্থ বিজ্ঞান
+          - ৰসায়নবিজ্ঞান
+          - গণিত
+        table:
+          subject: বিষয়
+          correct: হয়
+          incorrect: অশুদ্ধ
+          unattempted: চেষ্টা কৰা হোৱা নাই
+          score: নম্বৰ
       table:
         given_answer: উত্তৰ দিয়া হৈছে
         correct_answer: শুদ্ধ উত্তৰ

@@ -16,6 +16,18 @@ main:
       incorrect_ques: ভুল প্রশ্ন
       total_score: মোট স্কোর
       detailed_report: বিস্তারিত প্রতিবেদন
+      subject_wise:
+        title: বিষয় ভিত্তিক
+        subjects:
+          - পদার্থবিজ্ঞান
+          - রসায়ন
+          - গণিত
+        table:
+          subject: বিষয়শ্রেণী
+          correct: সঠিক
+          incorrect: ভুল
+          unattempted: চেষ্টা করা হয়নি
+          score: স্কোর
       table:
         given_answer: প্রদত্ত উত্তর
         correct_answer: সঠিক উত্তর

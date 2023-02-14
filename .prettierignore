@@ -15,3 +15,5 @@ Pipfile
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 static/404.html
+
+tests/result/

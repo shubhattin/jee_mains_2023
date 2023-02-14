@@ -17,6 +17,18 @@ main:
       incorrect_ques: ತಪ್ಪಾದ ಪ್ರಶ್ನೆಗಳು
       total_score: ಒಟ್ಟು ಸ್ಕೋರ್
       detailed_report: ವಿವರವಾದ ವರದಿ
+      subject_wise:
+        title: ವಿಷಯವಾರು
+        subjects:
+          - ಭೌತಶಾಸ್ತ್ರ
+          - ರಸಾಯನಶಾಸ್ತ್ರ
+          - ಗಣಿತ
+        table:
+          subject: ವಿಷಯ
+          correct: ಸರಿಯಾದ
+          incorrect: ತಪ್ಪು
+          unattempted: ಪ್ರಯತ್ನವಿಲ್ಲದ
+          score: ಸ್ಕೋರ್
       table:
         given_answer: ನೀಡಲಾದ ಉತ್ತರ
         correct_answer: ಸರಿಯಾದ ಉತ್ತರ

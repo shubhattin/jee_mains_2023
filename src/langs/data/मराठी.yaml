@@ -16,6 +16,18 @@ main:
       incorrect_ques: चुकीचे प्रश्न
       total_score: एकूण धावसंख्या
       detailed_report: सविस्तर अहवाल
+      subject_wise:
+        title: विषयनिहाय
+        subjects:
+          - पदार्थविज्ञान
+          - रसायनशास्त्र
+          - गणित
+        table:
+          subject: विषय
+          correct: बरोबर
+          incorrect: चुकीचे आहे
+          unattempted: अप्रयत्न
+          score: स्कोर
       table:
         given_answer: दिलेले उत्तर
         correct_answer: सही उत्तर

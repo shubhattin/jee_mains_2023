@@ -17,6 +17,18 @@ main:
       incorrect_ques: अनुचित प्रश्न
       total_score: सकल अंक
       detailed_report: विस्तृत वृत्तांत
+      subject_wise:
+        title: प्रतिविषय अनुसार
+        subjects:
+          - भौतिकी
+          - रसायन
+          - गणित
+        table:
+          subject: विषय
+          correct: उचित
+          incorrect: अनुचित
+          unattempted: अप्रयासित
+          score: अंक
       table:
         given_answer: प्रदत्त उत्तर
         correct_answer: उचित उत्तर

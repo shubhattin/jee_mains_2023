@@ -7,7 +7,7 @@ router = APIRouter(prefix="/api")
 
 
 @router.post("/get_result")
-async def result():
+async def get_result():
     data = load_data(
         Drive("temp_data").get("answer_key.csv").read().decode("utf-8"),
         Drive("temp_data").get("question_paper_html").read().decode("utf-8"),
@@ -22,6 +22,13 @@ async def result():
         Base("counts").put(result_count, "result_view_count")
 
     return {"result": result.__dict__, "data": data.__dict__}
+
+
+@router.post("/get_sample_result")
+async def get_sample_result():
+    # Just for demonstration
+    datt = Base("data").get("sample_result")
+    return {"data": datt["data"], "result": datt["result"]}
 
 
 @router.post("/page_view_count")

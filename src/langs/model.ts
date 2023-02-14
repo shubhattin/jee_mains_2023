@@ -18,6 +18,17 @@ export interface dattType {
         incorrect_ques: string;
         total_score: string;
         detailed_report: string;
+        subject_wise: {
+          title: string;
+          subjects: [string, string, string];
+          table: {
+            subject: string;
+            correct: string;
+            incorrect: string;
+            unattempted: string;
+            score: string;
+          };
+        };
         table: {
           given_answer: string;
           correct_answer: string;

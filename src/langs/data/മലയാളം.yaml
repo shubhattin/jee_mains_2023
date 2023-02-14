@@ -17,6 +17,18 @@ main:
       incorrect_ques: തെറ്റായ ചോദ്യങ്ങൾ
       total_score: മൊത്തം സ്കോർ
       detailed_report: വിശദമായ റിപ്പോർട്ട്
+      subject_wise:
+        title: വിഷയം തിരിച്ച്
+        subjects:
+          - ഭൗതികശാസ്ത്രം
+          - രസതന്ത്രം
+          - ഗണിതം
+        table:
+          subject: വിഷയം
+          correct: ശരി
+          incorrect: തെറ്റ്
+          unattempted: ശ്രദ്ധിക്കപ്പെടാത്തത്
+          score: സ്കോർ
       table:
         given_answer: നൽകിയ ഉത്തരം
         correct_answer: ശരിയായ ഉത്തരം

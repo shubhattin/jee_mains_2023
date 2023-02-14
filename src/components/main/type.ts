@@ -1,5 +1,9 @@
-import { writable } from 'svelte/store';
-import type { PageData } from './$types';
+interface resultTyoe {
+  unattempted: string[];
+  correct: string[];
+  incorrect: string[];
+  score: number;
+}
 
 export interface ResponseDataType {
   data: {
@@ -15,13 +19,7 @@ export interface ResponseDataType {
     Option3IMG: string[];
     Option4IMG: string[];
   };
-  result: {
-    unattempted: string[];
-    correct: string[];
-    incorrect: string[];
-    score: number;
+  result: resultTyoe & {
+    subjects: resultTyoe[];
   };
 }
-
-export const lekhAH = writable<PageData['lekh']>(null!);
-export const viewCountData = writable<[number, number]>([0, 0]);

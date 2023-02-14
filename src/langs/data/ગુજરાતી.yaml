@@ -17,6 +17,18 @@ main:
       incorrect_ques: અયોગ્ય પ્રશ્ર્નો
       total_score: કુલ ગુણ
       detailed_report: વિગતવાર અહેવાલ
+      subject_wise:
+        title: વિષય પ્રમાણે
+        subjects:
+          - ભૌતિકશાસ્ત્ર
+          - રસાયણશાસ્ત્ર
+          - ગણિત
+        table:
+          subject: વિષય
+          correct: ખરું
+          incorrect: અયોગ્ય
+          unattempted: અવ્યવસ્થિત
+          score: વીસ
       table:
         given_answer: આપેલ જવાબ
         correct_answer: સાચો જવાબ

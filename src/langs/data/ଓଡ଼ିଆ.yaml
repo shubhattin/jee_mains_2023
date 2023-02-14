@@ -17,6 +17,18 @@ main:
       incorrect_ques: ଭୁଲ ପ୍ରଶ୍ନ
       total_score: ମୋଟ ସ୍କୋର
       detailed_report: ବିସ୍ତୃତ ରିପୋର୍ଟ
+      subject_wise:
+        title: ବିଷୟ ଅନୁଯାୟୀ
+        subjects:
+          - ପଦାର୍ଥ ବିଜ୍ଞାନ[ସମ୍ପାଦନା]
+          - ରସାୟନ ବିଜ୍ଞାନ[ସମ୍ପାଦନା]
+          - ଗଣିତ[ସମ୍ପାଦନା]
+        table:
+          subject: ବିଷୟ[ସମ୍ପାଦନା]
+          correct: ଠିକ୍‌
+          incorrect: ଭୁଲ୍
+          unattempted: Unattempted
+          score: ସ୍କୋର[ସମ୍ପାଦନା]
       table:
         given_answer: ଦିଆଯାଇଥିବା ଉତ୍ତର
         correct_answer: ସଠିକ୍ ଉତ୍ତର

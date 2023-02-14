@@ -17,6 +17,18 @@ main:
       incorrect_ques: अनुचितप्रश्नानि
       total_score: सकलाङ्कम्
       detailed_report: विस्तृतवृत्तान्तम्
+      subject_wise:
+        title: प्रतिविषयानामनुसारम्
+        subjects:
+          - भौतिकशास्त्रम्
+          - रसायनशास्त्रम्
+          - गणितम्
+        table:
+          subject: विषयम्
+          correct: उचितम्
+          incorrect: अनुचितम्
+          unattempted: अप्रयासितम्
+          score: अंकम्
       table:
         given_answer: प्रदत्तोत्तराणि
         correct_answer: उचितोत्तराणि

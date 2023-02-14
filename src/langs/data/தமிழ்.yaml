@@ -16,6 +16,18 @@ main:
       incorrect_ques: தவறான கேள்விகள்
       total_score: மொத்த ஸ்கோர்
       detailed_report: விரிவான அறிக்கை
+      subject_wise:
+        title: பாட வாரியாக
+        subjects:
+          - இயற்பியல்
+          - வேதியியல்
+          - கணக்கியல்
+        table:
+          subject: குடிமகன்
+          correct: சரி
+          incorrect: தவறான
+          unattempted: முயற்சி செய்யப்பெறாத
+          score: வடு
       table:
         given_answer: கொடுக்கப்பட்ட பதில்
         correct_answer: சரியான பதில்

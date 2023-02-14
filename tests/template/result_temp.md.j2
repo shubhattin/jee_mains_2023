@@ -2,17 +2,24 @@
 
 | | |
 |:-|:-|
-| Unattempted Questions | {{ unattempted }}
-| Attempted Questions | {{ attempted }}
-| Correct Answers | {{ correct }}
-| Incorrect Answers | {{ incorrect }}
-| **_Total Score_** | _{{ score }}_
+| Unattempted Questions | {{ result.unattempted|length }}
+| Attempted Questions | {{ result.attempted|length }}
+| Correct Answers | {{ result.correct|length }}
+| Incorrect Answers | {{ result.incorrect|length }}
+| **_Total Score_** | _{{ result.score }}_
 
+## Subject Wise
+
+| Subject | Correct | Incorrect | Unattempted | Score
+| - | - | - | - | - |
+{% for i in range(3) -%}
+| {{ ["Physics", "Chemistry", "Mathematics"][i] }} | {{ result.subjects[i].correct|length }} | {{ result.subjects[i].incorrect|length }} | {{ result.subjects[i].unattempted|length }} | {{ result.subjects[i].score }}
+{% endfor %}
 ## Detailed Data
 
-- _Correct Questions_ :- {{ ", ".join(correct_ques) }}
-- _Incorrect Questions_ :- {{ ", ".join(incorrect_ques) }}
-- _Unattempted Questions_ :- {{ ", ".join(unattempted_ques) }}
+- _Correct Questions_ :- {{ ", ".join(result.correct) }}
+- _Incorrect Questions_ :- {{ ", ".join(result.incorrect) }}
+- _Unattempted Questions_ :- {{ ", ".join(result.unattempted) }}
 
 |   | GivenAnswer | CorrectAnswer | QuestionID | CorrectAnswerID | GivenAnswerID |
 | - | - | - | - | - | - |

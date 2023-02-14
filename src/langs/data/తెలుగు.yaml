@@ -17,6 +17,18 @@ main:
       incorrect_ques: తప్పు ప్రశ్నలు
       total_score: మొత్తం స్కోరు
       detailed_report: వివరణాత్మక నివేదిక
+      subject_wise:
+        title: సబ్జెక్టుల వారీగా..
+        subjects:
+          - భౌతిక శాస్త్రం
+          - రసాయన శాస్త్రం
+          - గణితం
+        table:
+          subject: పాలితుడు
+          correct: అవును
+          incorrect: తప్పు
+          unattempted: అన్ ట్యాంప్టెడ్
+          score: ఇరవై
       table:
         given_answer: సమాధానం ఇవ్వబడింది
         correct_answer: సరైన సమాధానం

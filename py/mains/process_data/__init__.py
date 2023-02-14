@@ -21,8 +21,16 @@ class MainDataType(BaseModel):
     Option4IMG: List[str] = [None] * 90
 
 
-class ResultDataType(BaseModel):
+class ResultMetrics(BaseModel):
     unattempted: List[str] = []
     correct: List[str] = []
     incorrect: List[str] = []
     score: int = 0
+
+
+class ResultDataType(ResultMetrics):
+    subjects: "List[ResultMetrics]" = [
+        ResultMetrics(),  # Physics
+        ResultMetrics(),  # Chemistry
+        ResultMetrics(),  # Mathematics
+    ]

@@ -17,6 +17,18 @@ main:
       incorrect_ques: ਗਲਤ ਸਵਾਲ
       total_score: ਕੁੱਲ ਸਕੋਰ
       detailed_report: ਵੇਰਵੇ ਸਮੇਤ ਰਿਪੋਰਟ
+      subject_wise:
+        title: ਵਿਸ਼ਾ ਅਨੁਸਾਰ
+        subjects:
+          - ਭੌਤਿਕ ਵਿਗਿਆਨ
+          - ਰਸਾਇਣ ਵਿਗਿਆਨ
+          - ਗਣਿਤ
+        table:
+          subject: ਵਿਸ਼ਾ
+          correct: ਹਾਂ
+          incorrect: ਗਲਤ
+          unattempted: ਅਣ-ਪਰਤਾਹੇ
+          score: ਸਕੋਰ
       table:
         given_answer: ਦਿੱਤਾ ਜਵਾਬ
         correct_answer: ਠੀਕ ਜਵਾਬ
