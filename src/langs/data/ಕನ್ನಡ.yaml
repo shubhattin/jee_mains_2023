@@ -4,6 +4,12 @@ main:
     ಸಾಧನ.
   home:
     get_result: ಫಲಿತಾಂಶ ಪಡೆಯಿರಿ
+    DOB: ಹುಟ್ತಿದ ದಿನ
+    appl_numb: ಅಪ್ಲಿಕೇಶನ್ ಸಂಖ್ಯೆ
+    get_sample_result: ಮಾದರಿ ಫಲಿತಾಂಶ ಪಡೆಯಿರಿ
+    verify:
+      appl_numb_verify: ಅಪ್ಲಿಕೇಶನ್ ಸಂಖ್ಯೆ 12 ಅಂಕಿಗಳನ್ನು ಹೊಂದಿರಬೇಕು
+      dob_verify: ಹುಟ್ಟಿದ ದಿನಾಂಕವನ್ನು ನಮೂದಿಸಿ
     made_by: ಮಾಡಿದವರು ಯಾರು?
     page_views: ಪುಟ ವೀಕ್ಷಣೆಗಳು
     result_views: ಫಲಿತಾಂಶ ವೀಕ್ಷಣೆಗಳು
@@ -36,6 +42,7 @@ main:
         correct_answer_id: ಸರಿಯಾದ ಉತ್ತರ ID
         given_answer_id: ನೀಡಲಾದ ಉತ್ತರ ID
     questions_tab:
+      desktop_mode_better: ಉತ್ತಮ ಅನುಭವಕ್ಕಾಗಿ ಈ ಪುಟವನ್ನು ಡೆಸ್ಕ್ ಟಾಪ್ ಮೋಡ್ ನಲ್ಲಿ ವೀಕ್ಷಿಸಿ
       title: ಪ್ರಶ್ನೆಗಳು
       correct_answer: ಸರಿಯಾದ ಉತ್ತರ
       marked_answer: ಗುರುತು ಮಾಡಲಾದ ಉತ್ತರ

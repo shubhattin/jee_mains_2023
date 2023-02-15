@@ -4,6 +4,12 @@ main:
     ।
   home:
     get_result: ଫଳାଫଳ ପ୍ରାପ୍ତ କରନ୍ତୁ
+    DOB: ଜନ୍ମ ତାରିଖ
+    appl_numb: ଆପ୍ଲିକେସନ୍ ନମ୍ବର
+    get_sample_result: ନମୁନା ଫଳାଫଳ ପ୍ରାପ୍ତ କରନ୍ତୁ
+    verify:
+      appl_numb_verify: ଆବେଦନ ନମ୍ବର ୧୨ ଅଙ୍କ ବିଶିଷ୍ଟ ହେବା ଦରକାର
+      dob_verify: ଜନ୍ମ ତାରିଖ ପ୍ରବେଶ କରନ୍ତୁ
     made_by: ଦ୍ଵାରା ତିଆରି ହୋଇଛି
     page_views: ପୃଷ୍ଠା ଦୃଶ୍ୟ[ସମ୍ପାଦନା]
     result_views: ଫଳାଫଳ ଦୃଶ୍ୟ
@@ -36,6 +42,7 @@ main:
         correct_answer_id: ସଠିକ୍ ଉତ୍ତର ID
         given_answer_id: ଦିଆଯାଇଥିବା ଉତ୍ତର ID
     questions_tab:
+      desktop_mode_better: ଉତ୍ତମ ଅନୁଭୂତି ପାଇଁ ଡେସ୍କଟପ୍ ମୋଡ୍ ରେ ଏହି ପୃଷ୍ଠା ଦେଖନ୍ତୁ
       title: ପ୍ରଶ୍ନ
       correct_answer: ସଠିକ୍ ଉତ୍ତର
       marked_answer: ଉତ୍ତର ଚିହ୍ନିତ ହୋଇଛି

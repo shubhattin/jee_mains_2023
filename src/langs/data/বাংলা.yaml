@@ -3,6 +3,12 @@ main:
   description: জেইই মেইনস 2023 পরীক্ষার স্কোর সহজেই গণনা করার জন্য একটি সহজ সরঞ্জাম।
   home:
     get_result: ফলাফল পান
+    DOB: জন্মতারিখ
+    appl_numb: আবেদন নম্বর
+    get_sample_result: নমুনা ফলাফল পান
+    verify:
+      appl_numb_verify: আবেদন নম্বর ১২ ডিজিটের হতে হবে
+      dob_verify: জন্ম তারিখ লিখুন
     made_by: দ্বারা তৈরি
     page_views: পৃষ্ঠা দর্শন
     result_views: ফলাফল মতামত
@@ -35,6 +41,7 @@ main:
         correct_answer_id: সঠিক উত্তর আইডি
         given_answer_id: প্রদত্ত উত্তর আইডি
     questions_tab:
+      desktop_mode_better: আরও ভাল অভিজ্ঞতার জন্য ডেস্কটপ মোডে এই পৃষ্ঠাটি দেখুন
       title: প্রশ্ন
       correct_answer: সঠিক উত্তর
       marked_answer: চিহ্নিত উত্তর

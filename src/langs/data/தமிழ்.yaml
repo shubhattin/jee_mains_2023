@@ -3,6 +3,12 @@ main:
   description: ஜேஇஇ மெயின்ஸ் 2023 தேர்வு மதிப்பெண்ணை எளிதாக கணக்கிட ஒரு எளிய கருவி.
   home:
     get_result: முடிவைப் பெறுங்கள்
+    DOB: பிறந்த நாள்
+    appl_numb: விண்ணப்ப எண்
+    get_sample_result: மாதிரி முடிவைப் பெறுங்கள்
+    verify:
+      appl_numb_verify: விண்ணப்ப எண் 12 இலக்கங்களில் இருக்க வேண்டும்.
+      dob_verify: பிறந்த தேதியை உள்ளிடவும்
     made_by: தயாரித்தவர்
     page_views: பக்க பார்வைகள்
     result_views: முடிவு பார்வைகள்
@@ -35,6 +41,8 @@ main:
         correct_answer_id: சரியான விடை ஐடி
         given_answer_id: கொடுக்கப்பட்ட பதில் ஐடி
     questions_tab:
+      desktop_mode_better: சிறந்த அனுபவத்திற்காக இந்த பக்கத்தை டெஸ்க்டாப் பயன்முறையில்
+        பார்க்கவும்
       title: கேள்விகள்
       correct_answer: சரியான பதில்
       marked_answer: குறிக்கப்பட்ட பதில்

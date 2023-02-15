@@ -6,9 +6,16 @@
   $: lekh = $lekhAH.result.questions_tab;
 
   export let data: ResponseDataType['data'];
+  let suggestion_text_shown = true;
 </script>
 
 <div transition:fly class="list-decimal">
+  <div class:hidden={!suggestion_text_shown} class="mt-1 mb-2 ml-3 text-sm text-zinc-500 sm:hidden">
+    {lekh.desktop_mode_better}
+    <button on:click={() => (suggestion_text_shown = false)} class="cursor-button text-[red]">
+      ❌
+    </button>
+  </div>
   {#each { length: data.GivenAnswer.length } as _, i (i)}
     <li class="mb-4">
       <img class="inline-block" src={data.QuestionIMG[i]} alt={`Question ${i + 1}`} />

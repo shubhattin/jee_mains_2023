@@ -4,6 +4,12 @@ main:
     ഉപകരണം.
   home:
     get_result: ഫലം നേടുക
+    DOB: ജനന തിയതി
+    appl_numb: ആപ്ലിക്കേഷൻ നമ്പർ
+    get_sample_result: സാമ്പിൾ ഫലം നേടുക
+    verify:
+      appl_numb_verify: അപേക്ഷാ നമ്പർ 12 അക്കങ്ങൾ ആയിരിക്കണം
+      dob_verify: ജനനത്തീയതി നൽകുക
     made_by: നിർമ്മിച്ചത്
     page_views: പേജ് കാഴ്ചകൾ
     result_views: റിസൾട്ട് കാഴ്ചകൾ
@@ -36,6 +42,7 @@ main:
         correct_answer_id: ശരിയായ ഉത്തര ഐഡി
         given_answer_id: നൽകിയ ഉത്തര ഐഡി
     questions_tab:
+      desktop_mode_better: മികച്ച അനുഭവത്തിനായി ഡെസ്ക്ടോപ്പ് മോഡിൽ ഈ പേജ് കാണുക
       title: ചോദ്യങ്ങൾ
       correct_answer: ശരിയായ ഉത്തരം
       marked_answer: അടയാളപ്പെടുത്തിയ ഉത്തരം

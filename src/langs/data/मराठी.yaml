@@ -3,6 +3,12 @@ main:
   description: जेईई मेन्स 2023 परीक्षेच्या गुणांची सहज गणना करण्यासाठी एक सोपे साधन.
   home:
     get_result: निकाल मिळवा
+    DOB: जन्म तारीख
+    appl_numb: अप्लीकेशन नंबर
+    get_sample_result: नमुना निकाल मिळवा
+    verify:
+      appl_numb_verify: अर्ज क्रमांक १२ अंकी असावा
+      dob_verify: जन्म तारीख प्रविष्ट करा
     made_by: द्वारा बना हुआ
     page_views: पृष्ठ दृश्ये
     result_views: परिणाम दृश्य
@@ -35,6 +41,7 @@ main:
         correct_answer_id: सही उत्तर आईडी
         given_answer_id: उत्तर आयडी दिला आहे
     questions_tab:
+      desktop_mode_better: अधिक चांगल्या अनुभवासाठी डेस्कटॉप मोडमध्ये हे पृष्ठ पहा
       title: प्रश्न
       correct_answer: सही उत्तर
       marked_answer: चिन्हांकित उत्तर

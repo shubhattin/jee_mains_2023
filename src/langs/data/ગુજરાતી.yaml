@@ -4,6 +4,12 @@ main:
     સાધન.
   home:
     get_result: પરિણામ મેળવો
+    DOB: જન્મની તારીખ
+    appl_numb: કાર્યક્રમ નંબર
+    get_sample_result: નમૂના પરિણામ મેળવો
+    verify:
+      appl_numb_verify: અરજી નંબર 12 અંકોનો હોવો જોઈએ
+      dob_verify: જન્મની તારીખ એન્ટર કરો
     made_by: ના દ્વારા બનાવેલ
     page_views: પાનાં દેખાવો
     result_views: પરિણામ દેખાવો
@@ -36,6 +42,7 @@ main:
         correct_answer_id: સાચો જવાબ ID
         given_answer_id: આપેલ જવાબ ID
     questions_tab:
+      desktop_mode_better: વધુ સારા અનુભવ માટે આ પાનાંને ડેસ્કટોપ સ્થિતિમાં જુઓ
       title: પ્રશ્ર્નો
       correct_answer: સાચો જવાબ
       marked_answer: ચિહ્નિત જવાબ

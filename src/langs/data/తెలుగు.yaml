@@ -4,6 +4,12 @@ main:
     సాధనం.
   home:
     get_result: ఫలితాన్ని పొందండి
+    DOB: పుట్టిన తేది
+    appl_numb: అప్లికేషన్ నెంబరు
+    get_sample_result: నమూనా ఫలితాన్ని పొందండి
+    verify:
+      appl_numb_verify: అప్లికేషన్ నెంబరు 12 అంకెలతో ఉండాలి.
+      dob_verify: పుట్టిన తేదీని నమోదు చేయండి
     made_by: దీని ద్వారా తయారు చేయబడింది
     page_views: పేజీ వీక్షణలు
     result_views: ఫలిత వీక్షణలు
@@ -36,6 +42,7 @@ main:
         correct_answer_id: సరైన సమాధాన ఐడి
         given_answer_id: ఆన్సర్ ఐడి ఇవ్వబడింది
     questions_tab:
+      desktop_mode_better: మెరుగైన అనుభవం కొరకు డెస్క్ టాప్ మోడ్ లో ఈ పేజీని వీక్షించండి
       title: ప్రశ్నలు
       correct_answer: సరైన సమాధానం
       marked_answer: మార్క్ చేయబడ్డ సమాధానం

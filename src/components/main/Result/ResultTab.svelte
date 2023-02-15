@@ -28,48 +28,49 @@
         <div class="font-bold text-blue-900">{result.score}</div>
       </div>
     </div>
-  </div>
-  <div>
-    <h2 class="mt-2 text-xl font-bold">{lekh.subject_wise.title}</h2>
-    <table class="mt-2 border-collapse rounded-xl border-2 border-blue-800">
-      <thead>
-        <tr>
-          <th class="border border-slate-900 bg-gray-100 px-1">{lekh.subject_wise.table.subject}</th
-          >
-          <th class="border border-slate-900 bg-gray-100 px-1 text-green-800"
-            >{lekh.subject_wise.table.correct}</th
-          >
-          <th class="border border-slate-900 bg-gray-100 px-1 text-red-700"
-            >{lekh.subject_wise.table.incorrect}</th
-          >
-          <th class="border border-slate-900 bg-gray-100 px-1 text-blue-900"
-            >{lekh.subject_wise.table.unattempted}</th
-          >
-          <th class="border border-slate-900 bg-gray-100 px-1 text-amber-900"
-            >{lekh.subject_wise.table.score}</th
-          >
-        </tr>
-      </thead>
-      <tbody>
-        {#each { length: 3 } as _, i (i)}
+    <h3 class="text-lg font-bold text-amber-800 underline">{lekh.subject_wise.title}</h3>
+    <div class="overflow-x-scroll text-center text-sm sm:text-base">
+      <table class="border-collapse rounded-xl border-2 border-blue-800">
+        <thead>
           <tr>
-            <td class="border border-zinc-400 px-1 text-violet-900 "
-              >{lekh.subject_wise.subjects[i]}</td
+            <th class="border border-slate-900 bg-gray-100 px-1 text-sm"
+              >{lekh.subject_wise.table.subject}</th
             >
-            <td class="border border-zinc-400 px-1 text-zinc-800"
-              >{result.subjects[i].correct.length}</td
+            <th class="border border-slate-900 bg-gray-100 px-1 text-xs text-green-800 sm:text-sm"
+              >{lekh.subject_wise.table.correct}</th
             >
-            <td class="border border-zinc-400 px-1 text-zinc-800"
-              >{result.subjects[i].incorrect.length}</td
+            <th class="border border-slate-900 bg-gray-100 px-1 text-xs text-red-700 sm:text-sm"
+              >{lekh.subject_wise.table.incorrect}</th
             >
-            <td class="border border-zinc-400 px-1 text-zinc-800"
-              >{result.subjects[i].unattempted.length}</td
+            <th class="border border-slate-900 bg-gray-100 px-1 text-xs text-blue-900 sm:text-sm"
+              >{lekh.subject_wise.table.unattempted}</th
             >
-            <td class="border border-zinc-400 px-1 text-zinc-800">{result.subjects[i].score}</td>
+            <th class="border border-slate-900 bg-gray-100 px-1 text-xs text-amber-900 sm:text-sm"
+              >{lekh.subject_wise.table.score}</th
+            >
           </tr>
-        {/each}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {#each { length: 3 } as _, i (i)}
+            <tr>
+              <td class="border border-zinc-400 px-1 text-violet-900"
+                >{lekh.subject_wise.subjects[i]}</td
+              >
+              <td class="border border-zinc-400 px-1 text-zinc-800"
+                >{result.subjects[i].correct.length}</td
+              >
+              <td class="border border-zinc-400 px-1 text-zinc-800"
+                >{result.subjects[i].incorrect.length}</td
+              >
+              <td class="border border-zinc-400 px-1 text-zinc-800"
+                >{result.subjects[i].unattempted.length}</td
+              >
+              <td class="border border-zinc-400 px-1 text-zinc-800">{result.subjects[i].score}</td>
+            </tr>
+          {/each}
+        </tbody>
+      </table>
+    </div>
   </div>
   <div>
     <h2 class="mt-2 text-xl font-bold">{lekh.detailed_report}</h2>
@@ -88,7 +89,7 @@
       </li>
     </div>
   </div>
-  <div class="overflow-x-scroll">
+  <div class="overflow-x-scroll text-center">
     <table class="mt-4 border-collapse rounded-xl border-2 border-blue-800">
       <thead>
         <tr>

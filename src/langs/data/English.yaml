@@ -3,6 +3,12 @@ main:
   description: A simple tool to easily calculate JEE Mains 2023 exam score.
   home:
     get_result: Get Result
+    DOB: Date of Birth
+    appl_numb: Application Number
+    get_sample_result: Get Sample Result
+    verify:
+      appl_numb_verify: Application number should be of 12 digits
+      dob_verify: Enter Date of Birth
     made_by: Made by
     page_views: Page Views
     result_views: Result Views
@@ -35,6 +41,7 @@ main:
         correct_answer_id: Correct Answer ID
         given_answer_id: Given Answer ID
     questions_tab:
+      desktop_mode_better: View This Page in Desktop Mode for Better Experience
       title: Questions
       correct_answer: Correct Answer
       marked_answer: Marked Answer

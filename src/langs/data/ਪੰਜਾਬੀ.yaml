@@ -4,6 +4,12 @@ main:
     ਸਾਧਨ।
   home:
     get_result: ਨਤੀਜਾ ਲਵੋ
+    DOB: ਜਨਮ ਦੀ ਤਾਰੀਖ
+    appl_numb: ਐਪਲੀਕੇਸ਼ਨ ਨੰਬਰ
+    get_sample_result: ਨਮੂਨਾ ਨਤੀਜਾ ਪ੍ਰਾਪਤ ਕਰੋ
+    verify:
+      appl_numb_verify: ਅਰਜ਼ੀ ਨੰਬਰ 12 ਅੰਕਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ
+      dob_verify: ਜਨਮ ਮਿਤੀ ਦਰਜ ਕਰੋ
     made_by: ਵਲੋਂ ਬਣਾਇਆ ਗਿਆ
     page_views: ਸਫ਼ਾ ਝਲਕ
     result_views: ਨਤੀਜਾ ਝਲਕ
@@ -36,6 +42,7 @@ main:
         correct_answer_id: ਠੀਕ ਜਵਾਬ ID
         given_answer_id: ਦਿੱਤਾ ਜਵਾਬ ID
     questions_tab:
+      desktop_mode_better: ਬਿਹਤਰ ਅਨੁਭਵ ਲਈ ਇਸ ਪੰਨੇ ਨੂੰ ਡੈਸਕਟੌਪ ਮੋਡ ਵਿੱਚ ਵੇਖੋ
       title: ਸਵਾਲ
       correct_answer: ਠੀਕ ਜਵਾਬ
       marked_answer: ਨਿਸ਼ਾਨਬੱਧ ਜਵਾਬ

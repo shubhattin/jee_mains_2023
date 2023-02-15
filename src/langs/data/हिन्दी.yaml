@@ -4,6 +4,12 @@ main:
     के मूल्यांकन को पूरे विवरण सहित देख सकते हैं।
   home:
     get_result: मूल्यांकन प्राप्त करें
+    DOB: जन्म तिथि
+    appl_numb: आवेदन संख्या
+    get_sample_result: प्रतिदर्श परिणाम देखें
+    verify:
+      appl_numb_verify: आवेदन संख्या 12 अंकों की होनी चाहिए
+      dob_verify: जन्म तिथि भरें
     made_by: निर्माता
     page_views: पृष्ठ दृष्टांक
     result_views: परिणाम दृष्टांक
@@ -36,6 +42,7 @@ main:
         correct_answer_id: उचित उत्तर ID
         given_answer_id: प्रदत्त उत्तर ID
     questions_tab:
+      desktop_mode_better: इस पृष्ठ को सांगणिक अवस्था मे देखना अधिकोचित होगा
       title: प्रश्न
       correct_answer: उचित उत्तर
       marked_answer: चिह्नित उत्तर

@@ -4,6 +4,13 @@ export interface dattType {
     description: string;
     home: {
       get_result: string;
+      DOB: string;
+      appl_numb: string;
+      get_sample_result: string;
+      verify: {
+        appl_numb_verify: string;
+        dob_verify: string;
+      };
       made_by: string;
       page_views: string;
       result_views: string;
@@ -38,6 +45,7 @@ export interface dattType {
         };
       };
       questions_tab: {
+        desktop_mode_better: string;
         title: string;
         correct_answer: string;
         marked_answer: string;

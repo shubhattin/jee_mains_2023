@@ -5,6 +5,12 @@ main:
     ہاَےں.
   home:
     get_result: ماُولیآںکَنَ پرآپتَ کَرےں
+    DOB: جَنمَ تِتھِ
+    appl_numb: آوےدَنَ سَںکھیآ
+    get_sample_result: پرَتِدَرشَ پَرِݨآمَ دےکھےں
+    verify:
+      appl_numb_verify: آوےدَنَ سَںکھیآ 12 اَںکاوں کاِی ہاوناِی چآہِے
+      dob_verify: جَنمَ تِتھِ بھَرےں
     made_by: نِرمآتآ
     page_views: پرِشٹھَ درِشٹآںکَ
     result_views: پَرِݨآمَ درِشٹآںکَ
@@ -37,6 +43,8 @@ main:
         correct_answer_id: اُچِتَ اُتتَرَ اِیڈ
         given_answer_id: پرَدَتتَ اُتتَرَ اِیڈ
     questions_tab:
+      desktop_mode_better: اِسَ پرِشٹھَ کاو سآںگَݨِکَ اَوَستھآ مے دےکھَنآ اَدھِکاوچِتَ
+        ہاوگآ
       title: پرَشنَ
       correct_answer: اُچِتَ اُتتَرَ
       marked_answer: چِہنِتَ اُتتَرَ
