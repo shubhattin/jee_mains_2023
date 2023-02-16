@@ -44,7 +44,7 @@
     $mainMode = 'result';
   };
   const fetch_data_result = async () => {
-    if (dob === '' || !$appl_numb || $appl_numb.toString().length != 12) return;
+    if (!dob || dob === '' || !$appl_numb || $appl_numb.toString().length != 12) return;
     get_result_loading_status = true;
     const req = await fetch_post('/api/get_result', {
       json: {
