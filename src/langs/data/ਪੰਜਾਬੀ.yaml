@@ -4,6 +4,7 @@ main:
     ਸਾਧਨ।
   home:
     get_result: ਨਤੀਜਾ ਲਵੋ
+    get_data_result: ਡੇਟਾ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਨਤੀਜਾ ਪ੍ਰਾਪਤ ਕਰੋ
     DOB: ਜਨਮ ਦੀ ਤਾਰੀਖ
     appl_numb: ਐਪਲੀਕੇਸ਼ਨ ਨੰਬਰ
     get_sample_result: ਨਮੂਨਾ ਨਤੀਜਾ ਪ੍ਰਾਪਤ ਕਰੋ
@@ -13,7 +14,30 @@ main:
     made_by: ਵਲੋਂ ਬਣਾਇਆ ਗਿਆ
     page_views: ਸਫ਼ਾ ਝਲਕ
     result_views: ਨਤੀਜਾ ਝਲਕ
+    data_page:
+      first_time_info: ਜਿਵੇਂ ਕਿ ਤੁਸੀਂ ਪਹਿਲੀ ਵਾਰ ਆਪਣੇ ਨਤੀਜਿਆਂ ਨੂੰ ਦੇਖ ਰਹੇ ਹੋ, ਤੁਹਾਨੂੰ
+        ਇਹ ਜਾਣਕਾਰੀ ਪ੍ਰਦਾਨ ਕਰਨ ਦੀ ਲੋੜ ਹੈ
+      response_page_data: ਜਵਾਬ ਸਫ਼ਾ ਡਾਟਾ
+      response_page_data_msg: ਜਵਾਬ ਸ਼ੀਟ ਪੇਜ਼ ਦਾ URL ਜਾਂ HTML ਦਿਓ
+      answer_key_data: ਉੱਤਰ ਕੁੰਜੀ ਡਾਟਾ
+      answer_key_data_msg: ਉੱਤਰ ਕੁੰਜੀ ਪੇਜ਼ ਦਾ HTML ਦਰਜ਼ ਕਰੋ
+      submit_btn: ਸਪੁਰਦ ਕਰੋ
+      error_msg: ਸਪੁਰਦ ਕੀਤੇ ਡੇਟਾ ਵਿੱਚ ਤਰੁੱਟੀ
+      notes:
+        get_html_page: ਸਫ਼ਾ ਦਾ HTML ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ
+        on_mobile: ਮੋਬਾਇਲ ਉੱਤੇ
+        on_mobile_msg: URL ਨੂੰ 'view- source:' ਨਾਲ ਅਗੇਤਰ ਕਰੋ । ਉਦਾਹਰਨ ਲਈ :- 'https://www.google.com'
+          -> 'view-source:https://www.google.com'
+        on_computer: ਕੰਪਿਊਟਰ ਉੱਤੇ
+        on_computer_msg: ਮਾਊਸ 'ਤੇ ਰਾਈਟ ਕਲਿੱਕ ਕਰੋ ਅਤੇ ਫਿਰ' View page source 'ਤੇ ਕਲਿੱਕ
+          ਕਰੋ।
+        other_notes:
+          - '*ਰਿਸਪਾਂਸ ਸ਼ੀਟ ਡਾਟਾ* ਲਈ ਤੁਸੀਂ ਰਿਸਪਾਂਸ ਸ਼ੀਟ ਪੇਜ ਦਾ **ਲਿੰਕ (URL)** ਜਾਂ **HTML**
+            ਪ੍ਰਦਾਨ ਕਰ ਸਕਦੇ ਹੋ।'
+          - '*ਉੱਤਰ ਕੁੰਜੀ ਡੇਟਾ ਲਈ ਤੁਹਾਨੂੰ ਉੱਤਰ ਕੁੰਜੀ ਪੇਜ* ਦਾ **ਐਚਟੀਐਮਐਲ** ਪ੍ਰਦਾਨ ਕਰਨਾ
+            ਚਾਹੀਦਾ ਹੈ।'
   result:
+    sample_result_msg: ਇਹ ਇੱਕ ਨਮੂਨਾ ਨਤੀਜਾ ਹੈ
     result_tab:
       title: ਨਤੀਜਾ
       summary: ਸੰਖੇਪ

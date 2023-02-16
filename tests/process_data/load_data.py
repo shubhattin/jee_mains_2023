@@ -1,18 +1,24 @@
 import csv
 from pyquery import PyQuery as pq
-from . import AnswerKeyType, MainDataType
-from typing import List
+from . import AnswerKeyType, MainDataType, InfoDataType, ResultDataType
+from typing import List, Dict
+from copy import deepcopy
 
 OPTIONS = ["A", "B", "C", "D"]
 QUESTION_URL_PREFIX = "https://cdn3.digialm.com"
+QUESTION_COUNT = 90
 
 
 def load_answer_key(filedata: str) -> AnswerKeyType:
     data = AnswerKeyType()
     reader = csv.DictReader(filedata.splitlines())
+    i = 0
     for row in reader:
         data.QuestionID.append(row["QuestionID"])
         data.CorrectAnswerID.append(row["Correct Option(s)/ Answers"])
+        i += 1
+    if i != QUESTION_COUNT:
+        raise Exception("Error in answer_key data")
     return data
 
 
@@ -84,5 +90,29 @@ def load_data(anwer_key_data: str, response_sheet_data: str) -> MainDataType:
                 + QUESTIONS.eq(i).eq(0).eq(0)("img")[0].attrib["src"]
             )
         i += 1
-
+    if i != QUESTION_COUNT:
+        raise Exception("Error in response_data data")
     return data
+
+
+def get_metadata(response_sheet_data: str) -> InfoDataType:
+    try:
+        HTML_DATA = pq(response_sheet_data)
+        HTML_QUERY = HTML_DATA(".main-info-pnl table tbody tr")
+        data = InfoDataType()
+        data.ApplicationNumber = pq(HTML_QUERY[0]).text().split("\n")[1]
+        data.Name = pq(HTML_QUERY[1]).text().split("\n")[1]
+        data.RollNumber = pq(HTML_QUERY[2]).text().split("\n")[1]
+        data.TestDate = pq(HTML_QUERY[3]).text().split("\n")[1]
+        data.TestTime = pq(HTML_QUERY[4]).text().split("\n")[1]
+        return data
+    except Exception:
+        raise Exception("Not able to parse metadata")
+
+
+def serialize_Result_JSON(result: ResultDataType) -> Dict:
+    result_copy = deepcopy(result)
+    result_copy.subjects = []
+    for x in result.subjects:
+        result_copy.subjects.append(x.__dict__)
+    return result_copy.__dict__

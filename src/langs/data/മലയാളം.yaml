@@ -4,6 +4,7 @@ main:
     ഉപകരണം.
   home:
     get_result: ഫലം നേടുക
+    get_data_result: ഡാറ്റ ഉപയോഗിച്ച് ഫലം നേടുക
     DOB: ജനന തിയതി
     appl_numb: ആപ്ലിക്കേഷൻ നമ്പർ
     get_sample_result: സാമ്പിൾ ഫലം നേടുക
@@ -13,7 +14,29 @@ main:
     made_by: നിർമ്മിച്ചത്
     page_views: പേജ് കാഴ്ചകൾ
     result_views: റിസൾട്ട് കാഴ്ചകൾ
+    data_page:
+      first_time_info: നിങ്ങൾ ആദ്യമായി നിങ്ങളുടെ ഫലങ്ങൾ കാണുമ്പോൾ നിങ്ങൾ ഈ വിവരങ്ങൾ
+        നൽകേണ്ടതുണ്ട്
+      response_page_data: പ്രതികരണ പേജ് ഡാറ്റ
+      response_page_data_msg: പ്രതികരണ ഷീറ്റിന്റെ URL അല്ലെങ്കിൽ HTML നൽകുക
+      answer_key_data: ഉത്തര കീ ഡാറ്റ
+      answer_key_data_msg: ഉത്തര കീ പേജിന്റെ HTML നൽകുക
+      submit_btn: സമർപ്പിക്കുക
+      error_msg: സമർപ്പിച്ച ഡാറ്റയിൽ പിശക്
+      notes:
+        get_html_page: പേജിന്റെ HTML ലഭിക്കുന്നതിന്
+        on_mobile: മൊബൈലിൽ
+        on_mobile_msg: "'വ്യൂ-സോഴ്സ്:' ഉപയോഗിച്ച് URL പ്രിഫിക്സ് ചെയ്യുക. ഉദാഹരണത്തിന്
+          :- 'https://www.google.com' -> 'view-source:https://www.google.com'"
+        on_computer: കമ്പ്യൂട്ടറിൽ
+        on_computer_msg: മൗസിൽ റൈറ്റ് ക്ലിക്ക് ചെയ്യുക, തുടർന്ന് 'പേജ് ഉറവിടം കാണുക'
+          എന്നതിൽ ക്ലിക്കുചെയ്യുക.
+        other_notes:
+          - '*റെസ്പോൺസ് ഷീറ്റ് ഡാറ്റയ്ക്കായി* നിങ്ങൾക്ക് റെസ്പോൺസ് ഷീറ്റ് പേജിന്റെ **ലിങ്ക്
+            (URL)** അല്ലെങ്കിൽ **HTML** നൽകാം.'
+          - '*ഉത്തര കീ ഡാറ്റയ്ക്കായി* നിങ്ങൾ ഉത്തര കീ പേജിന്റെ **HTML** നൽകണം.'
   result:
+    sample_result_msg: ഇതൊരു സാമ്പിൾ ഫലമാണ്
     result_tab:
       title: ഫലം
       summary: സംഗ്രഹം

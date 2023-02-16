@@ -1,5 +1,4 @@
 import shubhlipi as sh, re, os
-from langs.datt import LANG_DB
 from typing import Dict
 
 if sh.args(0) == "clone":
@@ -56,17 +55,7 @@ def copy_files(lc=""):
             sh.copy_file(x, f"o/{x}")
 
 
-def make_lang_files():
-    sh.makedir("o/langs/data")
-    LANG_DB.json_type = True
-    for x in sh.lang_list:
-        code = sh.lang_list[x]
-        data: Dict = LANG_DB(code)
-        sh.write(f"o/langs/data/{sh.lang_list[x]}.json", sh.dump_json(data))
-
-
 copy_files()
-make_lang_files()
 
 if "deploy" in sh.argv:
     if "nobuild" not in sh.argv:

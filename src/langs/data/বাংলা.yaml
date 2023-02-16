@@ -3,6 +3,7 @@ main:
   description: জেইই মেইনস 2023 পরীক্ষার স্কোর সহজেই গণনা করার জন্য একটি সহজ সরঞ্জাম।
   home:
     get_result: ফলাফল পান
+    get_data_result: ডেটা ব্যবহার করে ফলাফল পান
     DOB: জন্মতারিখ
     appl_numb: আবেদন নম্বর
     get_sample_result: নমুনা ফলাফল পান
@@ -12,7 +13,29 @@ main:
     made_by: দ্বারা তৈরি
     page_views: পৃষ্ঠা দর্শন
     result_views: ফলাফল মতামত
+    data_page:
+      first_time_info: যেহেতু আপনি প্রথমবার আপনার ফলাফল গুলি দেখছেন তাই আপনাকে এই
+        তথ্য সরবরাহ করতে হবে
+      response_page_data: প্রতিক্রিয়া পৃষ্ঠার তথ্য
+      response_page_data_msg: রেসপন্স শীট পৃষ্ঠার URL বা HTML লিখুন
+      answer_key_data: মূল তথ্যের উত্তর দিন
+      answer_key_data_msg: উত্তর কী পৃষ্ঠার এইচটিএমএল লিখুন
+      submit_btn: জমা
+      error_msg: জমা দেওয়া তথ্যে ত্রুটি
+      notes:
+        get_html_page: পেজের এইচটিএমএল পেতে
+        on_mobile: মোবাইলে
+        on_mobile_msg: "ইউআরএলটি 'ভিউ-সোর্স:' দিয়ে প্রিফিক্স করুন। উদাহরণস্বরূপ:
+          - 'https://www.google.com' -> 'ভিউ-সোর্স:https://www.google.com'"
+        on_computer: কম্পিউটারে
+        on_computer_msg: মাউসে ডান ক্লিক করুন এবং তারপরে 'ভিউ পেজ সোর্স' এ ক্লিক করুন।
+        other_notes:
+          - '*রেসপন্স শীট ডেটার* জন্য আপনি রেসপন্স শীট পৃষ্ঠার **লিঙ্ক (ইউআরএল)** বা
+            **এইচটিএমএল** সরবরাহ করতে পারেন।'
+          - '*উত্তর কী ডেটার জন্য* আপনাকে উত্তর কী পৃষ্ঠার **এইচটিএমএল** সরবরাহ করতে
+            হবে।'
   result:
+    sample_result_msg: এটি একটি নমুনা ফলাফল
     result_tab:
       title: ফলাফল
       summary: সারাংশ

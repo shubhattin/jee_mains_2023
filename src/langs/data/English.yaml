@@ -3,6 +3,7 @@ main:
   description: A simple tool to easily calculate JEE Mains 2023 exam score.
   home:
     get_result: Get Result
+    get_data_result: Get Result using Data
     DOB: Date of Birth
     appl_numb: Application Number
     get_sample_result: Get Sample Result
@@ -12,7 +13,30 @@ main:
     made_by: Made by
     page_views: Page Views
     result_views: Result Views
+    data_page:
+      first_time_info: As you are viewing your results for first time you
+        need to provide this Information
+      response_page_data: Response Page Data
+      response_page_data_msg: Enter URL or HTML of the Response Sheet Page
+      answer_key_data: Answer Key Data
+      answer_key_data_msg: Enter HTML of the Answer Key Page
+      submit_btn: Submit
+      error_msg: Error in submitted data
+      notes:
+        get_html_page: To get HTML of Page
+        on_mobile: On Mobile
+        on_mobile_msg: Prefix the URL with 'view-source:'. For
+          example :- 'https://www.google.com' ->
+          'view-source:https://www.google.com'
+        on_computer: On Computer
+        on_computer_msg: Right click on mouse and then click on
+          'View page source'.
+        other_notes:
+          - For _Response Sheet Data_ you can provide either the **link(URL)** or **HTML** of the Response Sheet
+            Page.
+          - For _Answer Key Data_ you should provide the **HTML** of the Answer Key Page.
   result:
+    sample_result_msg: This is a sample result
     result_tab:
       title: Result
       summary: Summary

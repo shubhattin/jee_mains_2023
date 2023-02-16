@@ -1,8 +1,14 @@
 from fastapi import APIRouter, HTTPException, status
-from .process_data.load_data import load_data
+from .process_data.load_data import (
+    load_data,
+    get_metadata,
+    serialize_Result_JSON,
+    QUESTION_URL_PREFIX,
+)
 from .process_data.get_result import get_result
 from kry.datt import deta_val, PROD_ENV, Base
 from pydantic import BaseModel
+import requests
 
 router = APIRouter(prefix="/api")
 
@@ -45,17 +51,41 @@ async def get_result_post(bdy: ResultRequestDate):
 class SubmitRequestData(BaseModel):
     ResponsePageData: str
     AnswerKeyData: str
+    DateOfBirth: str
 
 
 @router.post("/submit_result_data")
 async def submit_result_data(bdy: SubmitRequestData):
     try:
+        URL = bdy.ResponsePageData.split("/")[0]
+        if URL.startswith(QUESTION_URL_PREFIX):
+            bdy.ResponsePageData = requests.get(URL).text
         data = load_data(bdy.AnswerKeyData, bdy.ResponsePageData)
         result = get_result(data)
         upadate_result_view_count()
         return_data = {"result": result.__dict__, "data": data.__dict__}
+        if True:  # Caching the data
+            meta = get_metadata(bdy.ResponsePageData)
+            Base("info").put(
+                {
+                    "DOB": bdy.DateOfBirth,
+                    "name": meta.Name,
+                    "roll": meta.RollNumber,
+                    "date": meta.TestDate,
+                    "time": meta.TestTime,
+                },
+                meta.ApplicationNumber,
+            )
+            Base("data").put(
+                {
+                    "result": serialize_Result_JSON(result),
+                    "data": data.__dict__,
+                },
+                meta.ApplicationNumber,
+            )
         return return_data
     except Exception as e:
+        print(e)
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             headers={"X-error": "invalid_data"},

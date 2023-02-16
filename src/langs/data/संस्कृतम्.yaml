@@ -4,6 +4,7 @@ main:
     मूल्यांकनं पूर्णविवरणेन सह पश्यतु।
   home:
     get_result: मूल्यांकनं प्राप्यताम्
+    get_data_result: दत्तांशेन मूल्यांकनं प्राप्यताम्
     DOB: जन्मतिथिम्
     appl_numb: आवेदनसंख्या
     get_sample_result: प्रतिदर्शपरिणामं पश्यताम्
@@ -13,7 +14,29 @@ main:
     made_by: निर्माता
     page_views: पृष्ठदृष्टांकम्
     result_views: परिणामदृष्टांकम्
+    data_page:
+      first_time_info: यतो भवतः परिणामं प्रथमवारं दर्शतु इत इदं दत्तांशस्य आवश्यकता
+        वर्तते
+      response_page_data: प्रतिक्रियापृष्ठदत्तांशम्
+      response_page_data_msg: प्रतिक्रियापत्रस्य पृष्ठस्य URLइत्यिदं HTMLइत्यिदं वा
+        तुदतु
+      answer_key_data: उत्तरकुंजीदत्तांशम्
+      answer_key_data_msg: उत्तरकुंज्याः पृष्ठस्य HTMLइत्यिदं तुदतु
+      submit_btn: उपस्थाप्यताम्
+      error_msg: उपस्थापिते दत्तांशे त्रुट्यः भवन्ति
+      notes:
+        get_html_page: पृष्ठस्य HTMLइत्यिदं प्राप्तितुम्
+        on_mobile: निष्तन्त्र्याम्
+        on_mobile_msg: URLइत्यिदं 'view-source:'इत्येन उपसर्गयतु। उदाहराणार्थम् :-
+          'https://www.google.com' -> 'view-source:https://www.google.com'
+        on_computer: सङ्गणके
+        on_computer_msg: मूषिकायां दक्षिणतोदनं कुरु 'View page source'इत्यिदञ्च तुदतु।
+        other_notes:
+          - _प्रतिक्रियापृष्ठाय दत्तांशाय_ प्रतिक्रियापृष्ठस्य **संचितं(URL)** **HTML**इत्यिदं
+            वा प्रदत्ततु।
+          - _उत्तरकुंजीदत्तांशाय_ उत्तरकुंजीपृष्ठस्य **HTML**इत्यिदं प्रदत्ततु।
   result:
+    sample_result_msg: इदमेकं प्रतिदर्शं परिणामं वर्तते
     result_tab:
       title: परिणामम्
       summary: सारांशम्

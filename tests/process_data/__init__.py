@@ -34,3 +34,11 @@ class ResultDataType(ResultMetrics):
         ResultMetrics(),  # Chemistry
         ResultMetrics(),  # Mathematics
     ]
+
+
+class InfoDataType(BaseModel):
+    ApplicationNumber: str = None
+    Name: str = None
+    RollNumber: str = None
+    TestDate: str = None
+    TestTime: str = None

@@ -2,6 +2,7 @@
   import { fly } from 'svelte/transition';
   import type { ResponseDataType } from '@components/main/type';
   import { lekhAH } from '@state/main';
+  import { mobile_tablet_detector } from '@tools/mobile_detector';
 
   $: lekh = $lekhAH.result.questions_tab;
 
@@ -10,15 +11,17 @@
 </script>
 
 <div transition:fly class="list-decimal">
-  <div
-    class:hidden={!suggestion_text_shown}
-    class="my-1 mx-2 inline-flex justify-between text-center text-xs text-zinc-500 sm:hidden"
-  >
-    <span>{lekh.desktop_mode_better}</span>
-    <button on:click={() => (suggestion_text_shown = false)} class="cursor-button ml-1">
-      ❌
-    </button>
-  </div>
+  {#if mobile_tablet_detector()}
+    <div
+      class:hidden={!suggestion_text_shown}
+      class="my-1 mx-2 inline-flex justify-between text-center text-xs text-zinc-500 sm:hidden"
+    >
+      <span>{lekh.desktop_mode_better}</span>
+      <button on:click={() => (suggestion_text_shown = false)} class="cursor-button ml-1">
+        ❌
+      </button>
+    </div>
+  {/if}
   {#each { length: data.GivenAnswer.length } as _, i (i)}
     <li class="mb-4">
       <img class="inline-block" src={data.QuestionIMG[i]} alt={`Question ${i + 1}`} />

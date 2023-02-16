@@ -4,6 +4,7 @@ main:
     ಸಾಧನ.
   home:
     get_result: ಫಲಿತಾಂಶ ಪಡೆಯಿರಿ
+    get_data_result: ಡೇಟಾ ಬಳಸಿ ಫಲಿತಾಂಶ ಪಡೆಯಿರಿ
     DOB: ಹುಟ್ತಿದ ದಿನ
     appl_numb: ಅಪ್ಲಿಕೇಶನ್ ಸಂಖ್ಯೆ
     get_sample_result: ಮಾದರಿ ಫಲಿತಾಂಶ ಪಡೆಯಿರಿ
@@ -13,7 +14,29 @@ main:
     made_by: ಮಾಡಿದವರು ಯಾರು?
     page_views: ಪುಟ ವೀಕ್ಷಣೆಗಳು
     result_views: ಫಲಿತಾಂಶ ವೀಕ್ಷಣೆಗಳು
+    data_page:
+      first_time_info: ನೀವು ಮೊದಲ ಬಾರಿಗೆ ನಿಮ್ಮ ಫಲಿತಾಂಶಗಳನ್ನು ವೀಕ್ಷಿಸುತ್ತಿರುವಾಗ ನೀವು
+        ಈ ಮಾಹಿತಿಯನ್ನು ಒದಗಿಸಬೇಕಾಗುತ್ತದೆ
+      response_page_data: ಪ್ರತಿಕ್ರಿಯೆ ಪುಟ ಡೇಟಾ
+      response_page_data_msg: ಪ್ರತಿಕ್ರಿಯೆ ಪತ್ರ ಪುಟದ URL ಅಥವಾ HTML ನಮೂದಿಸಿ
+      answer_key_data: ಉತ್ತರ ಕೀಲಿ ಡೇಟಾ
+      answer_key_data_msg: ಉತ್ತರ ಕೀಲಿ ಪುಟದ HTML ನಮೂದಿಸಿ
+      submit_btn: ಸಲ್ಲಿಸು
+      error_msg: ಸಲ್ಲಿಸಿದ ಡೇಟಾದಲ್ಲಿ ದೋಷ
+      notes:
+        get_html_page: ಪುಟದ HTML ಪಡೆಯಲು
+        on_mobile: ಮೊಬೈಲ್ ನಲ್ಲಿ
+        on_mobile_msg: URL ಅನ್ನು 'ವೀಕ್ಷಣೆ-ಮೂಲ:' ನೊಂದಿಗೆ ಪೂರ್ವಪ್ರತ್ಯಯ ಮಾಡಿ. ಉದಾಹರಣೆಗೆ
+          :- 'https://www.google.com' -> 'ವೀಕ್ಷಣೆ-ಮೂಲ:https://www.google.com'
+        on_computer: ಕಂಪ್ಯೂಟರಿನಲ್ಲಿ
+        on_computer_msg: ಮೌಸ್ ಮೇಲೆ ರೈಟ್ ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು ನಂತರ 'ಪುಟ ಮೂಲವನ್ನು ವೀಕ್ಷಿಸಿ'
+          ಕ್ಲಿಕ್ ಮಾಡಿ.
+        other_notes:
+          - '*ಪ್ರತಿಕ್ರಿಯೆ ಪತ್ರ ಡೇಟಾಗಾಗಿ* ನೀವು ಪ್ರತಿಕ್ರಿಯೆ ಪತ್ರ ಪುಟದ **ಲಿಂಕ್ (URL)**
+            ಅಥವಾ **HTML** ಅನ್ನು ಒದಗಿಸಬಹುದು.'
+          - '*ಉತ್ತರ ಕೀ ಡೇಟಾಗಾಗಿ* ನೀವು ಉತ್ತರ ಕೀ ಪುಟದ **HTML** ಅನ್ನು ಒದಗಿಸಬೇಕು.'
   result:
+    sample_result_msg: ಇದು ಒಂದು ಮಾದರಿ ಫಲಿತಾಂಶವಾಗಿದೆ
     result_tab:
       title: ಫಲಿತಾಂಶ
       summary: ಸಾರಾಂಶ

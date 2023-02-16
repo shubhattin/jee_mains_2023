@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { lekhAH, datt } from '@state/main';
+  import { lekhAH, datt, application_number, sample_result_status } from '@state/main';
   import { scale } from 'svelte/transition';
   import { clsx } from '@tools/clsx';
   import QuestionsTab from './Result/QuestionsTab.svelte';
@@ -12,6 +12,14 @@
 </script>
 
 <div class="mt-4" in:scale>
+  {#if $sample_result_status}
+    <div class="mb-2 font-bold text-amber-700">{$lekhAH.result.sample_result_msg}</div>
+  {:else}
+    <div class="mb-2">
+      <span class="font-bold text-zinc-700">{$lekhAH.home.appl_numb}</span> :
+      <span class="text-blue-700">{$application_number}</span>
+    </div>
+  {/if}
   <div
     class="h-[80vh] w-full overflow-x-hidden overflow-y-scroll rounded-xl border-2 border-gray-700"
   >
