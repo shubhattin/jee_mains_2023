@@ -34,7 +34,7 @@
 <svelte:head>
   <title>{lekh.title}</title>
 </svelte:head>
-<div class="flex h-full w-full flex-col justify-between overflow-y-scroll bg-sky-50">
+<div class="flex h-full w-full flex-col justify-between overflow-y-scroll bg-orange-50">
   <div class="p-2">
     <h1 class="text-center text-2xl font-bold">
       <span class="bg-gradient-to-r from-red-600 to-blue-800 bg-clip-text text-transparent"
