@@ -25,15 +25,12 @@ main:
       notes:
         get_html_page: পেজের এইচটিএমএল পেতে
         on_mobile: মোবাইলে
-        on_mobile_msg: "ইউআরএলটি 'ভিউ-সোর্স:' দিয়ে প্রিফিক্স করুন। উদাহরণস্বরূপ:
-          - 'https://www.google.com' -> 'ভিউ-সোর্স:https://www.google.com'"
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: কম্পিউটারে
-        on_computer_msg: মাউসে ডান ক্লিক করুন এবং তারপরে 'ভিউ পেজ সোর্স' এ ক্লিক করুন।
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*রেসপন্স শীট ডেটার* জন্য আপনি রেসপন্স শীট পৃষ্ঠার **লিঙ্ক (ইউআরএল)** বা
-            **এইচটিএমএল** সরবরাহ করতে পারেন।'
-          - '*উত্তর কী ডেটার জন্য* আপনাকে উত্তর কী পৃষ্ঠার **এইচটিএমএল** সরবরাহ করতে
-            হবে।'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: এটি একটি নমুনা ফলাফল
     result_tab:

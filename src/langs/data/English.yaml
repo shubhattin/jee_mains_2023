@@ -25,16 +25,12 @@ main:
       notes:
         get_html_page: To get HTML of Page
         on_mobile: On Mobile
-        on_mobile_msg: Prefix the URL with 'view-source:'. For
-          example :- 'https://www.google.com' ->
-          'view-source:https://www.google.com'
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: On Computer
-        on_computer_msg: Right click on mouse and then click on
-          'View page source'.
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - For _Response Sheet Data_ you can provide either the **link(URL)** or **HTML** of the Response Sheet
-            Page.
-          - For _Answer Key Data_ you should provide the **HTML** of the Answer Key Page.
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: This is a sample result
     result_tab:

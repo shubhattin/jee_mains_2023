@@ -26,16 +26,12 @@ main:
       notes:
         get_html_page: ਸਫ਼ਾ ਦਾ HTML ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ
         on_mobile: ਮੋਬਾਇਲ ਉੱਤੇ
-        on_mobile_msg: URL ਨੂੰ 'view- source:' ਨਾਲ ਅਗੇਤਰ ਕਰੋ । ਉਦਾਹਰਨ ਲਈ :- 'https://www.google.com'
-          -> 'view-source:https://www.google.com'
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: ਕੰਪਿਊਟਰ ਉੱਤੇ
-        on_computer_msg: ਮਾਊਸ 'ਤੇ ਰਾਈਟ ਕਲਿੱਕ ਕਰੋ ਅਤੇ ਫਿਰ' View page source 'ਤੇ ਕਲਿੱਕ
-          ਕਰੋ।
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*ਰਿਸਪਾਂਸ ਸ਼ੀਟ ਡਾਟਾ* ਲਈ ਤੁਸੀਂ ਰਿਸਪਾਂਸ ਸ਼ੀਟ ਪੇਜ ਦਾ **ਲਿੰਕ (URL)** ਜਾਂ **HTML**
-            ਪ੍ਰਦਾਨ ਕਰ ਸਕਦੇ ਹੋ।'
-          - '*ਉੱਤਰ ਕੁੰਜੀ ਡੇਟਾ ਲਈ ਤੁਹਾਨੂੰ ਉੱਤਰ ਕੁੰਜੀ ਪੇਜ* ਦਾ **ਐਚਟੀਐਮਐਲ** ਪ੍ਰਦਾਨ ਕਰਨਾ
-            ਚਾਹੀਦਾ ਹੈ।'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: ਇਹ ਇੱਕ ਨਮੂਨਾ ਨਤੀਜਾ ਹੈ
     result_tab:

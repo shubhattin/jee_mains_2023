@@ -26,15 +26,12 @@ main:
       notes:
         get_html_page: पृष्ठ के HTML को प्राप्त करने के लिए
         on_mobile: निष्तन्त्री मे
-        on_mobile_msg:
-          URL को 'view-source:' से उपसर्गित करें। उदाहरण के लिए :- 'https://www.google.com'
-          -> 'view-source:https://www.google.com'
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: संगणक मे
-        on_computer_msg: मूषिका पर दक्षिण तोदन करें और 'View page source' को दबाएं।
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - _प्रतिक्रिया पृष्ठ दत्तांश_ के लिए प्रतिक्रिया पृष्ठ के **संचित(URL)** या
-            **HTML** प्रदान करें।
-          - _उत्तर कुंजी दत्तांश_ के लिए उत्तर कुंजी पृष्ठ का **HTML** प्रदान करें।
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: यह एक प्रतिदर्श परिणाम है
     result_tab:

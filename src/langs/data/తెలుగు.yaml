@@ -26,16 +26,12 @@ main:
       notes:
         get_html_page: పేజీ యొక్క HTML పొందడానికి
         on_mobile: మొబైల్ పై
-        on_mobile_msg: URLను 'వ్యూ-సోర్స్:' తో ముందుగా ఫిక్స్ చేయండి. ఉదాహరణకు :-
-          'https://www.google.com' -> 'వ్యూ-సోర్స్:https://www.google.com'
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: కంప్యూటర్ పై
-        on_computer_msg: మౌస్ పై రైట్ క్లిక్ చేసి ఆ తర్వాత 'వ్యూ పేజ్ సోర్స్'పై క్లిక్
-          చేయాలి.
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*ప్రతిస్పందన షీట్ డేటా* కొరకు మీరు ప్రతిస్పందన షీట్ పేజీ యొక్క **లింక్
-            (URL)** లేదా **HTMLను** అందించవచ్చు.'
-          - '*ఆన్సర్ కీ డేటా* కొరకు మీరు ఆన్సర్ కీ పేజీ యొక్క **హెచ్ టిఎమ్ ఎల్** ని
-            అందించాలి.'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: ఇది ఒక నమూనా ఫలితం.
     result_tab:

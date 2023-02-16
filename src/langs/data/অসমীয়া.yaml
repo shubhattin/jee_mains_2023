@@ -26,16 +26,12 @@ main:
       notes:
         get_html_page: পৃষ্ঠাৰ এইচটিএমএল প্ৰাপ্ত কৰিবলৈ
         on_mobile: ম'বাইলত
-        on_mobile_msg:
-          "'দৰ্শন-উৎস'ৰ সৈতে ইউআৰএল উপসৰ্গ কৰক: উদাহৰণ স্বৰূপে :- 'https://www.google.com'
-          -> 'দৰ্শন-উৎস:t////.গুগল.com'"
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: কম্পিউটাৰত
-        on_computer_msg: মাউচত সোঁ ক্লিক কৰক আৰু তাৰ পিছত 'পৃষ্ঠাৰ উৎস দৰ্শন কৰক'ত
-          ক্লিক কৰক।
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*সঁহাৰি পত্ৰিকা ডাটাৰ* বাবে আপুনি সঁহাৰি পত্ৰিকা পৃষ্ঠাৰ **লিংক (ইউআৰএল)**
-            বা **এইচটিএমএল** প্ৰদান কৰিব পাৰে।'
-          - '*উত্তৰ কী ডাটাৰ* বাবে আপুনি উত্তৰ কী পৃষ্ঠাৰ **এইচটিএমএল** প্ৰদান কৰা উচিত।'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: এইটো এটা নমুনা ফলাফল
     result_tab:

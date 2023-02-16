@@ -26,17 +26,12 @@ main:
       notes:
         get_html_page: પાનાંનું HTML મેળવવા માટે
         on_mobile: મોબાઇલ પર
-        on_mobile_msg:
-          "'વ્યુ-સોર્સ:' સાથે URL ને પૂર્વગ કરો. ઉદાહરણ તરીકે :- 'https://www.google.com'
-          -> 'view-source:https://www.google.com'"
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: કમ્પ્યૂટર પર
-        on_computer_msg: માઉસ પર જમણું ક્લિક કરો અને પછી 'જુઓ પૃષ્ઠ સ્રોત' પર ક્લિક
-          કરો.
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*રિસ્પોન્સ શીટના ડેટા* માટે તમે રિસ્પોન્સ શીટ પેજની **લિંક(URL)** અથવા
-            **HTML** પ્રદાન કરી શકો છો.'
-          - '*આન્સર કી ડેટા* માટે તમારે આન્સર કી પૃષ્ઠનું **એચટીએમએલ** પ્રદાન કરવું
-            જોઈએ.'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: આ એક નમૂનાનું પરિણામ છે
     result_tab:

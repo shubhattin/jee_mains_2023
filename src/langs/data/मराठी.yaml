@@ -26,16 +26,12 @@ main:
       notes:
         get_html_page: पेजचे एचटीएमएल मिळविण्यासाठी
         on_mobile: मोबाइल वर
-        on_mobile_msg:
-          यूआरएलला 'दृश्य-स्त्रोत:' सह उपसर्ग करा. उदाहरणार्थ :- 'https://www.google.com'->
-          'व्ह्यू-सोर्स:https://www.google.com'
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: संगणकावर
-        on_computer_msg: माऊसवर राईट क्लिक करा आणि नंतर 'पेज सोर्स पहा' वर क्लिक करा.
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*प्रतिसाद पत्रक डेटासाठी* आपण प्रतिसाद पत्रक पृष्ठाची **लिंक (यूआरएल)**
-            किंवा **एचटीएमएल** प्रदान करू शकता.'
-          - '*उत्तर कुंजी डेटासाठी* आपण उत्तर कुंजी पृष्ठाचे **एचटीएमएल** प्रदान केले
-            पाहिजे.'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: हा एक नमुना निकाल आहे
     result_tab:

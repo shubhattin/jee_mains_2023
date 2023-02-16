@@ -26,15 +26,12 @@ main:
       notes:
         get_html_page: പേജിന്റെ HTML ലഭിക്കുന്നതിന്
         on_mobile: മൊബൈലിൽ
-        on_mobile_msg: "'വ്യൂ-സോഴ്സ്:' ഉപയോഗിച്ച് URL പ്രിഫിക്സ് ചെയ്യുക. ഉദാഹരണത്തിന്
-          :- 'https://www.google.com' -> 'view-source:https://www.google.com'"
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: കമ്പ്യൂട്ടറിൽ
-        on_computer_msg: മൗസിൽ റൈറ്റ് ക്ലിക്ക് ചെയ്യുക, തുടർന്ന് 'പേജ് ഉറവിടം കാണുക'
-          എന്നതിൽ ക്ലിക്കുചെയ്യുക.
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*റെസ്പോൺസ് ഷീറ്റ് ഡാറ്റയ്ക്കായി* നിങ്ങൾക്ക് റെസ്പോൺസ് ഷീറ്റ് പേജിന്റെ **ലിങ്ക്
-            (URL)** അല്ലെങ്കിൽ **HTML** നൽകാം.'
-          - '*ഉത്തര കീ ഡാറ്റയ്ക്കായി* നിങ്ങൾ ഉത്തര കീ പേജിന്റെ **HTML** നൽകണം.'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: ഇതൊരു സാമ്പിൾ ഫലമാണ്
     result_tab:

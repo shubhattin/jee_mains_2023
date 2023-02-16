@@ -25,16 +25,12 @@ main:
       notes:
         get_html_page: பக்கத்தின் HTML பெற
         on_mobile: மொபைலில்
-        on_mobile_msg: "URL ஐ 'பார்வை-மூலத்துடன்: ' என்று முன்னொட்டு. எடுத்துக்காட்டாக
-          :- 'https://www.google.com' -> 'பார்வை-ஆதாரம்:https://www.google.com'"
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: கணினியில்
-        on_computer_msg: சுட்டியில் வலது கிளிக் செய்து, 'பக்க மூலத்தைக் காண்க' என்பதைக்
-          கிளிக் செய்க.
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*மறுமொழி தாள் தரவுக்கு* நீங்கள் மறுமொழி தாள் பக்கத்தின் **இணைப்பு (URL)**
-            அல்லது **HTML** ஐ வழங்கலாம்.'
-          - '*விடைக்குறிப்பு தரவுக்கு* நீங்கள் விடைக்குறிப்பு பக்கத்தின் **HTML** ஐ
-            வழங்க வேண்டும்.'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: இது ஒரு மாதிரி முடிவு
     result_tab:

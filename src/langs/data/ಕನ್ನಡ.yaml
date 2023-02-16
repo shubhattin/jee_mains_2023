@@ -26,15 +26,12 @@ main:
       notes:
         get_html_page: ಪುಟದ HTML ಪಡೆಯಲು
         on_mobile: ಮೊಬೈಲ್ ನಲ್ಲಿ
-        on_mobile_msg: URL ಅನ್ನು 'ವೀಕ್ಷಣೆ-ಮೂಲ:' ನೊಂದಿಗೆ ಪೂರ್ವಪ್ರತ್ಯಯ ಮಾಡಿ. ಉದಾಹರಣೆಗೆ
-          :- 'https://www.google.com' -> 'ವೀಕ್ಷಣೆ-ಮೂಲ:https://www.google.com'
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: ಕಂಪ್ಯೂಟರಿನಲ್ಲಿ
-        on_computer_msg: ಮೌಸ್ ಮೇಲೆ ರೈಟ್ ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು ನಂತರ 'ಪುಟ ಮೂಲವನ್ನು ವೀಕ್ಷಿಸಿ'
-          ಕ್ಲಿಕ್ ಮಾಡಿ.
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*ಪ್ರತಿಕ್ರಿಯೆ ಪತ್ರ ಡೇಟಾಗಾಗಿ* ನೀವು ಪ್ರತಿಕ್ರಿಯೆ ಪತ್ರ ಪುಟದ **ಲಿಂಕ್ (URL)**
-            ಅಥವಾ **HTML** ಅನ್ನು ಒದಗಿಸಬಹುದು.'
-          - '*ಉತ್ತರ ಕೀ ಡೇಟಾಗಾಗಿ* ನೀವು ಉತ್ತರ ಕೀ ಪುಟದ **HTML** ಅನ್ನು ಒದಗಿಸಬೇಕು.'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: ಇದು ಒಂದು ಮಾದರಿ ಫಲಿತಾಂಶವಾಗಿದೆ
     result_tab:

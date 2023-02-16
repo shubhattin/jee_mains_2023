@@ -26,15 +26,12 @@ main:
       notes:
         get_html_page: ପୃଷ୍ଠାର HTML ପ୍ରାପ୍ତ କରିବାକୁ
         on_mobile: ମୋବାଇଲରେ
-        on_mobile_msg: URLକୁ 'ଦୃଶ୍ୟ-ଉତ୍ସ:' ସହିତ ପ୍ରସ୍ତୁତ କରନ୍ତୁ। ଉଦାହରଣ ସ୍ୱରୂପ :-
-          'https://www.google.com' - > 'ଦୃଶ୍ୟ-ଉତ୍ସ:https://www.google.com'
+        on_mobile_msg: (notes.on_mobile_msg)
         on_computer: କମ୍ପ୍ୟୁଟରରେ
-        on_computer_msg: ଡାହାଣ ମାଉସ୍ ଉପରେ କ୍ଲିକ୍ କରନ୍ତୁ ଏବଂ ତା'ପରେ 'ପୃଷ୍ଠା ଉତ୍ସ ଦେଖନ୍ତୁ'
-          ଉପରେ କ୍ଲିକ୍ କରନ୍ତୁ।
+        on_computer_msg: (notes.on_computer_msg)
         other_notes:
-          - '*ପ୍ରତିକ୍ରିୟା ଶୀଟ୍ ଡାଟା* ପାଇଁ ଆପଣ ପ୍ରତିକ୍ରିୟା ଶୀଟ୍ ପୃଷ୍ଠାର **ଲିଙ୍କ୍ (URL)**
-            କିମ୍ବା **HTML** ପ୍ରଦାନ କରିପାରିବେ।'
-          - '*ଉତ୍ତର କୀ ଡାଟା* ପାଇଁ ଆପଣ ଉତ୍ତର କୀ ପୃଷ୍ଠାର **HTML** ପ୍ରଦାନ କରିବା ଉଚିତ୍।'
+          - (notes.other_notes.0)
+          - (notes.other_notes.1)
   result:
     sample_result_msg: ଏହା ଏକ ନମୁନା ଫଳାଫଳ ଅଟେ
     result_tab:
