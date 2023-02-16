@@ -29,12 +29,14 @@ def deta_val(key: str, root="verify", jsn=False):
     if key == "":
         return None
     v = deta.Base(root).get(key)
-    if v == None:
-        v = None
+    if not v:  # If it is 'None'
+        pass
     else:
-        v = v["value"]
-    if jsn:
-        v = json.loads(v)
+        del v["key"]
+        if "value" in v:
+            v = v["value"]
+        if jsn:
+            v = json.loads(v)
     return v
 
 

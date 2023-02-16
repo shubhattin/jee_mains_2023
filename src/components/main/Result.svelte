@@ -21,8 +21,8 @@
       <button
         on:click={() => (mode = 'result')}
         class={clsx(
-          'cursor-button rounded-tl-xl border-r-2 border-r-neutral-500 px-4 text-red-500 transition active:text-black',
-          mode === 'result' ? 'bg-yellow-100' : ''
+          'cursor-button rounded-tl-lg border-r-2 border-r-neutral-500 px-4 text-red-500 transition active:text-black',
+          mode === 'result' ? 'border-2 border-black bg-yellow-100' : ''
         )}
         ><span class="text-black" class:hidden={mode !== 'result'}> • </span>{$lekhAH.result
           .result_tab.title}</button
@@ -30,7 +30,7 @@
         on:click={() => (mode = 'questions')}
         class={clsx(
           'cursor-button border-r-2 border-r-neutral-500 px-4 text-blue-600 transition active:text-black',
-          mode === 'questions' ? 'bg-yellow-100' : ''
+          mode === 'questions' ? 'border-2 border-black bg-yellow-100' : ''
         )}
         ><span class="text-black" class:hidden={mode !== 'questions'}> • </span>{$lekhAH.result
           .questions_tab.title}</button

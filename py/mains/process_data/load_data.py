@@ -5,14 +5,19 @@ from typing import List
 
 OPTIONS = ["A", "B", "C", "D"]
 QUESTION_URL_PREFIX = "https://cdn3.digialm.com"
+QUESTION_COUNT = 90
 
 
 def load_answer_key(filedata: str) -> AnswerKeyType:
     data = AnswerKeyType()
     reader = csv.DictReader(filedata.splitlines())
+    i = 0
     for row in reader:
         data.QuestionID.append(row["QuestionID"])
         data.CorrectAnswerID.append(row["Correct Option(s)/ Answers"])
+        i += 1
+    if i != QUESTION_COUNT:
+        raise Exception("Error in answer_key data")
     return data
 
 
@@ -84,5 +89,6 @@ def load_data(anwer_key_data: str, response_sheet_data: str) -> MainDataType:
                 + QUESTIONS.eq(i).eq(0).eq(0)("img")[0].attrib["src"]
             )
         i += 1
-
+    if i != QUESTION_COUNT:
+        raise Exception("Error in response_data data")
     return data

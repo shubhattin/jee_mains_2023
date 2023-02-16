@@ -10,9 +10,12 @@
 </script>
 
 <div transition:fly class="list-decimal">
-  <div class:hidden={!suggestion_text_shown} class="mt-1 mb-2 ml-3 text-sm text-zinc-500 sm:hidden">
-    {lekh.desktop_mode_better}
-    <button on:click={() => (suggestion_text_shown = false)} class="cursor-button text-[red]">
+  <div
+    class:hidden={!suggestion_text_shown}
+    class="my-1 mx-2 inline-flex justify-between text-center text-xs text-zinc-500 sm:hidden"
+  >
+    <span>{lekh.desktop_mode_better}</span>
+    <button on:click={() => (suggestion_text_shown = false)} class="cursor-button ml-1">
       ❌
     </button>
   </div>
