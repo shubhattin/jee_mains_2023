@@ -3,6 +3,7 @@ node_modules
 .venv
 /build
 /.svelte-kit
+/.space
 /package
 .env
 .env.*

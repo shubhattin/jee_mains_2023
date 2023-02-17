@@ -9,8 +9,11 @@ from .process_data.get_result import get_result
 from kry.datt import deta_val, PROD_ENV, Base
 from pydantic import BaseModel
 import requests
+import os
 
-router = APIRouter(prefix="/api")
+DETA_ENV = os.getenv("DETA_SPACE_APP") == "true"
+
+router = APIRouter(prefix=("/api" if not DETA_ENV else ""))
 
 
 def upadate_result_view_count():

@@ -1,8 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import Response
 from datetime import timedelta
-from kry.datt import DEV_ENV, PROD_ENV
-from kry.plugins import sthaitik_sanchit
+from kry.datt import DEV_ENV
 import mains
 
 APP_NAME = "JEE Mains 2023 Score Calculator"
@@ -38,8 +37,6 @@ async def middleware(req: Request, call_next):
 
 
 app.include_router(mains.router)
-if PROD_ENV:
-    app.mount("/", sthaitik_sanchit(directory="public"), name="static")
 
 if DEV_ENV:
     import uvicorn

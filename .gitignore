@@ -3,6 +3,7 @@
 node_modules
 /build
 /.svelte-kit
+/.space
 /package
 .env
 .env.*
@@ -13,7 +14,7 @@ vite.config.ts.timestamp-*
 */.env
 *__pycache__
 */a.ipynb
-py/o
+py/requirements.txt
 tests/data/question_paper_html.html
 py/.env
 tests/result
@@ -22,3 +23,4 @@ tests/result
 .flaskenv*
 !.env.project
 !.env.vault
+.space
