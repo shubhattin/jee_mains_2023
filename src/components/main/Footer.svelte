@@ -10,7 +10,7 @@
 <footer class="flex justify-center border-t-2 border-t-gray-400 bg-zinc-200 px-2 pt-2 pb-1">
   <div class="flex flex-col justify-center">
     <div>
-      <span class="font-bold text-red-600">
+      <span class="text-sm font-bold text-red-600">
         {lekh.home.made_by}
         <a
           class="text-blue-700"
