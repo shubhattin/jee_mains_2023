@@ -5,7 +5,6 @@
   import { onMount } from 'svelte';
   import LangMetaTags from '@components/tags/LangMetaTags.svelte';
   import Footer from '@components/main/Footer.svelte';
-  import Result from '@components/main/Result.svelte';
   import Login from '@components/main/Login.svelte';
 
   export let data: PageData;
@@ -45,7 +44,9 @@
       {#if $mode === 'main'}
         <Login />
       {:else if $mode === 'result'}
-        <Result />
+        {#await import('@components/main/Result.svelte') then Result}
+          <Result.default />
+        {/await}
       {/if}
     </div>
   </div>
