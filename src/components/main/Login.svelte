@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ResponseDataType } from '@components/main/type';
+  import { API_URL } from '@components/main/type';
   import {
     lekhAH,
     mode as mainMode,
@@ -33,7 +34,7 @@
 
   const fetch_sample_data_result = async () => {
     get_sample_result_loading_status = true;
-    const req = await fetch_post('/api/get_sample_result');
+    const req = await fetch_post(API_URL + '/api/get_sample_result');
     if (!req.ok) {
       get_sample_result_loading_status = false;
       return;
@@ -46,7 +47,7 @@
   const fetch_data_result = async () => {
     if (!dob || dob === '' || !$appl_numb || $appl_numb.toString().length != 12) return;
     get_result_loading_status = true;
-    const req = await fetch_post('/api/get_result', {
+    const req = await fetch_post(API_URL + '/api/get_result', {
       json: {
         ApplicationNumber: $appl_numb.toString(),
         DateOfBirth: dob.split('-').reverse().join('/')
@@ -73,7 +74,7 @@
   const submit_data = async () => {
     if (responseData === '' || answerKey === '' || !dob || dob === '') return;
     submit_data_loading_status = true;
-    const req = await fetch_post('/api/submit_result_data', {
+    const req = await fetch_post(API_URL + '/api/submit_result_data', {
       json: {
         ResponsePageData: responseData,
         AnswerKeyData: answerKey,

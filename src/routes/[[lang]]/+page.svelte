@@ -3,6 +3,7 @@
   import { lekhAH, viewCountData, mode, counted } from '@state/main';
   import { fetch_post } from '@tools/fetch';
   import { onMount } from 'svelte';
+  import { API_URL } from '@components/main/type';
   import LangMetaTags from '@components/tags/LangMetaTags.svelte';
   import Footer from '@components/main/Footer.svelte';
   import Login from '@components/main/Login.svelte';
@@ -15,7 +16,7 @@
 
   onMount(async () => {
     if (import.meta.env.DEV) return;
-    const req = await fetch_post('/api/page_view_count');
+    const req = await fetch_post(API_URL + '/api/page_view_count');
     if (!req.ok) return;
     const {
       page_view_count,

@@ -4,6 +4,8 @@ from datetime import timedelta
 from kry.datt import DEV_ENV, PROD_ENV
 from kry.plugins import sthaitik_sanchit
 import mains
+from fastapi.middleware.cors import CORSMiddleware
+import os
 
 APP_NAME = "JEE Mains 2023 Score Calculator"
 if DEV_ENV:
@@ -11,7 +13,15 @@ if DEV_ENV:
 else:
     app = FastAPI(openapi_url=None, redoc_url=None, title=APP_NAME)
 
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        os.getenv("STATIC_SITE_URL"),
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 CACHE_DURATION = int(timedelta(hours=8).total_seconds())
 
 

@@ -9,6 +9,11 @@ micros:
     primary: true
     public_routes:
       - '/*'
+    presets:
+      env:
+        - name: STATIC_SITE_URL
+          description: URL of the static site hosted on a CDN
+          default: ""
   # - name: Frontend
   #   src: ./
   #   engine: svelte-kit

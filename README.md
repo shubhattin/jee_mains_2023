@@ -1,6 +1,6 @@
 ## JEE Mains 2023 Score Calculator
 
-Link: [https://jeemains2023-1-v9350686.deta.app](https://jeemains2023-1-v9350686.deta.app)
+Link: [https://jeemainsscore2023.netlify.app](https://jeemainsscore2023.netlify.app)
 
 ### **Tech Stack Used**
 
@@ -8,3 +8,5 @@ Link: [https://jeemains2023-1-v9350686.deta.app](https://jeemains2023-1-v9350686
 - **[SvelteKit](https://kit.svelte.dev/)** - Frontend ([Svelte](https://svelte.dev/), [TypeScript](https://www.typescriptlang.org/))
   - **[Tailwind CSS](https://tailwindcss.com/)** - Styling and Design System
 - **_[Deta](https://deta.space/developers)_** - A Free Hosting service to host and deploy our app. Also provides inbuilt support for databases and File Storage.
+
+We are hosting the backend on **deta** and the frontend on **netlify(CDN)**.
