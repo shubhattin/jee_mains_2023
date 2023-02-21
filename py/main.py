@@ -1,7 +1,8 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import Response
 from datetime import timedelta
-from kry.datt import DEV_ENV
+from kry.datt import DEV_ENV, PROD_ENV
+from kry.plugins import sthaitik_sanchit
 import mains
 
 APP_NAME = "JEE Mains 2023 Score Calculator"
@@ -11,7 +12,7 @@ else:
     app = FastAPI(openapi_url=None, redoc_url=None, title=APP_NAME)
 
 
-CACHE_DURATION = int(timedelta(hours=4).total_seconds())
+CACHE_DURATION = int(timedelta(hours=8).total_seconds())
 
 
 @app.middleware("http")
@@ -37,6 +38,9 @@ async def middleware(req: Request, call_next):
 
 
 app.include_router(mains.router)
+
+if PROD_ENV:
+    app.mount("/", sthaitik_sanchit(directory="public"), name="static")
 
 if DEV_ENV:
     import uvicorn

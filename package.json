@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite dev --host",
-    "build": "vite build && partytown copylib build/client/~partytown",
+    "build": "vite build && partytown copylib build/~partytown",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -13,8 +13,8 @@
     "local-test": "serve build"
   },
   "devDependencies": {
-    "@sveltejs/adapter-node": "^1.2.0",
-    "@sveltejs/kit": "1.0.0",
+    "@sveltejs/adapter-static": "^2.0.1",
+    "@sveltejs/kit": "^1.8.3",
     "@types/js-yaml": "^4.0.5",
     "@types/markdown-it": "^12.2.3",
     "autoprefixer": "^10.4.13",

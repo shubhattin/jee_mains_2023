@@ -17,6 +17,7 @@ vite.config.ts.timestamp-*
 py/requirements.txt
 tests/data/question_paper_html.html
 py/.env
+py/public
 tests/result
 
 .env*
