@@ -59,13 +59,7 @@
       $mainMode = 'result';
       $viewCountData[1]++;
     } else if (req.status === 403) {
-      const reason = req.headers.get('x-error');
-      console.log([
-        'reason',
-        reason,
-        reason === 'appl_numb_not_found',
-        reason === 'dob_did_not_match'
-      ]);
+      const reason: string = (await req.json()).detail.error;
       if (reason === 'appl_numb_not_found') {
         get_result_loading_status = false;
         appl_numb_not_found_err_msg = true;

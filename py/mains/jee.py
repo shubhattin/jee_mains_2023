@@ -32,13 +32,13 @@ async def get_result_post(bdy: ResultRequestDate):
 
     if not dt:  # it means the application number is not found
         raise HTTPException(
+            detail={"error": "appl_numb_not_found"},
             status_code=status.HTTP_403_FORBIDDEN,
-            headers={"X-error": "appl_numb_not_found"},
         )
     if dt["DOB"] != bdy.DateOfBirth:
         raise HTTPException(
+            detail={"error": "dob_did_not_match"},
             status_code=status.HTTP_403_FORBIDDEN,
-            headers={"X-error": "dob_did_not_match"},
         )
 
     dt = deta_val(bdy.ApplicationNumber, "data")
@@ -85,10 +85,8 @@ async def submit_result_data(bdy: SubmitRequestData):
             )
         return return_data
     except Exception as e:
-        print(e)
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
-            headers={"X-error": "invalid_data"},
+            detail={"error": "invalid_data"}, status_code=status.HTTP_403_FORBIDDEN
         )
 
 
