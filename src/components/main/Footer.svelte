@@ -4,7 +4,7 @@
   import AiOutlineGithub from 'svelte-icons-pack/ai/AiOutlineGithub';
   import LangChange from '@components/LangChange.svelte';
 
-  let lekh = $lekhAH;
+  $: lekh = $lekhAH;
 </script>
 
 <footer class="flex justify-center border-t-2 border-t-gray-400 bg-zinc-200 px-2 pt-2 pb-1">
