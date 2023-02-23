@@ -8,6 +8,7 @@ from .process_data.load_data import (
 from .process_data.get_result import get_result
 from kry.datt import deta_val, PROD_ENV, Base
 from pydantic import BaseModel
+from datetime import timedelta
 import requests
 
 router = APIRouter(prefix="/api")
@@ -97,13 +98,19 @@ async def get_sample_result():
     return {"data": datt["data"], "result": datt["result"]}
 
 
+# The Page count will be only counted when the page is loaded within 1 hour
+PAGE_COUNT_TIME = int(timedelta(minutes=30).total_seconds())
+
+
 @router.post("/page_view_count")
-def page_view_count():
+def page_view_count(update_count: bool = True):
     # Tracking the number of times the page is viewed
     page_view_count = deta_val("page_view_count", "counts")
-    page_view_count += 1
-    Base("counts").put(page_view_count, "page_view_count")
+    if update_count:
+        page_view_count += 1
+        Base("counts").put(page_view_count, "page_view_count")
     return {
         "page_view_count": page_view_count,
         "result_view_count": deta_val("result_view_count", "counts"),
+        "page_count_time": PAGE_COUNT_TIME,
     }
