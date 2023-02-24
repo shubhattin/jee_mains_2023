@@ -1,10 +1,11 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import Response
+from fastapi.middleware.cors import CORSMiddleware
+from brotli_asgi import BrotliMiddleware
 from datetime import timedelta
 from kry.datt import DEV_ENV, PROD_ENV
 from kry.plugins import sthaitik_sanchit
 import mains
-from fastapi.middleware.cors import CORSMiddleware
 import os
 
 APP_NAME = "JEE Mains 2023 Score Calculator"
@@ -13,6 +14,8 @@ if DEV_ENV:
 else:
     app = FastAPI(openapi_url=None, redoc_url=None, title=APP_NAME)
 
+if DEV_ENV:  # Currently not working in the production(deta)
+    app.add_middleware(BrotliMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[

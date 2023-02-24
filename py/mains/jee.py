@@ -2,7 +2,6 @@ from fastapi import APIRouter, HTTPException, status
 from .process_data.load_data import (
     load_data,
     get_metadata,
-    serialize_Result_JSON,
     QUESTION_URL_PREFIX,
 )
 from .process_data.get_result import get_result
@@ -64,7 +63,7 @@ async def submit_result_data(bdy: SubmitRequestData):
         data = load_data(bdy.AnswerKeyData, bdy.ResponsePageData)
         result = get_result(data)
         upadate_result_view_count()
-        return_data = {"result": result.__dict__, "data": data.__dict__}
+        return_data = {"result": result.dict(), "data": data.dict()}
         if True:  # Caching the data
             meta = get_metadata(bdy.ResponsePageData)
             Base("info").put(
@@ -79,8 +78,8 @@ async def submit_result_data(bdy: SubmitRequestData):
             )
             Base("data").put(
                 {
-                    "result": serialize_Result_JSON(result),
-                    "data": data.__dict__,
+                    "result": result.dict(),
+                    "data": data.dict(),
                 },
                 meta.ApplicationNumber,
             )

@@ -8,6 +8,8 @@ fastapi = "*"
 deta = "*"
 pyquery = "*"
 requests = "*"
+brotli-asgi = "*"
+brotli = "*"
 
 [dev-packages]
 black = "*"

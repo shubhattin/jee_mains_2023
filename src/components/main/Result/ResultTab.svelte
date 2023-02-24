@@ -21,10 +21,10 @@
         <div class="font-bold text-green-900">{lekh.total_score}</div>
       </div>
       <div class="flex flex-col">
-        <div class="text-zinc-800">{result.correct.length + result.incorrect.length}</div>
-        <div class="text-green-800">{result.correct.length}</div>
-        <div class="text-red-800">{result.incorrect.length}</div>
-        <div class="text-blue-800">{result.unattempted.length}</div>
+        <div class="text-zinc-800">{result.correct_count + result.incorrect_count}</div>
+        <div class="text-green-800">{result.correct_count}</div>
+        <div class="text-red-800">{result.incorrect_count}</div>
+        <div class="text-blue-800">{result.unattempted_count}</div>
         <div class="font-bold text-blue-900">{result.score}</div>
       </div>
     </div>
@@ -77,15 +77,30 @@
     <div class="list-disc">
       <li>
         <span class="font-semibold text-green-700">{lekh.correct_ques}</span> :-
-        <span class="text-slate-700">{result.correct.join(', ')}</span>
+        <span class="text-slate-700"
+          >{result.subjects[0].correct
+            .concat(result.subjects[1].correct)
+            .concat(result.subjects[2].correct)
+            .join(', ')}</span
+        >
       </li>
       <li>
         <span class="font-semibold text-red-700">{lekh.incorrect_ques}</span> :-
-        <span class="text-slate-700">{result.incorrect.join(', ')}</span>
+        <span class="text-slate-700"
+          >{result.subjects[0].incorrect
+            .concat(result.subjects[1].incorrect)
+            .concat(result.subjects[2].incorrect)
+            .join(', ')}</span
+        >
       </li>
       <li>
         <span class="font-semibold text-blue-700">{lekh.unattempted_ques}</span> :-
-        <span class="text-slate-700">{result.unattempted.join(', ')}</span>
+        <span class="text-slate-700"
+          >{result.subjects[0].unattempted
+            .concat(result.subjects[1].unattempted)
+            .concat(result.subjects[2].unattempted)
+            .join(', ')}</span
+        >
       </li>
     </div>
   </div>

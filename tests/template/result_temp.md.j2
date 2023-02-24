@@ -2,10 +2,10 @@
 
 | | |
 |:-|:-|
-| Unattempted Questions | {{ result.unattempted|length }}
-| Attempted Questions | {{ result.attempted|length }}
-| Correct Answers | {{ result.correct|length }}
-| Incorrect Answers | {{ result.incorrect|length }}
+| Unattempted Questions | {{ result.unattempted_count }}
+| Attempted Questions | {{ result.correct_count + result.incorrect_count }}
+| Correct Answers | {{ result.correct_count }}
+| Incorrect Answers | {{ result.incorrect_count }}
 | **_Total Score_** | _{{ result.score }}_
 
 ## Subject Wise
@@ -17,9 +17,9 @@
 {% endfor %}
 ## Detailed Data
 
-- _Correct Questions_ :- {{ ", ".join(result.correct) }}
-- _Incorrect Questions_ :- {{ ", ".join(result.incorrect) }}
-- _Unattempted Questions_ :- {{ ", ".join(result.unattempted) }}
+- _Correct Questions_ :- {{ ", ".join(result.subjects[0].correct + result.subjects[1].correct + result.subjects[2].correct) }}
+- _Incorrect Questions_ :- {{ ", ".join(result.subjects[0].incorrect + result.subjects[1].incorrect + result.subjects[2].incorrect) }}
+- _Unattempted Questions_ :- {{ ", ".join(result.subjects[0].unattempted + result.subjects[1].unattempted + result.subjects[2].unattempted) }}
 
 |   | GivenAnswer | CorrectAnswer | QuestionID | CorrectAnswerID | GivenAnswerID |
 | - | - | - | - | - | - |

@@ -28,7 +28,11 @@ class ResultMetrics(BaseModel):
     score: int = 0
 
 
-class ResultDataType(ResultMetrics):
+class ResultDataType(BaseModel):
+    score: int = 0
+    unattempted_count: int = 0
+    correct_count: int = 0
+    incorrect_count: int = 0
     subjects: "List[ResultMetrics]" = [
         ResultMetrics(),  # Physics
         ResultMetrics(),  # Chemistry

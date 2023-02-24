@@ -108,11 +108,3 @@ def get_metadata(response_sheet_data: str) -> InfoDataType:
         return data
     except Exception:
         raise Exception("Not able to parse metadata")
-
-
-def serialize_Result_JSON(result: ResultDataType) -> Dict:
-    result_copy = deepcopy(result)
-    result_copy.subjects = []
-    for x in result.subjects:
-        result_copy.subjects.append(x.__dict__)
-    return result_copy.__dict__

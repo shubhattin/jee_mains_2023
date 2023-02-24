@@ -19,7 +19,11 @@ export interface ResponseDataType {
     Option3IMG: string[];
     Option4IMG: string[];
   };
-  result: resultTyoe & {
+  result: {
+    score: number;
+    unattempted_count: number;
+    correct_count: number;
+    incorrect_count: number;
     subjects: resultTyoe[];
   };
 }
