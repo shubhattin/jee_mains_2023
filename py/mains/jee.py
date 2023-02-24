@@ -102,9 +102,9 @@ PAGE_COUNT_TIME = int(timedelta(minutes=30).total_seconds())
 
 
 @router.post("/page_view_count")
-def page_view_count(update_count: bool = True):
+async def page_view_count(update_count: bool = True):
     # Tracking the number of times the page is viewed
-    page_view_count = deta_val("page_view_count", "counts")
+    page_view_count: int = deta_val("page_view_count", "counts")
     if update_count:
         page_view_count += 1
         Base("counts").put(page_view_count, "page_view_count")
