@@ -13,7 +13,7 @@ import requests
 router = APIRouter(prefix="/api")
 
 
-def upadate_result_view_count():
+def update_result_view_count():
     if PROD_ENV:
         # Tracking the number of times the result is viewed
         result_count = deta_val("result_view_count", "counts")
@@ -43,7 +43,7 @@ async def get_result_post(bdy: ResultRequestDate):
 
     dt = deta_val(bdy.ApplicationNumber, "data")
 
-    upadate_result_view_count()
+    update_result_view_count()
 
     return {"result": dt["result"], "data": dt["data"]}
 
@@ -62,7 +62,6 @@ async def submit_result_data(bdy: SubmitRequestData):
             bdy.ResponsePageData = requests.get(URL).text
         data = load_data(bdy.AnswerKeyData, bdy.ResponsePageData)
         result = get_result(data)
-        upadate_result_view_count()
         return_data = {"result": result.dict(), "data": data.dict()}
         if True:  # Caching the data
             meta = get_metadata(bdy.ResponsePageData)
@@ -83,6 +82,7 @@ async def submit_result_data(bdy: SubmitRequestData):
                 },
                 meta.ApplicationNumber,
             )
+        update_result_view_count()
         return return_data
     except Exception as e:
         raise HTTPException(
