@@ -8,6 +8,6 @@
     - {{ opt_nm }}. ![]({{ data["Option{0}IMG".format(opt_numb)][i] }} "Question {{ i + 1 }} - Option {{ opt_nm }}")
     {%- endfor %}
 {%- endif %}
-    - Correct Answer : {{ data["CorrectAnswer"][i] }}
+    - Correct Answer : {{ data.CorrectAnswer[i] }}
     - Marked Answer : {{ data["GivenAnswer"][i] }}
 {% endfor -%}

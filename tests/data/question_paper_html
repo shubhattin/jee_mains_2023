@@ -535,6 +535,32 @@
                         2023</strong></span></div>
             <div>
                 <table border="1" cellpadding="1" cellspacing="1" style="width:500px">
+                    <tbody>
+                        <tr>
+                            <td>Application No</td>
+                            <td>123456789012</td>
+                        </tr>
+                        <tr>
+                            <td>Candidate Name</td>
+                            <td>Some Candinate's Name</td>
+                        </tr>
+                        <tr>
+                            <td>Roll No</td>
+                            <td>UP12345678</td>
+                        </tr>
+                        <tr>
+                            <td>Test Date</td>
+                            <td>24/01/2023</td>
+                        </tr>
+                        <tr>
+                            <td>Test Time</td>
+                            <td>9:00 AM - 12:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Subject</td>
+                            <td>B TECH</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="clear"></div>

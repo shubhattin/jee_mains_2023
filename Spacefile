@@ -4,7 +4,6 @@ app_name: 'jeemains2023'
 micros:
   - name: Backend
     src: ./py
-    path: api # /api
     engine: python3.9
     primary: true
     public_routes:
