@@ -9,8 +9,8 @@
 
 <footer class="flex justify-center border-t-2 border-t-gray-400 bg-zinc-200 px-2 pt-2 pb-1">
   <div class="flex flex-col justify-center">
-    <div>
-      <span class="text-sm font-bold text-red-600">
+    <div class="mb-1 flex justify-center">
+      <!-- <span class="text-sm font-bold text-red-600">
         {lekh.home.made_by}
         <a
           class="text-blue-700"
@@ -18,10 +18,10 @@
           href="https://www.github.com/shubhattin"
           target="_blank">@shubhattin</a
         >
-      </span>
+      </span> -->
       <a
         href="https://github.com/shubhattin/jee_mains_2023_score_calculator"
-        class="ml-2"
+        class="ml-2 active:text-blue-800"
         rel="noreferrer"
         target="_blank"
       >

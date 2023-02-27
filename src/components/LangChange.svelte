@@ -28,7 +28,7 @@
 
 <Select
   value={val}
-  className="px-1 font-bold bg-black text-white border-2 border-lime-500 outline-none rounded-lg"
+  className="px-1 text-sm font-bold bg-black text-white border-2 border-lime-500 outline-none rounded-lg"
   onChange={() => change_locale($val)}
   {options}
 />

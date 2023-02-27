@@ -96,11 +96,6 @@ async def get_sample_result():
     datt = deta_val("sample_result", "data")
     return {"data": datt["data"], "result": datt["result"]}
 
-
-# The Page count will be only counted when the page is loaded within 1 hour
-PAGE_COUNT_TIME = int(timedelta(minutes=30).total_seconds())
-
-
 @router.post("/page_view_count")
 async def page_view_count(update_count: bool = True):
     # Tracking the number of times the page is viewed
@@ -111,5 +106,4 @@ async def page_view_count(update_count: bool = True):
     return {
         "page_view_count": page_view_count,
         "result_view_count": deta_val("result_view_count", "counts"),
-        "page_count_time": PAGE_COUNT_TIME,
     }

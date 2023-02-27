@@ -4,7 +4,6 @@
   import { fetch_post } from '@tools/fetch';
   import { onMount } from 'svelte';
   import { API_URL } from '@components/main/type';
-  import { getTime } from '@tools/cookies';
   import LangMetaTags from '@components/tags/LangMetaTags.svelte';
   import Footer from '@components/main/Footer.svelte';
   import Login from '@components/main/Login.svelte';
@@ -18,25 +17,20 @@
   onMount(async () => {
     if (import.meta.env.DEV) return;
     let update_count = true;
-    if (localStorage.getItem('page_count_time')) {
-      const page_count_time = parseInt(localStorage.getItem('page_count_time')!);
-      // count will be updated only if page_count_time is greater than current time
-      // so that we dont update count on every page load
-      if (getTime() - page_count_time < 0) update_count = false;
+    if (sessionStorage.getItem('page_counted') === 'true') {
+      update_count = false;
     }
     const req = await fetch_post(API_URL + `/api/page_view_count?update_count=${update_count}`);
     if (!req.ok) return;
     const {
       page_view_count,
-      result_view_count,
-      page_count_time
+      result_view_count
     }: {
       page_view_count: number;
       result_view_count: number;
-      page_count_time: number;
     } = await req.json();
     $viewCountData = [page_view_count, result_view_count];
-    localStorage.setItem('page_count_time', (getTime() + page_count_time).toString());
+    sessionStorage.setItem('page_counted', 'true');
     $counted = true;
   });
 </script>
