@@ -12,7 +12,6 @@ brotli-asgi = "*"
 brotli = "*"
 
 [dev-packages]
-black = "*"
 markdown = "*"
 jinja2 = "*"
 ipykernel = "*"
@@ -24,6 +23,7 @@ markdownify = "*"
 requests = "*"
 datamodel-code-generator = "*"
 toml = "*"
+black = "*"
 
 [requires]
 python_version = "3"

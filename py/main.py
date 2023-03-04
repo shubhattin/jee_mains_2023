@@ -34,18 +34,14 @@ async def middleware(req: Request, call_next):
     if req.method == "GET":
         head.update(
             {
-                "X-Robots-Tag": "index",
+                "X-Robots-Tag": "noindex",
                 "X-Frame-Options": "deny",
-                "Cache-Control": "No-Store"
-                if DEV_ENV
-                else f"public, max-age={CACHE_DURATION}",
+                "Cache-Control": "No-Store" if DEV_ENV else "public, max-age=0",
+                # Using the E-tag caching instead
             }
         )
     for x in head:
         res.headers[x] = head[x]
-    for x in ["X-Powered-By"]:
-        if x in res.headers:
-            del res.headers[x]
     return res
 
 

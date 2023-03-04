@@ -11,6 +11,13 @@ micros:
       - npm run build
     serve: build
     primary: true
+    presets:
+      env:
+        - name: VITE_API_URL
+          default: ''
+        - name: VITE_GOOGLE_ANALYTICS_ID
+        - name: VITE_SITE_URL
+          description: URL of the static site hosted on a CDN
   - name: Backend
     src: ./py
     engine: python3.9
@@ -21,4 +28,4 @@ micros:
       env:
         - name: STATIC_SITE_URL
           description: URL of the static site hosted on a CDN
-          default: ""
+          default: ''
