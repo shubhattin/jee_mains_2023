@@ -9,4 +9,4 @@ Link: [https://jeemainsscore2023.netlify.app](https://jeemainsscore2023.netlify.
   - **[Tailwind CSS](https://tailwindcss.com/)** - Styling and Design System
 - **_[Deta](https://deta.space/developers)_** - A Free Hosting service to host and deploy our app. Also provides inbuilt support for databases and File Storage.
 
-We are hosting the backend on **deta** and the frontend on **netlify(CDN)**.
+We are hosting the backend on **deta** and the frontend on **[netlify](https://www.netlify.com)(CDN)**.
