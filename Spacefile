@@ -2,18 +2,23 @@ v: 0
 icon: ./Icon.png
 app_name: 'jeemains2023'
 micros:
+  - name: StaticFiles
+    src: ./
+    engine: static
+    public_routes:
+      - '/*'
+    commands:
+      - npm run build
+    serve: build
+    primary: true
   - name: Backend
     src: ./py
     engine: python3.9
-    primary: true
     public_routes:
-      - '/*'
+      - '/api/*'
+    path: api
     presets:
       env:
         - name: STATIC_SITE_URL
           description: URL of the static site hosted on a CDN
           default: ""
-  # - name: Frontend
-  #   src: ./
-  #   engine: svelte-kit
-  # we would be hosting our frontend app as static files through the backend(FastAPI)

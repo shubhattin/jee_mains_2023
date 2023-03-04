@@ -1,12 +1,10 @@
 .venv/
 node_modules/
 build/
-static/
 .svelte-kit/
 .env.me
 
 */.env
 *__pycache__
 */a.ipynb
-src/
 tests/

@@ -3,8 +3,7 @@ from fastapi.responses import Response
 from fastapi.middleware.cors import CORSMiddleware
 from brotli_asgi import BrotliMiddleware
 from datetime import timedelta
-from kry.datt import DEV_ENV, PROD_ENV
-from kry.plugins import sthaitik_sanchit
+from kry.datt import DEV_ENV
 import mains
 import os
 
@@ -52,8 +51,9 @@ async def middleware(req: Request, call_next):
 
 app.include_router(mains.router)
 
-if PROD_ENV:
-    app.mount("/", sthaitik_sanchit(directory="public"), name="static")
+# from kry.plugins import sthaitik_sanchit
+# if PROD_ENV:
+#     app.mount("/", sthaitik_sanchit(directory="public"), name="static")
 
 if DEV_ENV:
     import uvicorn
