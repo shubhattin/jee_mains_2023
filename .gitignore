@@ -14,10 +14,10 @@ vite.config.ts.timestamp-*
 */.env
 *__pycache__
 */a.ipynb
+api/main
+api/api
 py/requirements.txt
 tests/data/question_paper_html.html
-py/.env
-py/public
 tests/result
 
 .env*
