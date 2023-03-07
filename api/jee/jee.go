@@ -45,7 +45,7 @@ func get_result_route(c *gin.Context) {
 	var bdy get_result_route_body_type
 	c.BindJSON(&bdy)
 
-	var user_info types.UserInfoType
+	var user_info types.MetaDataType
 	user_info_fetched := kry.Deta.Base("info").Get(bdy.ApplicationNumber, &user_info)
 
 	if user_info_fetched != nil {

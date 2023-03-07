@@ -1,12 +1,6 @@
 from pydantic import BaseModel
 from typing import List
 
-
-class AnswerKeyType(BaseModel):
-    QuestionID: List[str] = [None] * 90
-    CorrectAnswerID: List[str] = [None] * 90
-
-
 class MainDataType(BaseModel):
     GivenAnswer: List[str] = [None] * 90
     CorrectAnswer: List[str] = [None] * 90
@@ -39,8 +33,7 @@ class ResultDataType(BaseModel):
         ResultMetrics(),  # Mathematics
     ]
 
-
-class InfoDataType(BaseModel):
+class MetaDataType(BaseModel):
     ApplicationNumber: str = None
     Name: str = None
     RollNumber: str = None

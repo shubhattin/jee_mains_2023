@@ -8,9 +8,9 @@ type ResultMetricsType struct {
 }
 type ResultDataType struct {
 	Score            int16                `json:"score"`
-	UnattemptedCount int16                `json:"unattempted_count"`
-	CorrectCount     int16                `json:"correct_count"`
-	IncorrectCount   int16                `json:"incorrect_count"`
+	UnattemptedCount uint8                `json:"unattempted_count"`
+	CorrectCount     uint8                `json:"correct_count"`
+	IncorrectCount   uint8                `json:"incorrect_count"`
 	Subjects         [3]ResultMetricsType `json:"subjects"`
 }
 type MainDataType struct {
@@ -27,7 +27,7 @@ type MainDataType struct {
 	Option4IMG      [90]string `json:"Option4IMG"`
 }
 
-type UserInfoType struct {
+type MetaDataType struct {
 	ApplicationNumber string `json:"key"`
 	Name              string `json:"name"`
 	RollNumber        string `json:"roll"`

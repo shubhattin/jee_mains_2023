@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+deta = "*"
+pydantic = "*"
+markdown = "*"
+jinja2 = "*"
+ipykernel = "*"
+shubhlipi = "*"
+python-dotenv = "*"
+black = "*"
+
+[requires]
+python_version = "3"
+# python_version >= 3.7

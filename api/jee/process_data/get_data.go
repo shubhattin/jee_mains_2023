@@ -3,11 +3,11 @@ package jee
 import (
 	"encoding/csv"
 	"encoding/json"
-	"fmt"
-	"github.com/PuerkitoBio/goquery"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/PuerkitoBio/goquery"
 )
 
 func load_answer_key(filedata string) AnswerKeyType {
@@ -53,8 +53,9 @@ var OPTIONS = [4]string{"A", "B", "C", "D"}
 
 const QUESTION_COUNT = 90
 
+var TEST_MODE = len(os.Args) > 1 && os.Args[1] == "test"
+
 func GetData(answer_key_data string, response_sheet_data string) MainDataType {
-	TEST_MODE := len(os.Args) > 1 && os.Args[1] == "test"
 	if TEST_MODE {
 		fl_answer, _ := os.ReadFile("../tests/data/answer_key.csv")
 		answer_key_data = string(fl_answer)
@@ -131,10 +132,59 @@ func GetData(answer_key_data string, response_sheet_data string) MainDataType {
 
 	if TEST_MODE {
 		json_data, _ := json.MarshalIndent(data, "", "  ")
-		fmt.Println("Saving data.json")
-		// Creating out directory if it doesn't exist
+
+		// Clearing the output directory
+		os.RemoveAll("./jee/process_data/out")
 		os.MkdirAll("./jee/process_data/out", 0755)
+
 		os.WriteFile("./jee/process_data/out/data.json", json_data, 0644)
+	}
+	return data
+}
+
+func GetResultData(data *MainDataType) ResultDataType {
+	var dt ResultDataType
+	for i := 0; i < QUESTION_COUNT; i++ {
+		if data.GivenAnswer[i] == "--" {
+			dt.UnattemptedCount++
+			dt.Subjects[i/30].Unattempted = append(dt.Subjects[i/30].Unattempted, strconv.Itoa(i+1))
+		} else if data.GivenAnswer[i] == data.CorrectAnswer[i] {
+			dt.CorrectCount++
+			dt.Subjects[i/30].Correct = append(dt.Subjects[i/30].Correct, strconv.Itoa(i+1))
+		} else {
+			dt.IncorrectCount++
+			dt.Subjects[i/30].Incorrect = append(dt.Subjects[i/30].Incorrect, strconv.Itoa(i+1))
+		}
+	}
+	for i := 0; i < 3; i++ {
+		dt.Subjects[i].Score = int16(len(dt.Subjects[i].Correct)*4 - len(dt.Subjects[i].Incorrect))
+	}
+	dt.Score = int16(4*dt.CorrectCount - 1*dt.IncorrectCount)
+	if TEST_MODE {
+		json_data, _ := json.MarshalIndent(dt, "", "  ")
+		os.WriteFile("./jee/process_data/out/result.json", json_data, 0644)
+	}
+	return dt
+}
+func GetMetaData(response_sheet_data string) MetaDataType {
+	var data MetaDataType
+	if TEST_MODE {
+		fl_resp, _ := os.ReadFile("../tests/data/question_paper_html")
+		response_sheet_data = string(fl_resp)
+	}
+	HTML_DATA, _ := goquery.NewDocumentFromReader(strings.NewReader(response_sheet_data))
+	HTML_QUERY := HTML_DATA.Find(".main-info-pnl table tbody tr")
+
+	data.ApplicationNumber = HTML_QUERY.Eq(0).Find("td").Eq(1).Text()
+	data.Name = HTML_QUERY.Eq(1).Find("td").Eq(1).Text()
+	data.RollNumber = HTML_QUERY.Eq(2).Find("td").Eq(1).Text()
+	data.DateOfExam = HTML_QUERY.Eq(3).Find("td").Eq(1).Text()
+	data.TimeOfExam = HTML_QUERY.Eq(4).Find("td").Eq(1).Text()
+	// Date of Birth is not present in the response sheet
+	// So it will be blank ""
+	if TEST_MODE {
+		json_data, _ := json.MarshalIndent(data, "", "  ")
+		os.WriteFile("./jee/process_data/out/meta_data.json", json_data, 0644)
 	}
 	return data
 }
