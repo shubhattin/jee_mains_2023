@@ -2,17 +2,23 @@ package main
 
 import (
 	"api/jee"
+	process_data "api/jee/process_data"
 	"api/kry"
 	"os"
 	"time"
 
 	"github.com/gin-contrib/cors"
+	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"github.com/gin-contrib/gzip"
 )
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "test" {
+		process_data.GetData("", "")
+		return
+	}
+
 	// loading .env file
 	godotenv.Load()
 
@@ -53,8 +59,8 @@ func set_cors_headers(router *gin.Engine) {
 
 	config := cors.New(cors.Config{
 		AllowOrigins:     origins,
-		AllowMethods:     []string{"POST"},
-		AllowHeaders:     []string{"Origin"},
+		AllowMethods:     []string{"POST", "OPTIONS", "PUT"},
+		AllowHeaders:     []string{"*"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 		MaxAge:           MAX_AGE,
