@@ -11,9 +11,15 @@ micros:
       - npm run build
     serve: build
     primary: true
-  - name: Backend
-    src: ./py
-    engine: python3.9
+  - name: APIBackend
+    src: ./api
+    engine: custom
+    commands:
+      - go get
+      - go build -o main -tags=jsoniter main.go
+    run: APP_ENV=production ./main
+    include:
+      - main
     public_routes:
       - '/api/*'
     path: api
@@ -21,4 +27,3 @@ micros:
       env:
         - name: STATIC_SITE_URL
           description: URL of the static site hosted on a CDN
-          default: ''

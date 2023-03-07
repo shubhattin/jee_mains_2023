@@ -10,12 +10,14 @@ import (
 )
 
 func getDetaKey() string {
-	enc_env, env_found := os.LookupEnv("DETA_KEY")
-	if !env_found {
+	enc_env, env_found := os.LookupEnv("DETA_PROJECT_KEY")
+	if env_found {
+		return enc_env
+	} else {
 		enc_env = os.Getenv("DETA_KEY")
+		env, _ := base64.StdEncoding.DecodeString(enc_env)
+		return string(env[:])
 	}
-	env, _ := base64.StdEncoding.DecodeString(enc_env)
-	return string(env[:])
 }
 
 type DetaStruct struct {
@@ -43,3 +45,15 @@ func (ref *DetaStruct) Drive(drive_name string) *drive.Drive {
 }
 
 var Deta DetaStruct
+
+type KeyValuePairInt struct {
+	Key   string `json:"key"`
+	Value int    `json:"value"`
+}
+
+var PROD_ENV = os.Getenv("APP_ENV") == "production"
+var DEV_ENV = !PROD_ENV
+
+type ErrorInfoType struct {
+	Error string `json:"error"`
+}
