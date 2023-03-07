@@ -19,3 +19,5 @@ pnpm-lock.yaml
 static/404.html
 
 tests/result/
+tests/data/question_paper_html.html
+api/jee/process_data/out/

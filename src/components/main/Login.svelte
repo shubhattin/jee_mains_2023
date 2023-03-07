@@ -82,7 +82,10 @@
       }
     });
     if (req.status === 200) {
-      const resp: ResponseDataType = await req.json();
+      const resp: ResponseDataType & {
+        key: string;
+      } = await req.json();
+      $appl_numb = resp.key;
       $datt = resp;
       $mainMode = 'result';
       $viewCountData[1]++;

@@ -7,21 +7,32 @@ import (
 	"strconv"
 	"strings"
 
+	"errors"
+
 	"github.com/PuerkitoBio/goquery"
 )
 
-func load_answer_key(filedata string) AnswerKeyType {
+var QUESTION_URL_PREFIX = "https://cdn3.digialm.com"
+var OPTIONS = [4]string{"A", "B", "C", "D"}
+
+const QUESTION_COUNT = 90
+
+func load_answer_key(filedata string) (AnswerKeyType, error) {
 	var data AnswerKeyType
 	csvLines, _ := csv.NewReader(strings.NewReader(filedata)).ReadAll()
+	var cnt uint8 = 0
 	for i, line := range csvLines {
 		if i == 0 {
 			continue
 		}
 		data.QuestionID[i-1] = line[0]
 		data.CorrectAnswerID[i-1] = line[1]
+		cnt++
 	}
-
-	return data
+	if cnt != QUESTION_COUNT {
+		return data, errors.New("invalid_answer_key")
+	}
+	return data, nil
 }
 
 func findIndex(arr []string, val string) int {
@@ -48,25 +59,26 @@ func normalize_double_dash(str string) string {
 	return str
 }
 
-var QUESTION_URL_PREFIX = "https://cdn3.digialm.com"
-var OPTIONS = [4]string{"A", "B", "C", "D"}
-
-const QUESTION_COUNT = 90
-
 var TEST_MODE = len(os.Args) > 1 && os.Args[1] == "test"
 
-func GetData(answer_key_data string, response_sheet_data string) MainDataType {
+func GetData(answer_key_data string, response_sheet_data string) (MainDataType, error) {
 	if TEST_MODE {
 		fl_answer, _ := os.ReadFile("../tests/data/answer_key.csv")
 		answer_key_data = string(fl_answer)
 		fl_resp, _ := os.ReadFile("../tests/data/question_paper_html")
 		response_sheet_data = string(fl_resp)
 	}
-	ANSWER_KEY := load_answer_key(answer_key_data)
+	ANSWER_KEY, err := load_answer_key(answer_key_data)
 	var data MainDataType
+	if err != nil {
+		return data, errors.New("invalid_answer_key")
+	}
 	HTML_DATA, _ := goquery.NewDocumentFromReader(strings.NewReader(response_sheet_data))
 	ANSWERS := HTML_DATA.Find("td.rw table.menu-tbl")
 	QUESTIONS := HTML_DATA.Find("td.rw table.questionRowTbl")
+	if QUESTIONS.Length() != ANSWERS.Length() {
+		return data, errors.New("invalid_response_sheet")
+	}
 	ANSWERS.Each(func(i int, tbl *goquery.Selection) {
 		// Question Type
 		typ := tbl.Find("tr").Eq(0).Find("td").Eq(1).Text()
@@ -120,7 +132,7 @@ func GetData(answer_key_data string, response_sheet_data string) MainDataType {
 		data.GivenAnswerID[i] = awns_id
 		data.GivenAnswer[i] = given_ans
 		if typ == "MCQ" {
-			data.Type[i] = "MCQ"
+			data.Type[i] = typ
 		} else {
 			data.Type[i] = "NUM"
 		}
@@ -139,10 +151,10 @@ func GetData(answer_key_data string, response_sheet_data string) MainDataType {
 
 		os.WriteFile("./jee/process_data/out/data.json", json_data, 0644)
 	}
-	return data
+	return data, nil
 }
 
-func GetResultData(data *MainDataType) ResultDataType {
+func GetResult(data *MainDataType) ResultDataType {
 	var dt ResultDataType
 	for i := 0; i < QUESTION_COUNT; i++ {
 		if data.GivenAnswer[i] == "--" {
@@ -166,7 +178,7 @@ func GetResultData(data *MainDataType) ResultDataType {
 	}
 	return dt
 }
-func GetMetaData(response_sheet_data string) MetaDataType {
+func GetMetaData(response_sheet_data string) (MetaDataType, error) {
 	var data MetaDataType
 	if TEST_MODE {
 		fl_resp, _ := os.ReadFile("../tests/data/question_paper_html")
@@ -174,6 +186,9 @@ func GetMetaData(response_sheet_data string) MetaDataType {
 	}
 	HTML_DATA, _ := goquery.NewDocumentFromReader(strings.NewReader(response_sheet_data))
 	HTML_QUERY := HTML_DATA.Find(".main-info-pnl table tbody tr")
+	if HTML_QUERY.Length() == 0 {
+		return data, errors.New("metadata_not_found")
+	}
 
 	data.ApplicationNumber = HTML_QUERY.Eq(0).Find("td").Eq(1).Text()
 	data.Name = HTML_QUERY.Eq(1).Find("td").Eq(1).Text()
@@ -186,5 +201,5 @@ func GetMetaData(response_sheet_data string) MetaDataType {
 		json_data, _ := json.MarshalIndent(data, "", "  ")
 		os.WriteFile("./jee/process_data/out/meta_data.json", json_data, 0644)
 	}
-	return data
+	return data, nil
 }

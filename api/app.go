@@ -15,9 +15,9 @@ import (
 
 func main() {
 	if len(os.Args) > 1 && os.Args[1] == "test" {
-		data := process_data.GetData("", "")
+		data, _ := process_data.GetData("", "")
 		process_data.GetMetaData("")
-		process_data.GetResultData(&data)
+		process_data.GetResult(&data)
 		return
 	}
 
@@ -41,7 +41,7 @@ func main() {
 	if kry.DEV_ENV && !IS_PORT {
 		app.Run(":3428")
 		// use nodemon to restart the server on file change
-		// nodemon --exec go run main.go --signal SIGTERM
+		// nodemon --exec go run app.go --signal SIGTERM
 	} else if IS_PORT {
 		app.Run(":" + PORT)
 	} else {

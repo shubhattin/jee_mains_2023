@@ -16,10 +16,10 @@ micros:
     engine: custom
     commands:
       - go get
-      - go build -o main -tags=jsoniter main.go
-    run: APP_ENV=production ./main
+      - go build -o main.out -tags=jsoniter app.go
+    run: APP_ENV=production ./main.out
     include:
-      - main
+      - main.out
     public_routes:
       - '/api/*'
     path: api

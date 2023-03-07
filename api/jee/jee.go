@@ -17,9 +17,10 @@ func GetRoutes(mainRouter *gin.Engine) {
 	}
 	router := mainRouter.Group(url_prefix)
 
-	router.POST("/page_view_count", route_page_view_count)
+	router.POST("/get_result", route_get_result)
 	router.POST("/get_sample_result", route_get_sample_result)
-	router.POST("/get_result", get_result_route)
+	router.POST("/submit_result_data", route_sumbit_result_data)
+	router.POST("/page_view_count", route_page_view_count)
 }
 
 func update_result_view_count() {
@@ -40,8 +41,14 @@ type result_response_type struct {
 	Result types.ResultDataType `json:"result"`
 	Data   types.MainDataType   `json:"data"`
 }
+type result_response_type_with_key struct {
+	// This type is used to store the result in the database
+	ApplicationNumber string               `json:"key"`
+	Result            types.ResultDataType `json:"result"`
+	Data              types.MainDataType   `json:"data"`
+}
 
-func get_result_route(c *gin.Context) {
+func route_get_result(c *gin.Context) {
 	var bdy get_result_route_body_type
 	c.BindJSON(&bdy)
 
@@ -82,6 +89,58 @@ func route_get_sample_result(c *gin.Context) {
 	c.JSON(200, &data)
 }
 
+type submit_result_data_route_body_type struct {
+	ResponsePageData string `json:"ResponsePageData"`
+	AnswerKeyData    string `json:"AnswerKeyData"`
+	DateOfBirth      string `json:"DateOfBirth"`
+}
+
+func route_sumbit_result_data(c *gin.Context) {
+	var bdy submit_result_data_route_body_type
+	c.BindJSON(&bdy)
+
+	data, err := types.GetData(bdy.AnswerKeyData, bdy.ResponsePageData)
+	if err != nil {
+		c.JSON(403, gin.H{
+			"detail": &kry.ErrorInfoType{
+				Error: "invalid_data",
+			},
+		})
+		return
+	}
+	result := types.GetResult(&data)
+	// storing the result in the database
+	meta_data, err := types.GetMetaData(bdy.ResponsePageData)
+	if err != nil {
+		c.JSON(403, gin.H{
+			"detail": &kry.ErrorInfoType{
+				Error: "invalid_data",
+			},
+		})
+	}
+	return_data := &result_response_type_with_key{
+		ApplicationNumber: meta_data.ApplicationNumber,
+		Result:            result,
+		Data:              data,
+	}
+	{
+		// storing the result in the database
+		kry.Deta.Base("info").Put(
+			&types.MetaDataType{
+				ApplicationNumber: meta_data.ApplicationNumber,
+				DOB:               bdy.DateOfBirth,
+				Name:              meta_data.Name,
+				RollNumber:        meta_data.RollNumber,
+				DateOfExam:        meta_data.DateOfExam,
+				TimeOfExam:        meta_data.TimeOfExam,
+			},
+		)
+		kry.Deta.Base("data").Put(&return_data)
+	}
+	update_result_view_count()
+
+	c.JSON(200, &return_data)
+}
 func route_page_view_count(c *gin.Context) {
 	counts_base := kry.Deta.Base("counts")
 	var update bool = c.DefaultQuery("update_count", "true") == "true"
