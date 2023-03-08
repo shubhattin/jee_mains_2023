@@ -15,6 +15,7 @@ vite.config.ts.timestamp-*
 *__pycache__
 */a.ipynb
 api/main.out
+api/tmp
 tests/data/question_paper_html.html
 tests/result
 

@@ -61,7 +61,7 @@ func normalize_double_dash(str string) string {
 
 var TEST_MODE = len(os.Args) > 1 && os.Args[1] == "test"
 
-func GetData(answer_key_data string, response_sheet_data string) (MainDataType, error) {
+func GetData(answer_key_data, response_sheet_data string) (MainDataType, error) {
 	if TEST_MODE {
 		fl_answer, _ := os.ReadFile("../tests/data/answer_key.csv")
 		answer_key_data = string(fl_answer)

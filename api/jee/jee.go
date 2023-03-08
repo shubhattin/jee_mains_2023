@@ -4,7 +4,11 @@ import (
 	types "api/jee/process_data"
 	"api/kry"
 	"fmt"
+	"io"
+	"net/http"
 	"os"
+	"regexp"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -99,6 +103,22 @@ func route_sumbit_result_data(c *gin.Context) {
 	var bdy submit_result_data_route_body_type
 	c.BindJSON(&bdy)
 
+	{
+		// detecting if the ResponsePageData is a URL
+		if len(bdy.ResponsePageData) < 300 {
+			line_count := strings.Count(bdy.ResponsePageData, "\n")
+			if line_count <= 1 {
+				URL_RE_PATTERN := regexp.MustCompile(`(http|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])`)
+				match_url := URL_RE_PATTERN.FindString(bdy.ResponsePageData)
+				if match_url != "" {
+					page_data, err := make_GET_request(match_url)
+					if err == nil {
+						bdy.ResponsePageData = page_data
+					}
+				}
+			}
+		}
+	}
 	data, err := types.GetData(bdy.AnswerKeyData, bdy.ResponsePageData)
 	if err != nil {
 		c.JSON(403, gin.H{
@@ -141,6 +161,22 @@ func route_sumbit_result_data(c *gin.Context) {
 
 	c.JSON(200, &return_data)
 }
+
+func make_GET_request(URL string) (string, error) {
+	req, _ := http.NewRequest("GET", URL, nil)
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return "", err
+	}
+	body, err := io.ReadAll(resp.Body)
+	defer resp.Body.Close()
+	if err != nil {
+		return "", err
+	}
+	return string(body), nil
+}
+
 func route_page_view_count(c *gin.Context) {
 	counts_base := kry.Deta.Base("counts")
 	var update bool = c.DefaultQuery("update_count", "true") == "true"

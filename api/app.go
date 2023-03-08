@@ -40,8 +40,6 @@ func main() {
 	PORT, IS_PORT := os.LookupEnv("PORT")
 	if kry.DEV_ENV && !IS_PORT {
 		app.Run(":3428")
-		// use nodemon to restart the server on file change
-		// nodemon --exec go run app.go --signal SIGTERM
 	} else if IS_PORT {
 		app.Run(":" + PORT)
 	} else {

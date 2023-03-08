@@ -9,7 +9,12 @@ import (
 	"github.com/deta/deta-go/service/drive"
 )
 
-func getDetaKey() string {
+type DetaStruct struct {
+	deta_ref    *deta.Deta
+	deta_loaded bool
+}
+
+func (ref *DetaStruct) getDetaKey() string {
 	enc_env, env_found := os.LookupEnv("DETA_PROJECT_KEY")
 	if env_found {
 		return enc_env
@@ -19,14 +24,8 @@ func getDetaKey() string {
 		return string(env[:])
 	}
 }
-
-type DetaStruct struct {
-	deta_ref    *deta.Deta
-	deta_loaded bool
-}
-
 func (ref *DetaStruct) init() {
-	ref.deta_ref, _ = deta.New(deta.WithProjectKey(getDetaKey()))
+	ref.deta_ref, _ = deta.New(deta.WithProjectKey(ref.getDetaKey()))
 	ref.deta_loaded = true
 }
 func (ref *DetaStruct) Base(base_name string) *base.Base {
