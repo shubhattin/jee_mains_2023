@@ -105,7 +105,7 @@ func route_sumbit_result_data(c *gin.Context) {
 	// detecting if the ResponsePageData is a URL
 	if len(bdy.ResponsePageData) < 300 {
 		line_count := strings.Count(bdy.ResponsePageData, "\n")
-		if line_count <= 1 {
+		if line_count <= 3 {
 			URL_RE_PATTERN := regexp.MustCompile(`(http|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])`)
 			match_url := URL_RE_PATTERN.FindString(bdy.ResponsePageData)
 			if match_url != "" {
@@ -138,9 +138,10 @@ func route_sumbit_result_data(c *gin.Context) {
 	if err != nil {
 		c.JSON(403, gin.H{
 			"detail": &kry.ErrorInfoType{
-				Error: "invalid_data",
+				Error: "invalid_meta_data",
 			},
 		})
+		return
 	}
 	return_data := &result_response_type_with_key{
 		ApplicationNumber: meta_data.ApplicationNumber,
@@ -149,20 +150,11 @@ func route_sumbit_result_data(c *gin.Context) {
 	}
 	{
 		// storing the result in the database
-		kry.Deta.Base("info").Put(
-			&types.MetaDataType{
-				ApplicationNumber: meta_data.ApplicationNumber,
-				DOB:               bdy.DateOfBirth,
-				Name:              meta_data.Name,
-				RollNumber:        meta_data.RollNumber,
-				DateOfExam:        meta_data.DateOfExam,
-				TimeOfExam:        meta_data.TimeOfExam,
-			},
-		)
+		meta_data.DOB = bdy.DateOfBirth
+		kry.Deta.Base("info").Put(&meta_data)
 		kry.Deta.Base("data").Put(&return_data)
+		update_result_view_count()
 	}
-	update_result_view_count()
-
 	c.JSON(200, &return_data)
 }
 

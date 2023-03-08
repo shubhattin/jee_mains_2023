@@ -1,6 +1,6 @@
 v: 0
 icon: ./Icon.png
-app_name: 'jeemains2023'
+app_name: 'JeeMains2023'
 micros:
   - name: StaticFiles
     src: ./
@@ -16,10 +16,10 @@ micros:
     engine: custom
     commands:
       - go get
-      - go build -o main.out -tags=jsoniter app.go
-    run: APP_ENV=production ./main.out
+      - go build -o main -tags=jsoniter app.go
+    run: APP_ENV=production ./main
     include:
-      - main.out
+      - main
     public_routes:
       - '/api/*'
     path: api
