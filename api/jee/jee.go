@@ -114,6 +114,13 @@ func route_sumbit_result_data(c *gin.Context) {
 					page_data, err := make_GET_request(match_url)
 					if err == nil {
 						bdy.ResponsePageData = page_data
+					} else {
+						c.JSON(403, gin.H{
+							"detail": &kry.ErrorInfoType{
+								Error: "invalid_response_sheet_url",
+							},
+						})
+						return
 					}
 				}
 			}

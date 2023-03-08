@@ -76,7 +76,7 @@ func GetData(answer_key_data, response_sheet_data string) (MainDataType, error) 
 	HTML_DATA, _ := goquery.NewDocumentFromReader(strings.NewReader(response_sheet_data))
 	ANSWERS := HTML_DATA.Find("td.rw table.menu-tbl")
 	QUESTIONS := HTML_DATA.Find("td.rw table.questionRowTbl")
-	if QUESTIONS.Length() != ANSWERS.Length() {
+	if !(ANSWERS.Length() == QUESTION_COUNT && QUESTIONS.Length() == QUESTION_COUNT) {
 		return data, errors.New("invalid_response_sheet")
 	}
 	ANSWERS.Each(func(i int, tbl *goquery.Selection) {
