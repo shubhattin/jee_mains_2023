@@ -102,26 +102,23 @@ type submit_result_data_route_body_type struct {
 func route_sumbit_result_data(c *gin.Context) {
 	var bdy submit_result_data_route_body_type
 	c.BindJSON(&bdy)
-
-	{
-		// detecting if the ResponsePageData is a URL
-		if len(bdy.ResponsePageData) < 300 {
-			line_count := strings.Count(bdy.ResponsePageData, "\n")
-			if line_count <= 1 {
-				URL_RE_PATTERN := regexp.MustCompile(`(http|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])`)
-				match_url := URL_RE_PATTERN.FindString(bdy.ResponsePageData)
-				if match_url != "" {
-					page_data, err := make_GET_request(match_url)
-					if err == nil {
-						bdy.ResponsePageData = page_data
-					} else {
-						c.JSON(403, gin.H{
-							"detail": &kry.ErrorInfoType{
-								Error: "invalid_response_sheet_url",
-							},
-						})
-						return
-					}
+	// detecting if the ResponsePageData is a URL
+	if len(bdy.ResponsePageData) < 300 {
+		line_count := strings.Count(bdy.ResponsePageData, "\n")
+		if line_count <= 1 {
+			URL_RE_PATTERN := regexp.MustCompile(`(http|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])`)
+			match_url := URL_RE_PATTERN.FindString(bdy.ResponsePageData)
+			if match_url != "" {
+				page_data, err := make_GET_request(match_url)
+				if err == nil {
+					bdy.ResponsePageData = page_data
+				} else {
+					c.JSON(403, gin.H{
+						"detail": &kry.ErrorInfoType{
+							Error: "invalid_response_sheet_url",
+						},
+					})
+					return
 				}
 			}
 		}
