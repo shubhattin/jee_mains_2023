@@ -245,7 +245,7 @@
           rows="3"
           bind:value={responseData}
           placeholder={lekh.data_page.response_page_data_msg}
-          cols="60"
+          cols="40"
         />
       </div>
       <div class="mt-1">
@@ -259,7 +259,7 @@
           rows="5"
           bind:value={answerKey}
           placeholder={lekh.data_page.answer_key_data_msg}
-          cols="60"
+          cols="40"
         />
       </div>
       {#if submit_data_parse_error_status}
