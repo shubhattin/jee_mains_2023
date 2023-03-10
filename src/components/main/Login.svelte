@@ -239,13 +239,13 @@
         <textarea
           spellcheck="false"
           class={clsx(
-            'resize-none rounded-lg border-2 border-blue-700 p-1 text-sm text-black outline-none transition-all focus:ring-2 focus:ring-blue-400',
+            'max-w-full resize-none rounded-lg border-2 border-blue-700 p-1 text-sm text-black outline-none transition-all focus:ring-2 focus:ring-blue-400',
             sumbit_page_fields_empty_status.responseData ? 'border-4 border-red-400' : ''
           )}
           rows="3"
           bind:value={responseData}
           placeholder={lekh.data_page.response_page_data_msg}
-          cols="40"
+          cols="60"
         />
       </div>
       <div class="mt-1">
@@ -253,13 +253,13 @@
         <textarea
           spellcheck="false"
           class={clsx(
-            'resize-none rounded-lg border-2 border-purple-700 p-1 text-sm text-black outline-none transition-all focus:ring-2 focus:ring-purple-400',
+            'max-w-full resize-none rounded-lg border-2 border-purple-700 p-1 text-sm text-black outline-none transition-all focus:ring-2 focus:ring-purple-400',
             sumbit_page_fields_empty_status.answerKey ? 'border-4 border-red-400' : ''
           )}
-          rows="5"
+          rows="4"
           bind:value={answerKey}
           placeholder={lekh.data_page.answer_key_data_msg}
-          cols="40"
+          cols="60"
         />
       </div>
       {#if submit_data_parse_error_status}
