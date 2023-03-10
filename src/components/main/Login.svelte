@@ -24,7 +24,31 @@
   let submit_data_parse_error_status = false;
   let responseData = '';
   let answerKey = '';
-  let mode: 'login' | 'extra' = 'login';
+  let mode: 'login' | 'submit_data' = 'login';
+
+  let login_page_empty_status = {
+    appl_numb: false,
+    dob: false
+  };
+  let sumbit_page_fields_empty_status = {
+    responseData: false,
+    answerKey: false,
+    dob: false
+  };
+
+  $: {
+    if (login_page_empty_status.appl_numb)
+      setTimeout(() => (login_page_empty_status.appl_numb = false), 600);
+    if (login_page_empty_status.dob) setTimeout(() => (login_page_empty_status.dob = false), 600);
+  }
+  $: {
+    if (sumbit_page_fields_empty_status.responseData)
+      setTimeout(() => (sumbit_page_fields_empty_status.responseData = false), 700);
+    if (sumbit_page_fields_empty_status.answerKey)
+      setTimeout(() => (sumbit_page_fields_empty_status.answerKey = false), 700);
+    if (sumbit_page_fields_empty_status.dob)
+      setTimeout(() => (sumbit_page_fields_empty_status.dob = false), 700);
+  }
 
   $: {
     if (dob_wrong_error) setTimeout(() => (dob_wrong_error = false), 700);
@@ -45,7 +69,18 @@
     $mainMode = 'result';
   };
   const fetch_data_result = async () => {
-    if (!dob || dob === '' || !$appl_numb || $appl_numb.toString().length != 12) return;
+    if (true) {
+      let return_status = false;
+      if (!$appl_numb || $appl_numb.toString().length != 12) {
+        login_page_empty_status.appl_numb = true;
+        return_status = true;
+      }
+      if (!dob || dob === '') {
+        login_page_empty_status.dob = true;
+        return_status = true;
+      }
+      if (return_status) return;
+    }
     get_result_loading_status = true;
     const req = await fetch_post(API_URL + '/api/get_result', {
       json: {
@@ -63,7 +98,7 @@
       if (reason === 'appl_numb_not_found') {
         get_result_loading_status = false;
         appl_numb_not_found_err_msg = true;
-        mode = 'extra';
+        mode = 'submit_data';
       } else if (reason === 'dob_did_not_match') {
         dob = '';
         dob_wrong_error = true;
@@ -72,7 +107,22 @@
     }
   };
   const submit_data = async () => {
-    if (responseData === '' || answerKey === '' || !dob || dob === '') return;
+    if (true) {
+      let return_status = false;
+      if (!responseData || responseData === '') {
+        sumbit_page_fields_empty_status.responseData = true;
+        return_status = true;
+      }
+      if (!answerKey || answerKey === '') {
+        sumbit_page_fields_empty_status.answerKey = true;
+        return_status = true;
+      }
+      if (!dob || dob === '') {
+        sumbit_page_fields_empty_status.dob = true;
+        return_status = true;
+      }
+      if (return_status) return;
+    }
     submit_data_loading_status = true;
     const req = await fetch_post(API_URL + '/api/submit_result_data', {
       json: {
@@ -106,7 +156,8 @@
           placeholder={lekh.appl_numb}
           class={clsx(
             'block w-44 rounded-md border-2 px-1 outline-none transition-all duration-200 focus:ring-2',
-            'border-blue-800 ring-green-500 placeholder:text-zinc-400'
+            'border-blue-800 ring-green-500 placeholder:text-zinc-400',
+            login_page_empty_status.appl_numb ? 'border-4 border-red-400' : ''
           )}
         />
         {#if $appl_numb && $appl_numb.toString().length != 12}
@@ -120,7 +171,8 @@
           class={clsx(
             'mb-1 block w-44 rounded-md border-2 px-1 outline-none transition-all duration-200',
             'border-blue-800 placeholder:text-zinc-400 focus:ring-2 focus:ring-green-500',
-            dob_wrong_error ? 'border-4 border-red-600' : ''
+            dob_wrong_error ? 'border-4 border-red-600' : '',
+            login_page_empty_status.dob ? 'border-4 border-red-400' : ''
           )}
         />
         {#if dob == ''}
@@ -142,7 +194,7 @@
         </button>
         <button
           class="cursor-button ml-16 rounded-xl border-2 border-blue-700 px-1 text-sm text-zinc-500"
-          on:click={() => (mode = 'extra')}>{lekh.get_data_result}</button
+          on:click={() => (mode = 'submit_data')}>{lekh.get_data_result}</button
         >
       </div>
     </div>
@@ -159,7 +211,7 @@
       {/if}
       {lekh.get_sample_result}
     </button>
-  {:else if mode === 'extra'}
+  {:else if mode === 'submit_data'}
     <div in:slide>
       {#if appl_numb_not_found_err_msg}
         <div class="text-red-700">
@@ -174,7 +226,8 @@
           class={clsx(
             'mb-1 block w-44 rounded-md border-2 px-1 outline-none transition-all duration-200',
             'border-blue-800 placeholder:text-zinc-400 focus:ring-2 focus:ring-green-500',
-            dob_wrong_error ? 'border-4 border-red-600' : ''
+            dob_wrong_error ? 'border-4 border-red-600' : '',
+            sumbit_page_fields_empty_status.dob ? 'border-4 border-red-400' : ''
           )}
         />
         {#if dob == ''}
@@ -185,22 +238,28 @@
         <div class="text-lg font-bold text-amber-800">{lekh.data_page.response_page_data}</div>
         <textarea
           spellcheck="false"
-          class="resize-none rounded-lg border-2 border-blue-700 p-1 text-sm text-black outline-none transition focus:ring-2 focus:ring-blue-400"
+          class={clsx(
+            'resize-none rounded-lg border-2 border-blue-700 p-1 text-sm text-black outline-none transition-all focus:ring-2 focus:ring-blue-400',
+            sumbit_page_fields_empty_status.responseData ? 'border-4 border-red-400' : ''
+          )}
           rows="3"
           bind:value={responseData}
           placeholder={lekh.data_page.response_page_data_msg}
-          cols="40"
+          cols="60"
         />
       </div>
       <div class="mt-1">
         <div class="text-lg font-bold text-yellow-800">{lekh.data_page.answer_key_data}</div>
         <textarea
           spellcheck="false"
-          class="resize-none rounded-lg border-2 border-purple-700 p-1 text-sm text-black outline-none transition focus:ring-2 focus:ring-purple-400"
+          class={clsx(
+            'resize-none rounded-lg border-2 border-purple-700 p-1 text-sm text-black outline-none transition-all focus:ring-2 focus:ring-purple-400',
+            sumbit_page_fields_empty_status.answerKey ? 'border-4 border-red-400' : ''
+          )}
           rows="5"
           bind:value={answerKey}
           placeholder={lekh.data_page.answer_key_data_msg}
-          cols="40"
+          cols="60"
         />
       </div>
       {#if submit_data_parse_error_status}
