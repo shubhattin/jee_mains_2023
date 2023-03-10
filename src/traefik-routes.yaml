@@ -3,15 +3,15 @@ http:
     sveltekit-main: # Svelte Kit for Handling Frontend
       service: sveltekit
       rule: PathPrefix(`/`)
-    fastapi-main: # FastAPI to handle backend part
-      service: fast-api
+    fiber-main: # Fiber to handle backend part
+      service: fiber
       rule: PathPrefix(`/api`)
   services:
     sveltekit:
       loadBalancer:
         servers:
           - url: http://localhost:3427
-    fast-api:
+    fiber:
       loadBalancer:
         servers:
           - url: http://localhost:3428

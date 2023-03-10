@@ -16,7 +16,7 @@ micros:
     engine: custom
     commands:
       - go get
-      - go build -o main -tags=jsoniter app.go
+      - go build -o main app.go
     run: APP_ENV=production ./main
     include:
       - main

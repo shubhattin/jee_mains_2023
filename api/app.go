@@ -7,9 +7,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/gin-contrib/cors"
-	"github.com/gin-contrib/gzip"
-	"github.com/gin-gonic/gin"
+	"github.com/goccy/go-json"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/compress"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 )
 
@@ -24,46 +25,39 @@ func main() {
 	// loading .env file
 	godotenv.Load()
 
-	if kry.PROD_ENV {
-		gin.SetMode(gin.ReleaseMode)
-	} else {
-		gin.SetMode(gin.DebugMode)
-	}
+	app := fiber.New(fiber.Config{
+		Prefork:       true,
+		CaseSensitive: true,
+		StrictRouting: true,
+		JSONEncoder:   json.Marshal,
+		JSONDecoder:   json.Unmarshal,
+		AppName:       "JEE Mains 2023 Score Calculator",
+	})
 
-	app := gin.Default()
 	set_cors_headers(app)
 
-	app.Use(gzip.Gzip(gzip.DefaultCompression))
+	app.Use(compress.New(compress.Config{
+		Level: compress.LevelBestSpeed, // 1
+	}))
 
 	jee.GetRoutes(app)
 
 	PORT, IS_PORT := os.LookupEnv("PORT")
 	if kry.DEV_ENV && !IS_PORT {
-		app.Run(":3428")
+		app.Listen(":3428")
 	} else if IS_PORT {
-		app.Run(":" + PORT)
+		app.Listen(":" + PORT)
 	} else {
-		app.Run(":8080")
+		app.Listen(":8080")
 	}
 }
 
-func set_cors_headers(router *gin.Engine) {
+func set_cors_headers(app *fiber.App) {
 	MAX_AGE := 24 * time.Hour
 
-	origins := []string{"http://localhost"}
-	STATIC_SITE_URL, IS_STATIC_SITE_URL := os.LookupEnv("STATIC_SITE_URL")
-	// Allow CORS for static site
-	if IS_STATIC_SITE_URL {
-		origins = append(origins, STATIC_SITE_URL)
-	}
-
-	config := cors.New(cors.Config{
-		AllowOrigins:     origins,
-		AllowMethods:     []string{"POST", "OPTIONS", "PUT"},
-		AllowHeaders:     []string{"*"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-		MaxAge:           MAX_AGE,
-	})
-	router.Use(config)
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: os.Getenv("STATIC_SITE_URL"),
+		AllowHeaders: "*",
+		MaxAge:       int(MAX_AGE.Seconds()),
+	}))
 }

@@ -1,1 +1,2 @@
-github.com/ugorji/go v1.2.7 h1:qYhyWUUd6WbiM+C6JZAUkIJt/1WrjzNHY9+KCIjVqTo=
+github.com/deta/deta-go v1.0.0 h1:vg94dg2t7ChYhs8DEn4oXLzLAGGafgCSClHfMYrVFvY=
+golang.org/x/sys v0.6.0 h1:MVltZSvRTcU2ljQOhs94SXPftV6DCNnZViHeQps87pQ=
