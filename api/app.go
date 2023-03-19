@@ -22,8 +22,10 @@ func main() {
 		return
 	}
 
-	// loading .env file
-	godotenv.Load()
+	if kry.DEV_ENV {
+		// loading .env file
+		godotenv.Load()
+	}
 
 	app := fiber.New(fiber.Config{
 		Prefork:       true,

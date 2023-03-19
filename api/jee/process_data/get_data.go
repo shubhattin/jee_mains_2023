@@ -1,8 +1,8 @@
 package jee
 
 import (
+	"api/kry"
 	"encoding/csv"
-	"encoding/json"
 	"os"
 	"strconv"
 	"strings"
@@ -10,6 +10,7 @@ import (
 	"errors"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/goccy/go-json"
 )
 
 var QUESTION_URL_PREFIX = "https://cdn3.digialm.com"
@@ -59,7 +60,7 @@ func normalize_double_dash(str string) string {
 	return str
 }
 
-var TEST_MODE = len(os.Args) > 1 && os.Args[1] == "test"
+var TEST_MODE = kry.DEV_ENV && len(os.Args) > 1 && os.Args[1] == "test"
 
 func GetData(answer_key_data, response_sheet_data string) (MainDataType, error) {
 	if TEST_MODE {
