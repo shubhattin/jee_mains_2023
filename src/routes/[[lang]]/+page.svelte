@@ -9,6 +9,7 @@
   import LoginPage from '@components/main/Login/Login.svelte';
   import SubmitData from '@components/main/Login/SubmitData.svelte';
   import { mode as modeLoginPage } from '@components/main/Login/store';
+  import Result from '@components/main/Result.svelte';
 
   export let data: PageData;
 
@@ -58,9 +59,7 @@
           {/if}
         </div>
       {:else if $mode === 'result'}
-        {#await import('@components/main/Result.svelte') then Result}
-          <Result.default />
-        {/await}
+        <Result />
       {/if}
     </div>
   </div>
