@@ -6,7 +6,9 @@
   import { API_URL } from '@components/main/type';
   import LangMetaTags from '@components/tags/LangMetaTags.svelte';
   import Footer from '@components/main/Footer.svelte';
-  import Login from '@components/main/Login.svelte';
+  import LoginPage from '@components/main/Login/Login.svelte';
+  import SubmitData from '@components/main/Login/SubmitData.svelte';
+  import { mode as modeLoginPage } from '@components/main/Login/store';
 
   export let data: PageData;
 
@@ -48,7 +50,13 @@
     </h1>
     <div>
       {#if $mode === 'main'}
-        <Login />
+        <div class="my-4">
+          {#if $modeLoginPage === 'login'}
+            <LoginPage />
+          {:else if $modeLoginPage === 'submit_data'}
+            <SubmitData />
+          {/if}
+        </div>
       {:else if $mode === 'result'}
         {#await import('@components/main/Result.svelte') then Result}
           <Result.default />
