@@ -38,6 +38,7 @@
   "type": "module",
   "dependencies": {
     "@builder.io/partytown": "^0.7.5",
+    "@fontsource/roboto": "^4.5.8",
     "svelte-icons-pack": "^2.0.0"
   }
 }
