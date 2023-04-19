@@ -45,9 +45,9 @@ main:
       subject_wise:
         title: Subject Wise
         subjects:
-          - Ph
-          - Chemistry
           - Mathematics
+          - Physics
+          - Chemistry
         table:
           subject: Subject
           correct: Correct
