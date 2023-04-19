@@ -23,7 +23,6 @@ Also the Response Sheet provided only has Question's image and ID and options' i
 
 This tool tries to simplify this task by automating things and **bringing Questins, their Answers', thier IDs' and thier actual Image Questions and Answers together**.
 
-> **_Note :- This app currently might not work with the new released JEE2023 Session 2 Answer Key. Some changes obviously have to be made. It will take atleast 2 hours for me to Update this to work properly._**
 
 ## How exactly will my result look like
 

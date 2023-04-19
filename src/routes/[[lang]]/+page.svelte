@@ -49,10 +49,6 @@
         >{lekh.title}</span
       >
     </h1>
-    <div class="text-red-600">
-      This app is not yet ready to view result of <span class="font-bold text-black">Session 2</span
-      >
-    </div>
     <div>
       {#if $mode === 'main'}
         <div class="my-4">

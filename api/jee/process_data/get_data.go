@@ -2,7 +2,6 @@ package jee
 
 import (
 	"api/kry"
-	"encoding/csv"
 	"os"
 	"strconv"
 	"strings"
@@ -20,19 +19,19 @@ const QUESTION_COUNT = 90
 
 func load_answer_key(filedata string) (AnswerKeyType, error) {
 	var data AnswerKeyType
-	csvLines, _ := csv.NewReader(strings.NewReader(filedata)).ReadAll()
-	var cnt uint8 = 0
-	for i, line := range csvLines {
-		if i == 0 {
-			continue
-		}
-		data.QuestionID[i-1] = line[0]
-		data.CorrectAnswerID[i-1] = line[1]
-		cnt++
-	}
-	if cnt != QUESTION_COUNT {
+	HTML_DATA, _ := goquery.NewDocumentFromReader(strings.NewReader(filedata))
+	DATA := HTML_DATA.Find("#ctl00_LoginContent_grAnswerKey>tbody>tr")
+	if DATA.Length()-1 != QUESTION_COUNT {
 		return data, errors.New("invalid_answer_key")
 	}
+	DATA.Each(func(i int, tr *goquery.Selection) {
+		if i == 0 {
+			// Skip the first row as it is the header
+			return
+		}
+		data.QuestionID[i-1] = tr.Find("td>span").Eq(1).Text()
+		data.CorrectAnswerID[i-1] = tr.Find("td>span").Eq(2).Text()
+	})
 	return data, nil
 }
 
@@ -64,7 +63,7 @@ var TEST_MODE = kry.DEV_ENV && len(os.Args) > 1 && os.Args[1] == "test"
 
 func GetData(answer_key_data, response_sheet_data string) (MainDataType, error) {
 	if TEST_MODE {
-		fl_answer, _ := os.ReadFile("../tests/data/answer_key.csv")
+		fl_answer, _ := os.ReadFile("../tests/data/answer_key_html")
 		answer_key_data = string(fl_answer)
 		fl_resp, _ := os.ReadFile("../tests/data/question_paper_html")
 		response_sheet_data = string(fl_resp)
