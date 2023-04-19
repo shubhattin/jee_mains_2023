@@ -45,7 +45,7 @@ main:
       subject_wise:
         title: Subject Wise
         subjects:
-          - Physics
+          - Ph
           - Chemistry
           - Mathematics
         table:

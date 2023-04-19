@@ -170,6 +170,15 @@ func GetResult(data *MainDataType) ResultDataType {
 	}
 	for i := 0; i < 3; i++ {
 		dt.Subjects[i].Score = int16(len(dt.Subjects[i].Correct)*4 - len(dt.Subjects[i].Incorrect))
+		if len(dt.Subjects[i].Incorrect) == 0 {
+			dt.Subjects[i].Incorrect = make([]string, 0)
+		}
+		if len(dt.Subjects[i].Correct) == 0 {
+			dt.Subjects[i].Correct = make([]string, 0)
+		}
+		if len(dt.Subjects[i].Unattempted) == 0 {
+			dt.Subjects[i].Unattempted = make([]string, 0)
+		}
 	}
 	dt.Score = int16(4*dt.CorrectCount - 1*dt.IncorrectCount)
 	if TEST_MODE {
