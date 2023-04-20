@@ -187,13 +187,16 @@ func GetResult(data *MainDataType) ResultDataType {
 	}
 	return dt
 }
-func GetMetaData(response_sheet_data string) (MetaDataType, error) {
+func GetMetaData(response_sheet_data string, answer_key_data string) (MetaDataType, error) {
 	var data MetaDataType
 	if TEST_MODE {
 		fl_resp, _ := os.ReadFile("../tests/data/question_paper_html")
 		response_sheet_data = string(fl_resp)
+		fl_answ, _ := os.ReadFile("../tests/data/answer_key_html")
+		answer_key_data = string(fl_answ)
 	}
 	HTML_DATA, _ := goquery.NewDocumentFromReader(strings.NewReader(response_sheet_data))
+	ANSWER_KEY_HTML, _ := goquery.NewDocumentFromReader(strings.NewReader(answer_key_data))
 	HTML_QUERY := HTML_DATA.Find(".main-info-pnl table tbody tr")
 	if HTML_QUERY.Length() == 0 {
 		return data, errors.New("metadata_not_found")
@@ -204,8 +207,8 @@ func GetMetaData(response_sheet_data string) (MetaDataType, error) {
 	data.RollNumber = HTML_QUERY.Eq(2).Find("td").Eq(1).Text()
 	data.DateOfExam = HTML_QUERY.Eq(3).Find("td").Eq(1).Text()
 	data.TimeOfExam = HTML_QUERY.Eq(4).Find("td").Eq(1).Text()
-	// Date of Birth is not present in the response sheet
-	// So it will be blank ""
+	data.DOB = ANSWER_KEY_HTML.Find("#ctl00_LoginContent_lblDob").Text()
+	data.DOB = strings.ReplaceAll(data.DOB, "-", "/")
 	if TEST_MODE {
 		json_data, _ := json.MarshalIndent(data, "", "  ")
 		os.WriteFile("./jee/process_data/out/meta_data.json", json_data, 0644)

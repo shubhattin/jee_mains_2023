@@ -15,27 +15,22 @@
   import { appl_numb_not_found_err_msg } from '@components/main/Login/store';
 
   $: lekh = $lekhAH.home;
-  let dob: string;
   let sumbit_loading_status = false;
-  let dob_wrong_error = false;
   let parse_error_status = false;
   let responseData = '';
   let answerKey = '';
 
   let empty_status = {
     responseData: false,
-    answerKey: false,
-    dob: false
+    answerKey: false
   };
 
   $: {
     if (empty_status.responseData) setTimeout(() => (empty_status.responseData = false), 700);
     if (empty_status.answerKey) setTimeout(() => (empty_status.answerKey = false), 700);
-    if (empty_status.dob) setTimeout(() => (empty_status.dob = false), 700);
   }
 
   $: {
-    if (dob_wrong_error) setTimeout(() => (dob_wrong_error = false), 700);
     if (parse_error_status) setTimeout(() => (parse_error_status = false), 4800);
   }
 
@@ -50,18 +45,13 @@
         empty_status.answerKey = true;
         return_status = true;
       }
-      if (!dob || dob === '') {
-        empty_status.dob = true;
-        return_status = true;
-      }
       if (return_status) return;
     }
     sumbit_loading_status = true;
     const req = await fetch_post(API_URL + '/api/submit_result_data', {
       json: {
         ResponsePageData: responseData,
-        AnswerKeyData: answerKey,
-        DateOfBirth: dob.split('-').reverse().join('/')
+        AnswerKeyData: answerKey
       }
     });
     if (req.status === 200) {
@@ -85,22 +75,6 @@
       ⚠️ {lekh.data_page.first_time_info}
     </div>
   {/if}
-  <div class="mb-2">
-    <div class="text-lg font-bold text-amber-800">{lekh.DOB}</div>
-    <input
-      type="date"
-      bind:value={dob}
-      class={clsx(
-        'mb-1 block w-44 rounded-md border-2 px-1 outline-none transition-all duration-200',
-        'border-blue-800 placeholder:text-zinc-400 focus:ring-2 focus:ring-green-500',
-        dob_wrong_error ? 'border-4 border-red-600' : '',
-        empty_status.dob ? 'border-4 border-red-400' : ''
-      )}
-    />
-    {#if dob == ''}
-      <div class="mt-1 text-sm text-red-500">{lekh.verify.dob_verify}</div>
-    {/if}
-  </div>
   <div>
     <div class="text-lg font-bold text-amber-800">{lekh.data_page.response_page_data}</div>
     <textarea

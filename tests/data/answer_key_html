@@ -219,19 +219,19 @@
                         <td width="25%">Application Number :
                         </td>
                         <td width="25%">
-                            <span id="ctl00_LoginContent_lblAppno" class="MsgLabel">230310026350</span>
+                            <span id="ctl00_LoginContent_lblAppno" class="MsgLabel">123456789012</span>
                         </td>
                         <td width="25%">Roll Number :
                         </td>
                         <td width="25%">
-                            <span id="ctl00_LoginContent_lblRollno" class="MsgLabel">UP18010985</span>
+                            <span id="ctl00_LoginContent_lblRollno" class="MsgLabel">UP12345678</span>
                         </td>
                     </tr>
                     <tr>
                         <td>Candidate&#39;s Name :
                         </td>
                         <td>
-                            <span id="ctl00_LoginContent_lblName" class="MsgLabel">RUDRANSH SINGH</span>
+                            <span id="ctl00_LoginContent_lblName" class="MsgLabel">Some Student's Name</span>
                         </td>
                         <td>Date of Birth :
                         </td>
@@ -243,12 +243,12 @@
                         <td>Father&#39;s Name :
                         </td>
                         <td>
-                            <span id="ctl00_LoginContent_lblFname" class="MsgLabel">PRADEEP KUMAR SINGH</span>
+                            <span id="ctl00_LoginContent_lblFname" class="MsgLabel">father</span>
                         </td>
                         <td>Mother&#39;s Name :
                         </td>
                         <td>
-                            <span id="ctl00_LoginContent_lblMName" class="MsgLabel">RASHMI SINGH</span>
+                            <span id="ctl00_LoginContent_lblMName" class="MsgLabel">mother</span>
                         </td>
                     </tr>
                     <tr>

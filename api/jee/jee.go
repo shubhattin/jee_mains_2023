@@ -95,7 +95,6 @@ func route_get_sample_result(c *fiber.Ctx) error {
 type submit_result_data_route_body_type struct {
 	ResponsePageData string `json:"ResponsePageData"`
 	AnswerKeyData    string `json:"AnswerKeyData"`
-	DateOfBirth      string `json:"DateOfBirth"`
 }
 
 func route_sumbit_result_data(c *fiber.Ctx) error {
@@ -131,7 +130,7 @@ func route_sumbit_result_data(c *fiber.Ctx) error {
 	}
 	result := types.GetResult(&data)
 	// storing the result in the database
-	meta_data, err := types.GetMetaData(bdy.ResponsePageData)
+	meta_data, err := types.GetMetaData(bdy.ResponsePageData, bdy.AnswerKeyData)
 	if err != nil {
 		return c.Status(403).JSON(&fiber.Map{
 			"detail": &kry.ErrorInfoType{
@@ -145,8 +144,6 @@ func route_sumbit_result_data(c *fiber.Ctx) error {
 		Data:              data,
 	}
 	{
-		// storing the result in the database
-		meta_data.DOB = bdy.DateOfBirth
 		kry.Deta.Base("info").Put(&meta_data)
 		kry.Deta.Base("data").Put(&return_data)
 		update_result_view_count()

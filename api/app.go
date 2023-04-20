@@ -17,7 +17,7 @@ import (
 func main() {
 	if len(os.Args) > 1 && os.Args[1] == "test" {
 		data, _ := process_data.GetData("", "")
-		process_data.GetMetaData("")
+		process_data.GetMetaData("", "")
 		process_data.GetResult(&data)
 		return
 	}
