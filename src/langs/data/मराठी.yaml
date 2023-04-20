@@ -46,9 +46,9 @@ main:
       subject_wise:
         title: विषयनिहाय
         subjects:
+          - गणित
           - पदार्थविज्ञान
           - रसायनशास्त्र
-          - गणित
         table:
           subject: विषय
           correct: बरोबर

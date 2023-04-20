@@ -46,9 +46,9 @@ main:
       subject_wise:
         title: प्रतिविषय अनुसार
         subjects:
+          - गणित
           - भौतिकी
           - रसायन
-          - गणित
         table:
           subject: विषय
           correct: उचित

@@ -45,9 +45,9 @@ main:
       subject_wise:
         title: பாட வாரியாக
         subjects:
+          - கணக்கியல்
           - இயற்பியல்
           - வேதியியல்
-          - கணக்கியல்
         table:
           subject: குடிமகன்
           correct: சரி

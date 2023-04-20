@@ -45,9 +45,9 @@ main:
       subject_wise:
         title: বিষয় ভিত্তিক
         subjects:
+          - গণিত
           - পদার্থবিজ্ঞান
           - রসায়ন
-          - গণিত
         table:
           subject: বিষয়শ্রেণী
           correct: সঠিক

@@ -46,9 +46,9 @@ main:
       subject_wise:
         title: વિષય પ્રમાણે
         subjects:
+          - ગણિત
           - ભૌતિકશાસ્ત્ર
           - રસાયણશાસ્ત્ર
-          - ગણિત
         table:
           subject: વિષય
           correct: ખરું

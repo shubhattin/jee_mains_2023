@@ -46,9 +46,9 @@ main:
       subject_wise:
         title: సబ్జెక్టుల వారీగా..
         subjects:
+          - గణితం
           - భౌతిక శాస్త్రం
           - రసాయన శాస్త్రం
-          - గణితం
         table:
           subject: పాలితుడు
           correct: అవును

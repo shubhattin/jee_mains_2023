@@ -46,9 +46,9 @@ main:
       subject_wise:
         title: বিষয় অনুসৰি
         subjects:
+          - গণিত
           - পদাৰ্থ বিজ্ঞান
           - ৰসায়নবিজ্ঞান
-          - গণিত
         table:
           subject: বিষয়
           correct: হয়

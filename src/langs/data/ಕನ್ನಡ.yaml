@@ -46,9 +46,9 @@ main:
       subject_wise:
         title: ವಿಷಯವಾರು
         subjects:
+          - ಗಣಿತ
           - ಭೌತಶಾಸ್ತ್ರ
           - ರಸಾಯನಶಾಸ್ತ್ರ
-          - ಗಣಿತ
         table:
           subject: ವಿಷಯ
           correct: ಸರಿಯಾದ

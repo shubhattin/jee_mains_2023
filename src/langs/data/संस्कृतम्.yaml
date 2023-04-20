@@ -47,9 +47,9 @@ main:
       subject_wise:
         title: प्रतिविषयानामनुसारम्
         subjects:
+          - गणितम्
           - भौतिकशास्त्रम्
           - रसायनशास्त्रम्
-          - गणितम्
         table:
           subject: विषयम्
           correct: उचितम्

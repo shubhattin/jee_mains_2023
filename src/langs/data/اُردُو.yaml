@@ -48,9 +48,9 @@ main:
       subject_wise:
         title: پرَتِوِشَیَ اَنُسآرَ
         subjects:
+          - گَݨِتَ
           - بھاَوتِکاِی
           - رَسآیَنَ
-          - گَݨِتَ
         table:
           subject: وِشَیَ
           correct: اُچِتَ

@@ -46,9 +46,9 @@ main:
       subject_wise:
         title: വിഷയം തിരിച്ച്
         subjects:
+          - ഗണിതം
           - ഭൗതികശാസ്ത്രം
           - രസതന്ത്രം
-          - ഗണിതം
         table:
           subject: വിഷയം
           correct: ശരി

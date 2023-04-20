@@ -46,9 +46,9 @@ main:
       subject_wise:
         title: ਵਿਸ਼ਾ ਅਨੁਸਾਰ
         subjects:
+          - ਗਣਿਤ
           - ਭੌਤਿਕ ਵਿਗਿਆਨ
           - ਰਸਾਇਣ ਵਿਗਿਆਨ
-          - ਗਣਿਤ
         table:
           subject: ਵਿਸ਼ਾ
           correct: ਹਾਂ
