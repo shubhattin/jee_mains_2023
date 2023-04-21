@@ -12,7 +12,7 @@
   import { clsx } from '@tools/clsx';
   import Spinner from '@components/Spinner.svelte';
   import { slide } from 'svelte/transition';
-  import { appl_numb_not_found_err_msg } from '@components/main/Login/store';
+  import { appl_numb_not_found_err_msg, normalize_data } from '@components/main/Login/store';
 
   $: lekh = $lekhAH.home;
   let sumbit_loading_status = false;
@@ -59,7 +59,7 @@
         key: string;
       } = await req.json();
       $appl_numb = resp.key;
-      $datt = resp;
+      $datt = normalize_data(resp);
       $mainMode = 'result';
       $viewCountData[1]++;
     } else if (req.status === 403) {

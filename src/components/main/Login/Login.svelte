@@ -12,7 +12,7 @@
   import { fetch_post } from '@tools/fetch';
   import { clsx } from '@tools/clsx';
   import Spinner from '@components/Spinner.svelte';
-  import { mode, appl_numb_not_found_err_msg } from './store';
+  import { mode, appl_numb_not_found_err_msg, normalize_data } from './store';
 
   $: lekh = $lekhAH.home;
   let dob: string;
@@ -43,7 +43,7 @@
     }
     const resp: ResponseDataType = await req.json();
     $sample_result_status = true;
-    $datt = resp;
+    $datt = normalize_data(resp);
     $mainMode = 'result';
   };
   const fetch_data_result = async () => {
@@ -68,7 +68,7 @@
     });
     if (req.status === 200) {
       const resp: ResponseDataType = await req.json();
-      $datt = resp;
+      $datt = normalize_data(resp);
       $mainMode = 'result';
       $viewCountData[1]++;
     } else if (req.status === 403) {
