@@ -4,13 +4,13 @@ type ResultMetricsType struct {
 	Unattempted []string `json:"unattempted"`
 	Correct     []string `json:"correct"`
 	Incorrect   []string `json:"incorrect"`
-	Score       int16    `json:"score"`
+	Score       int    `json:"score"`
 }
 type ResultDataType struct {
-	Score            int16                `json:"score"`
-	UnattemptedCount uint8                `json:"unattempted_count"`
-	CorrectCount     uint8                `json:"correct_count"`
-	IncorrectCount   uint8                `json:"incorrect_count"`
+	Score            int                `json:"score"`
+	UnattemptedCount int                `json:"unattempted_count"`
+	CorrectCount     int                `json:"correct_count"`
+	IncorrectCount   int                `json:"incorrect_count"`
 	Subjects         [3]ResultMetricsType `json:"subjects"`
 }
 type MainDataType struct {
