@@ -1,10 +1,10 @@
 # notes.on_mobile_msg
 
-Prefix the `URL` with `'view-source:'`. For example :- `'https://www.google.com'` -> `'view-source:https://www.google.com'`, open the *prefixed link*, then *select all* the *HTML* and *copy*.
+Prefix the `URL` with `'view-source:'`. For example :- `'https://www.google.com'` -> `'view-source:https://www.google.com'`, open the _prefixed link_, then _select all_ the _HTML_ and _copy_.
 
 # notes.on_computer_msg
 
-Right click on mouse and then click on `'View page source'`, then *select all* the *HTML* and *copy*.
+Right click on mouse and then click on `'View page source'`, then _select all_ the _HTML_ and _copy_.
 
 # notes.other_notes.0
 

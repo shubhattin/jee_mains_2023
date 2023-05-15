@@ -23,7 +23,6 @@ Also the Response Sheet provided only has Question's image and ID and options' i
 
 This tool tries to simplify this task by automating things and **bringing Questins, their Answers', thier IDs' and thier actual Image Questions and Answers together**.
 
-
 ## How exactly will my result look like
 
 The App has a option to view **Sample Result**, this is the format how any particular result will be displayed.

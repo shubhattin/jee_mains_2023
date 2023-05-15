@@ -13,12 +13,19 @@
   import { clsx } from '@tools/clsx';
   import Spinner from '@components/Spinner.svelte';
   import { mode, appl_numb_not_found_err_msg, normalize_data } from './store';
+  import { DateInput } from 'date-picker-svelte';
 
   $: lekh = $lekhAH.home;
-  let dob: string;
   let result_loading_status = false;
   let sample_result_loading_status = false;
   let dob_wrong_error = false;
+
+  let date: Date = null!;
+  let dob: string = null!;
+
+  $: {
+    if (date) dob = date.toLocaleDateString();
+  }
 
   let empty_status = {
     appl_numb: false,
@@ -63,7 +70,7 @@
     const req = await fetch_post(API_URL + '/api/get_result', {
       json: {
         ApplicationNumber: $appl_numb.toString(),
-        DateOfBirth: dob.split('-').reverse().join('/')
+        DateOfBirth: dob
       }
     });
     if (req.status === 200) {
@@ -78,7 +85,7 @@
         $appl_numb_not_found_err_msg = true;
         $mode = 'submit_data';
       } else if (reason === 'dob_did_not_match') {
-        dob = '';
+        date = null!;
         dob_wrong_error = true;
         result_loading_status = false;
       }
@@ -87,6 +94,7 @@
 </script>
 
 <div>
+  <!-- ApplicationNumber Input -->
   <div class="mb-2">
     <input
       type="number"
@@ -102,21 +110,22 @@
       <div class="mt-1 text-sm text-red-500">{lekh.verify.appl_numb_verify}</div>
     {/if}
   </div>
+  <!-- DOB Input -->
   <div class="mb-2">
-    <input
-      type="date"
-      bind:value={dob}
+    <DateInput
+      bind:value={date}
+      placeholder="DD/MM/YYYY"
+      format="dd/MM/yyyy"
+      closeOnSelection={true}
       class={clsx(
-        'mb-1 block w-44 rounded-md border-2 px-1 outline-none transition-all duration-200',
+        'mb-1 inline-block rounded-md border-2 text-base outline-none transition-all duration-200',
         'border-blue-800 placeholder:text-zinc-400 focus:ring-2 focus:ring-green-500',
         dob_wrong_error ? 'border-4 border-red-600' : '',
         empty_status.dob ? 'border-4 border-red-400' : ''
       )}
     />
-    {#if dob == ''}
-      <div class="mt-1 text-sm text-red-500">{lekh.verify.dob_verify}</div>
-    {/if}
   </div>
+  <!-- Submit Button -->
   <div>
     <button
       on:click={fetch_data_result}

@@ -7,7 +7,7 @@
   $: lekh = $lekhAH;
 </script>
 
-<footer class="flex justify-center border-t-2 border-t-gray-400 bg-zinc-200 px-2 pt-2 pb-1">
+<footer class="flex justify-center border-t-2 border-t-gray-400 bg-zinc-200 px-2 pb-1 pt-2">
   <div class="flex flex-col justify-center">
     <div class="mb-1 flex justify-center">
       <!-- <span class="text-sm font-bold text-red-600">

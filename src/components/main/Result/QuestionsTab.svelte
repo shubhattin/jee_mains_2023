@@ -14,7 +14,7 @@
   {#if mobile_tablet_detector()}
     <div
       class:hidden={!suggestion_text_shown}
-      class="my-1 mx-2 inline-flex justify-between text-center text-xs text-zinc-500 sm:hidden"
+      class="mx-2 my-1 inline-flex justify-between text-center text-xs text-zinc-500 sm:hidden"
     >
       <span>{lekh.desktop_mode_better}</span>
       <button on:click={() => (suggestion_text_shown = false)} class="cursor-button ml-1">
@@ -25,7 +25,7 @@
   {#each { length: data.GivenAnswer.length } as _, i (i)}
     <li class="mb-4">
       <img class="inline-block" src={data.QuestionIMG[i]} alt={`Question ${i + 1}`} />
-      <div class="mt-2 ml-4 list-disc">
+      <div class="ml-4 mt-2 list-disc">
         {#if data.Type[i] === 'MCQ'}
           {#each ['A', 'B', 'C', 'D'] as opt, opt_num (opt)}
             <li class="mb-1">
