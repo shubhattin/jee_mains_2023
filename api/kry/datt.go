@@ -1,7 +1,6 @@
 package kry
 
 import (
-	"encoding/base64"
 	"os"
 
 	"github.com/deta/deta-go/deta"
@@ -15,15 +14,10 @@ type DetaStruct struct {
 }
 
 func (ref *DetaStruct) getDetaKey() string {
-	enc_env, env_found := os.LookupEnv("DETA_PROJECT_KEY")
-	if env_found {
-		return enc_env
-	} else {
-		enc_env = os.Getenv("DETA_KEY")
-		env, _ := base64.StdEncoding.DecodeString(enc_env)
-		return string(env[:])
-	}
+	deta_key := os.Getenv("DETA_PROJECT_KEY")
+	return deta_key
 }
+
 func (ref *DetaStruct) init() {
 	ref.deta_ref, _ = deta.New(deta.WithProjectKey(ref.getDetaKey()))
 	ref.deta_loaded = true

@@ -24,7 +24,8 @@ func main() {
 
 	if kry.DEV_ENV {
 		// loading .env file
-		godotenv.Load()
+		godotenv.Load("../.env.local")
+		godotenv.Load("../.env")
 	}
 
 	app := fiber.New(fiber.Config{
