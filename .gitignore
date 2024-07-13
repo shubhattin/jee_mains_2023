@@ -11,13 +11,15 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 /tmp
+a.py
+tests/all_data/
 
 */.env
 *__pycache__
 */a.ipynb
 api/main
 api/tmp
-tests/data/question_paper_html.html
+tests/raw_data/question_paper_html.html
 tests/result
 
 .env*

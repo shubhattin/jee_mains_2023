@@ -63,9 +63,9 @@ var TEST_MODE = kry.DEV_ENV && len(os.Args) > 1 && os.Args[1] == "test"
 
 func GetData(answer_key_data, response_sheet_data string) (MainDataType, error) {
 	if TEST_MODE {
-		fl_answer, _ := os.ReadFile("../tests/data/answer_key_html")
+		fl_answer, _ := os.ReadFile("../tests/raw_data/answer_key_html")
 		answer_key_data = string(fl_answer)
-		fl_resp, _ := os.ReadFile("../tests/data/question_paper_html")
+		fl_resp, _ := os.ReadFile("../tests/raw_data/question_paper_html")
 		response_sheet_data = string(fl_resp)
 	}
 	ANSWER_KEY, err := load_answer_key(answer_key_data)
@@ -162,16 +162,31 @@ func GetResult(data *MainDataType) ResultDataType {
 		dt.Subjects[i].Incorrect = make([]string, 0)
 		dt.Subjects[i].Unattempted = make([]string, 0)
 	}
+	// to count number of numerical questions done
+	num_ques_attmpt_count := 0
 	for i := 0; i < QUESTION_COUNT; i++ {
-		if data.GivenAnswer[i] == "--" {
-			dt.UnattemptedCount++
-			dt.Subjects[i/30].Unattempted = append(dt.Subjects[i/30].Unattempted, strconv.Itoa(i+1))
-		} else if data.GivenAnswer[i] == data.CorrectAnswer[i] {
-			dt.CorrectCount++
-			dt.Subjects[i/30].Correct = append(dt.Subjects[i/30].Correct, strconv.Itoa(i+1))
-		} else {
-			dt.IncorrectCount++
-			dt.Subjects[i/30].Incorrect = append(dt.Subjects[i/30].Incorrect, strconv.Itoa(i+1))
+		subject_index := i / 30
+		ques_no := i%30 + 1
+		if ques_no == 21 {
+			num_ques_attmpt_count = 0
+		}
+		if ques_no <= 20 || (ques_no > 20 && num_ques_attmpt_count < 5) {
+			if data.GivenAnswer[i] == "--" {
+				dt.UnattemptedCount++
+				dt.Subjects[subject_index].Unattempted = append(dt.Subjects[subject_index].Unattempted, strconv.Itoa(i+1))
+			} else if data.GivenAnswer[i] == data.CorrectAnswer[i] {
+				dt.CorrectCount++
+				dt.Subjects[subject_index].Correct = append(dt.Subjects[subject_index].Correct, strconv.Itoa(i+1))
+				if ques_no > 20 {
+					num_ques_attmpt_count++
+				}
+			} else {
+				dt.IncorrectCount++
+				dt.Subjects[subject_index].Incorrect = append(dt.Subjects[subject_index].Incorrect, strconv.Itoa(i+1))
+				if ques_no > 20 {
+					num_ques_attmpt_count++
+				}
+			}
 		}
 	}
 	for i := 0; i < 3; i++ {
@@ -187,9 +202,9 @@ func GetResult(data *MainDataType) ResultDataType {
 func GetMetaData(response_sheet_data string, answer_key_data string) (MetaDataType, error) {
 	var data MetaDataType
 	if TEST_MODE {
-		fl_resp, _ := os.ReadFile("../tests/data/question_paper_html")
+		fl_resp, _ := os.ReadFile("../tests/raw_data/question_paper_html")
 		response_sheet_data = string(fl_resp)
-		fl_answ, _ := os.ReadFile("../tests/data/answer_key_html")
+		fl_answ, _ := os.ReadFile("../tests/raw_data/answer_key_html")
 		answer_key_data = string(fl_answ)
 	}
 	HTML_DATA, _ := goquery.NewDocumentFromReader(strings.NewReader(response_sheet_data))
