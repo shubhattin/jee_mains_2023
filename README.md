@@ -1,7 +1,5 @@
 ## JEE Mains 2023 Score Calculator
 
-Link: [https://jeemainsscore2023.netlify.app](https://jeemainsscore2023.netlify.app)
-
 ### **Tech Stack Used**
 
 - **[Fiber](https://gofiber.io/)** - Backend ([Go](https://go.dev/))
